@@ -15,6 +15,10 @@ run/main_scene="res://scenes/opening/opening.tscn"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.png"
 
+[autoload]
+
+InteractionManager3d="*uid://o20wulkuoo5s"
+
 [clean_copy_examples]
 
 examples_paths=Array[String](["res://addons/maaacks_game_template/examples/"])
