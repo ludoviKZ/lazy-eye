@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3tsgeu8qvimo"]
 
 [ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="1_v4ech"]
-[ext_resource type="Texture2D" uid="uid://c3b4he23tpwny" path="res://assets/poster.jpg" id="2_l8rfx"]
+[ext_resource type="Texture2D" uid="uid://c3b4he23tpwny" path="res://assets/PSX Tech v1.2.3(1)/poster.jpg" id="2_l8rfx"]
 
 [node name="test" type="Node3D" unique_id=1745408331]
 

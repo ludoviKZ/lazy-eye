@@ -12,7 +12,7 @@ script = ExtResource("1_74lek")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16316593, 1.1920929e-07, -0.101671696)
 
 [node name="arena" parent="." unique_id=1451379201 instance=ExtResource("2_iyx0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96787107, 0, 0.06915951)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118756175, -2.1270576, 0.86936855)
 
 [node name="EnemyFOV" type="Area3D" parent="." unique_id=13321358]
 transform = Transform3D(0.998962, 0, 0.045551334, 0, 1, 0, -0.045551334, 0, 0.998962, 5.951358, -2.3841858e-07, 2.7410758)
