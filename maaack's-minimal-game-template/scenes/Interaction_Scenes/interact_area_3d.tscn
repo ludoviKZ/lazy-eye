@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://brp8rdjp4mvhd"]
+
+[ext_resource type="Script" uid="uid://cqii4r67h2f2j" path="res://scenes/Interaction_Scenes/interact_area_3d.gd" id="1_2brnr"]
+
+[node name="InteractArea3D" type="Area3D" unique_id=891073404]
+script = ExtResource("1_2brnr")
