@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bd2ygsxwin7ds"]
+
+[ext_resource type="Script" uid="uid://dumwhcgkmvbng" path="res://scenes/Enemies_Stuff/detection_meter.gd" id="1_dhc70"]
+
+[node name="DetectionMeter" type="Node3D" unique_id=1693148647]
+script = ExtResource("1_dhc70")
+visible_through_walls = false
