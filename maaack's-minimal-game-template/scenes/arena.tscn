@@ -11,6 +11,7 @@ size = Vector3(1, 1, 1.0673828)
 transform = Transform3D(8.133204, 0, 0, 0, 1, 0, 0, 0, 7.8931303, 0, -2.2050433, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1414939679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.013551966, 0, -0.024830708)
 mesh = SubResource("BoxMesh_8twhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1820918819]
@@ -20,7 +21,7 @@ shape = SubResource("BoxShape3D_fxdce")
 transform = Transform3D(8.133204, 0, 0, 0, 0.032336038, 7.8890023, 0, -0.99947715, 0.2552326, 0, 0.99473, -2.8828225)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2" unique_id=753047233]
-transform = Transform3D(1, 0, 0, 0, 1, -2.9802322e-08, 0, 0, 1, -0.02909038, 0.33504748, 0.47737682)
+transform = Transform3D(1, 0, 0, 0, 1, -1.1920929e-07, 0, 0, 1, -0.0029996953, 0.4053564, 0.3793)
 mesh = SubResource("BoxMesh_8twhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2" unique_id=1221449806]
