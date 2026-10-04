@@ -3,6 +3,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_8twhp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fxdce"]
+size = Vector3(1, 1, 1.0673828)
 
 [node name="arena" type="Node3D" unique_id=1451379201]
 
@@ -23,6 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -2.9802322e-08, 0, 0, 1, -0.02909038, 0.3
 mesh = SubResource("BoxMesh_8twhp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2" unique_id=1221449806]
+transform = Transform3D(1, 0, 0, 0, 1, -8.34465e-07, 0, 0, 1, 0, 0.43456054, 0.40153736)
 shape = SubResource("BoxShape3D_fxdce")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1165438918]
