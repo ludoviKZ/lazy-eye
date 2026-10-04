@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cfedjrvwh1bee"]
+
+[ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="1_fov"]
+
+[node name="EnemyFOV" type="Area3D" unique_id=513511883]
+script = ExtResource("1_fov")
