@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c3tsgeu8qvimo"]
+
+[ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="1_v4ech"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gfc57"]
+size = Vector3(28, 10, 10)
+
+[node name="test" type="Node3D" unique_id=1745408331]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=514014534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056271672, 0, -0.029369831)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=367705575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 4.5, -10.5)
+shape = SubResource("BoxShape3D_gfc57")
+
+[node name="EnemyFOV" type="Area3D" parent="." unique_id=300796498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+script = ExtResource("1_v4ech")
+metadata/_custom_type_script = "uid://b4wykaar5pl0n"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1499016396]
+transform = Transform3D(0.58571416, 0, 0.81051767, 0, 1, 0, -0.81051767, 0, 0.58571416, 12.801889, 5.924447, 1.7777233)
