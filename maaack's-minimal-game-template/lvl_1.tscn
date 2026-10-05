@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://nwqhf3cc4eub" path="res://assets/Untitled.png" id="8_a1bqk"]
 [ext_resource type="Script" uid="uid://c375s1r80fxdg" path="res://area_3d.gd" id="9_a1bqk"]
 [ext_resource type="Script" uid="uid://df17f3kj0eibb" path="res://area_3d_2.gd" id="10_4snel"]
+[ext_resource type="AudioStream" uid="uid://c43ohkl0jra8u" path="res://assets/Warehouse Lights Turning On Sound Effect (mp3cut.net).mp3" id="10_akum8"]
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
 
@@ -17,12 +18,16 @@
 albedo_texture = ExtResource("4_clg6b")
 
 [sub_resource type="Environment" id="Environment_8twhp"]
+ambient_light_color = Color(0.064696476, 0.06469654, 0.06469653, 1)
 glow_enabled = true
-glow_intensity = 8.0
+glow_intensity = 1.01
 fog_enabled = true
 fog_light_color = Color(0.28860268, 0.3168768, 0.3592888, 1)
-fog_light_energy = 0.1
-fog_density = 0.2059
+fog_light_energy = 0.3
+fog_density = 0.2187
+adjustment_enabled = true
+adjustment_contrast = 1.08
+adjustment_saturation = 0.55
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6wp4"]
 
@@ -39,7 +44,7 @@ size = Vector3(1, 1, 7)
 [node name="LVL1" type="Node" unique_id=289565252]
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("2_okdh5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15, 1, 1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23, 1, 1)
 
 [node name="Floor" parent="." unique_id=123787244 instance=ExtResource("1_jschv")]
 
@@ -56,22 +61,49 @@ transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 0, 0, -10)
 
 [node name="Floor25" parent="." unique_id=1689991301 instance=ExtResource("1_jschv")]
-transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 6, 0, 0)
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 10, 0, 0)
 
 [node name="Floor26" parent="." unique_id=2062890510 instance=ExtResource("1_jschv")]
-transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 6, 0, 10)
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 10, 0, 10)
 
 [node name="Floor27" parent="." unique_id=95319228 instance=ExtResource("1_jschv")]
-transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 6, 0, -10)
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 10, 0, -10)
 
 [node name="Floor28" parent="." unique_id=1447491000 instance=ExtResource("1_jschv")]
-transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 14, 0, 0)
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 20, 0, 0)
 
 [node name="Floor29" parent="." unique_id=1414263922 instance=ExtResource("1_jschv")]
-transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 14, 0, 10)
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 20, 0, 10)
+
+[node name="Floor34" parent="." unique_id=366462386 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 0, 0, 20)
+
+[node name="Floor35" parent="." unique_id=497829203 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 10, 0, 20)
+
+[node name="Floor36" parent="." unique_id=1556908255 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 20, 0, 20)
+
+[node name="Floor37" parent="." unique_id=1850568724 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 0, 0, -20)
+
+[node name="Floor38" parent="." unique_id=645000879 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 10, 0, -20)
+
+[node name="Floor39" parent="." unique_id=847222 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 20, 0, -20.1)
 
 [node name="Floor30" parent="." unique_id=263706509 instance=ExtResource("1_jschv")]
-transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 14, 0, -10)
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 20, 0, -10.1)
+
+[node name="Floor31" parent="." unique_id=767860323 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 30, 0, 0)
+
+[node name="Floor32" parent="." unique_id=1932719553 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 30, 0, 10)
+
+[node name="Floor33" parent="." unique_id=388006945 instance=ExtResource("1_jschv")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 30, 0, -10)
 
 [node name="Floor6" parent="." unique_id=1048696532 instance=ExtResource("1_jschv")]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, -10, 0, -10)
@@ -140,7 +172,11 @@ mesh = ExtResource("4_okdh5")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PsxDownturningLamppost" unique_id=195369760]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.1163054, 0.56580305)
-light_energy = 10.822
+light_energy = 5.0
+light_indirect_energy = 16.0
+light_size = 1.0
+shadow_enabled = true
+omni_range = 6.0
 
 [node name="PsxDownturningLamppost2" type="MeshInstance3D" parent="." unique_id=891818121]
 transform = Transform3D(-0.99999976, -0.00012430012, 0.00072883646, -9.667942e-05, 1.2981675, -0.0012512051, -0.00072871376, -0.0016243679, -0.9999989, 6, -0.20929444, 3.426467)
@@ -149,7 +185,9 @@ mesh = ExtResource("4_okdh5")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PsxDownturningLamppost2" unique_id=537180713]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.1163054, 0.56580305)
-light_energy = 10.822
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 6.0
 
 [node name="PsxDownturningLamppost5" type="MeshInstance3D" parent="." unique_id=2020572891]
 transform = Transform3D(1, 0, 0, 0, 1.2981685, 0, 0, 0, 1, -10.510899, -0.20929444, -3)
@@ -165,7 +203,7 @@ mesh = ExtResource("4_okdh5")
 environment = SubResource("Environment_8twhp")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1947946985 instance=ExtResource("6_t6wp4")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -48.667995, 0.050000016, 2.4000545)
+transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, -119.13767, -1.9499999, 12.400055)
 
 [node name="Wall" parent="." unique_id=1780642556 instance=ExtResource("7_31jyx")]
 transform = Transform3D(0, 0, 1, 0, 3.0000005, 0, -5.0000005, 0, -5.9604645e-08, -14, 4, 0)
@@ -197,20 +235,25 @@ shape = SubResource("BoxShape3D_8twhp")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamppost/Area3D" unique_id=1564780072]
 unique_name_in_owner = true
-transform = Transform3D(1, -5.820766e-11, 3.6379756e-12, -7.740381e-13, -1.2073353e-08, 0.21276598, -2.580127e-12, -0.044326246, -2.5152818e-09, -3.0979295, 0.39068004, -0.10789881)
+transform = Transform3D(1, -5.820767e-11, 3.6379756e-12, -7.740381e-13, -1.2073352e-08, 0.21276598, -2.5801273e-12, -0.044326246, -2.5152818e-09, -1.0979295, 0.3906801, -0.107898824)
 visible = false
-light_energy = 10.822
+light_energy = 5.0
 shadow_enabled = true
+omni_range = 6.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Lamppost/Area3D" unique_id=1148783407]
+stream = ExtResource("10_akum8")
 
 [node name="Area3D2" type="Area3D" parent="Lamppost" unique_id=577575391]
 script = ExtResource("10_4snel")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lamppost/Area3D2" unique_id=1056547578]
 unique_name_in_owner = true
-transform = Transform3D(-0.99999976, -0.0007288341, -9.576759e-05, -9.667942e-05, 0.0012511486, 0.9999993, -0.0007287137, 0.999999, -0.0012512188, -5.0979047, 3.835484, 2.8556025)
+transform = Transform3D(-0.99999976, -0.0007288341, -9.576759e-05, -9.667942e-05, 0.0012511486, 0.9999993, -0.0007287137, 0.999999, -0.0012512188, -3.0979047, 3.835484, 2.8556025)
 visible = false
-light_energy = 10.822
+light_energy = 5.0
 shadow_enabled = true
+omni_range = 6.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D2" unique_id=990868578]
 transform = Transform3D(1, 0, 0, 0, 30.056, 0, 0, 0, 18.564001, 2, 0, 0)
@@ -222,8 +265,9 @@ script = ExtResource("11_g81ij")
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lamppost/Area3D3" unique_id=1499897774]
 transform = Transform3D(1, 0, 0, 0, -5.674475e-08, 1, 0, -1, -5.674475e-08, -10.510899, 3.8361955, -2.434197)
 visible = false
-light_energy = 10.822
+light_energy = 5.0
 shadow_enabled = true
+omni_range = 6.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D3" unique_id=1843527880]
 transform = Transform3D(0.3, 0, 0, 0, 15.048001, 0, 0, 0, 8.680001, -5, 0, -13.020002)
@@ -235,12 +279,21 @@ script = ExtResource("12_x5umw")
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lamppost/Area3D4" unique_id=2057442317]
 transform = Transform3D(-0.99999976, -0.0007288342, -9.5767595e-05, -9.667942e-05, 0.0012511485, 0.9999993, -0.00072871376, 0.999999, -0.0012512186, -10.510874, 3.835484, 2.8556025)
 visible = false
-light_energy = 10.822
+light_energy = 5.0
 shadow_enabled = true
+omni_range = 6.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D4" unique_id=1814738294]
 transform = Transform3D(2.2, 0, 0, 0, 27.132, 0, 0, 0, 7.8300004, -6, 0, -7.8300004)
 shape = SubResource("BoxShape3D_cwotn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Lamppost/Area3D4" unique_id=522469632]
+stream = ExtResource("10_akum8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1892548795]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 38, 116, 89)
+visible = false
+light_energy = 0.05
 
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]
