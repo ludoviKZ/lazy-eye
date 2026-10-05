@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dktlou7pxd3pw"]
+
+[ext_resource type="Script" uid="uid://dnlas5kysf4lp" path="res://scenes/Enemies_Stuff/enemy.gd" id="1_lkts1"]
+[ext_resource type="PackedScene" uid="uid://bx0u6u3mspgo8" path="res://scenes/Enemies_Stuff/modern_rebel_soldier.tscn" id="2_0lf7x"]
+[ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="3_ypcfe"]
+[ext_resource type="Script" uid="uid://dumwhcgkmvbng" path="res://scenes/Enemies_Stuff/detection_meter.gd" id="4_mwo18"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gfc57"]
+height = 2.8533936
+
+[node name="PatrolEnemy" type="CharacterBody3D" unique_id=728089667]
+script = ExtResource("1_lkts1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=420811080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2068481, 0)
+shape = SubResource("CapsuleShape3D_gfc57")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=620779836]
+
+[node name="ModernRebelSoldier" parent="." unique_id=2134944198 instance=ExtResource("2_0lf7x")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="EnemyFOV" type="Area3D" parent="." unique_id=388635153]
+transform = Transform3D(-0.999983, 0, -0.0058268295, 0, 1, 0, 0.0058268295, 0, -0.999983, -0.023537993, 2.4041984, 0.013724029)
+script = ExtResource("3_ypcfe")
+horizontal_fov = 74.0
+view_distance = 7.0
+metadata/_custom_type_script = "uid://b4wykaar5pl0n"
+
+[node name="DetectionMeter" type="Node3D" parent="." unique_id=1033843463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.754066, -0.06285739)
+script = ExtResource("4_mwo18")
+metadata/_custom_type_script = "uid://dumwhcgkmvbng"

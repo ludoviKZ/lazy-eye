@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://q12j67jsghe2"]
 
-[ext_resource type="Texture2D" uid="uid://do6gcohofmocn" path="res://assets/concrete_2.png" id="1_a6ifl"]
+[ext_resource type="Texture2D" uid="uid://do6gcohofmocn" path="res://assets/Textures/concrete_2.png" id="1_a6ifl"]
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="1_g1gc8"]
-[ext_resource type="Texture2D" uid="uid://diuwbn1b172tc" path="res://assets/window_2_1.png" id="1_qmw3c"]
-[ext_resource type="Texture2D" uid="uid://c3b4he23tpwny" path="res://assets/d.jpg" id="4_smh7c"]
+[ext_resource type="Texture2D" uid="uid://diuwbn1b172tc" path="res://assets/Textures/window_2_1.png" id="1_qmw3c"]
+[ext_resource type="Texture2D" uid="uid://c3b4he23tpwny" path="res://assets/Textures/d.jpg" id="4_smh7c"]
 [ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="5_l2lx5"]
 [ext_resource type="PackedScene" uid="uid://db6fah17ysh0k" path="res://assets/metal_barrel_mp_3.glb" id="5_p4o1l"]
+[ext_resource type="PackedScene" uid="uid://dktlou7pxd3pw" path="res://scenes/Enemies_Stuff/patrol_enemy.tscn" id="7_l2lx5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ooua1"]
 albedo_texture = ExtResource("1_a6ifl")
@@ -18,6 +19,8 @@ metallic = 0.26
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 texture_filter = 0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gfc57"]
 
 [node name="map1" type="Node3D" unique_id=181013177]
 
@@ -45,7 +48,7 @@ transform = Transform3D(-0.5657985, -0.41952395, 0.7098392, -0.26149, 0.9077443,
 transform = Transform3D(0.98424, 0, -0.17683803, 0, 1, 0, 0.17683803, 0, 0.98424, 31.395664, 4.9379063, 9.425507)
 
 [node name="Sprite3D" type="Sprite3D" parent="PosterCam" unique_id=8172437]
-transform = Transform3D(0.008111432, 0, -0.19236413, 0, 0.19253507, 0, 0.19236413, 0, 0.008111432, -3.9685402, 0.74701595, -5.665886)
+transform = Transform3D(-0.009135608, 0, 0.19231822, 0, 0.19253507, 0, -0.19231822, 0, -0.009135608, -3.9685383, 0.74701595, -5.665886)
 texture = ExtResource("4_smh7c")
 
 [node name="EnemyFOV" type="Area3D" parent="PosterCam" unique_id=751278763]
@@ -60,3 +63,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.274652, 0.47716737, 0)
 layers = 0
 use_collision = true
 radius = 0.372
+
+[node name="PatrolEnemy" parent="." unique_id=728089667 instance=ExtResource("7_l2lx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.630665, 0.49786747, -18.109123)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=718117489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.206463, 0.61467123, 12.458248)
+navigation_mesh = SubResource("NavigationMesh_gfc57")
