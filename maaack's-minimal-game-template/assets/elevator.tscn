@@ -9,21 +9,22 @@ albedo_texture = ExtResource("1_g1s1e")
 [sub_resource type="BoxMesh" id="BoxMesh_8twhp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8twhp"]
+size = Vector3(0.5048218, 1, 0.39990234)
 
 [node name="Elevator" type="StaticBody3D" unique_id=123787244]
-transform = Transform3D(2, 0, 0, 0, -1.1146404e-08, 2.5, 0, -0.255, -1.09278474e-07, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, -2.1855695e-09, 2.55, 0, -0.05, -1.1146404e-07, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=323963808]
-transform = Transform3D(2, 0, 0, 0, 0.255, 0, 0, 0, 2.5, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 4.5474735e-13, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_fiaqr")
 mesh = SubResource("BoxMesh_8twhp")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1923340448]
-transform = Transform3D(2, 0, 0, 0, 0.05099999, 0, 0, -1.3877788e-17, 2.4999998, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 1, 5.442271e-16, 0, -2.7211354e-16, 2, 0, 0, 0)
 script = ExtResource("2_fiaqr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=886088636]
-transform = Transform3D(1, 0, 0, 0, 38.4, 0, 0, 1.7763568e-15, 1.0000017, 0, 0, 0)
+transform = Transform3D(1.0000423, 0, 0, 0, 1.0000001, 4.0381565e-09, 0, 6.938894e-17, 1, 0.0013748587, -1.4015811e-10, -0.00024414063)
 shape = SubResource("BoxShape3D_8twhp")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
