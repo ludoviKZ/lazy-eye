@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://dr15e0ctkrqtw"]
 
+[ext_resource type="Script" uid="uid://bvlbcdkfav4ns" path="res://scenes/test.gd" id="1_74lek"]
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="1_bl13t"]
 [ext_resource type="PackedScene" uid="uid://bo7ep2prtho7l" path="res://scenes/arena.tscn" id="2_iyx0m"]
+[ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="3_iyx0m"]
 
 [node name="TestArena" type="Node3D" unique_id=984171723]
+script = ExtResource("1_74lek")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("1_bl13t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16316593, 1.1920929e-07, -0.101671696)
 
 [node name="arena" parent="." unique_id=1451379201 instance=ExtResource("2_iyx0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96787107, 0, 0.06915951)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118756175, -2.1270576, 0.86936855)
+
+[node name="EnemyFOV" type="Area3D" parent="." unique_id=13321358]
+transform = Transform3D(0.998962, 0, 0.045551334, 0, 1, 0, -0.045551334, 0, 0.998962, 5.951358, -2.3841858e-07, 2.7410758)
+script = ExtResource("3_iyx0m")
+metadata/_custom_type_script = "uid://b4wykaar5pl0n"

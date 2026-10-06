@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://q12j67jsghe2"]
+
+[ext_resource type="Texture2D" uid="uid://do6gcohofmocn" path="res://assets/Textures/concrete_2.png" id="1_a6ifl"]
+[ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="1_g1gc8"]
+[ext_resource type="Texture2D" uid="uid://diuwbn1b172tc" path="res://assets/Textures/window_2_1.png" id="1_qmw3c"]
+[ext_resource type="Texture2D" uid="uid://c3b4he23tpwny" path="res://assets/Textures/d.jpg" id="4_smh7c"]
+[ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="5_l2lx5"]
+[ext_resource type="PackedScene" uid="uid://db6fah17ysh0k" path="res://assets/metal_barrel_mp_3.glb" id="5_p4o1l"]
+[ext_resource type="PackedScene" uid="uid://dktlou7pxd3pw" path="res://scenes/Enemies_Stuff/patrol_enemy.tscn" id="7_l2lx5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ooua1"]
+albedo_texture = ExtResource("1_a6ifl")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1gc8"]
+albedo_texture = ExtResource("1_qmw3c")
+metallic = 0.26
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gfc57"]
+
+[node name="map1" type="Node3D" unique_id=181013177]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1570144272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1080704, 0, -6.460846)
+use_collision = true
+size = Vector3(165.14159, 1, 122.39032)
+material = SubResource("StandardMaterial3D_ooua1")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1938152540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.427795, 0)
+use_collision = true
+radius = 28.918945
+height = 58.85559
+sides = 18
+material = SubResource("StandardMaterial3D_g1gc8")
+
+[node name="Player" parent="." unique_id=958992094 instance=ExtResource("1_g1gc8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7, -4)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1799179154]
+transform = Transform3D(-0.5657985, -0.41952395, 0.7098392, -0.26149, 0.9077443, 0.32805997, -0.78198147, 0, -0.6233017, 39.44715, 27.45282, -35.340477)
+
+[node name="PosterCam" type="Node3D" parent="." unique_id=883132188]
+transform = Transform3D(0.98424, 0, -0.17683803, 0, 1, 0, 0.17683803, 0, 0.98424, 31.395664, 4.9379063, 9.425507)
+
+[node name="Sprite3D" type="Sprite3D" parent="PosterCam" unique_id=8172437]
+transform = Transform3D(-0.009135608, 0, 0.19231822, 0, 0.19253507, 0, -0.19231822, 0, -0.009135608, -3.9685383, 0.74701595, -5.665886)
+texture = ExtResource("4_smh7c")
+
+[node name="EnemyFOV" type="Area3D" parent="PosterCam" unique_id=751278763]
+transform = Transform3D(0.189574, 0.8106049, -0.55405915, 0.10087858, 0.5452256, 0.8321973, 0.97667044, -0.21365562, 0.021587946, -3.9142838, 0.050056458, -5.702785)
+script = ExtResource("5_l2lx5")
+metadata/_custom_type_script = "uid://b4wykaar5pl0n"
+
+[node name="metal_barrel_mp_32" parent="." unique_id=1971227263 instance=ExtResource("5_p4o1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.274652, 0.47716737, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="metal_barrel_mp_32" unique_id=34101461]
+layers = 0
+use_collision = true
+radius = 0.372
+
+[node name="PatrolEnemy" parent="." unique_id=728089667 instance=ExtResource("7_l2lx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.630665, 0.49786747, -18.109123)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=718117489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.206463, 0.61467123, 12.458248)
+navigation_mesh = SubResource("NavigationMesh_gfc57")

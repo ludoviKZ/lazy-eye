@@ -35,8 +35,12 @@ func _physics_process(delta):
 	var target_height = standing_height
 
 	if Input.is_action_pressed("crouch"):
+		
 		current_speed = crouch_speed
 		target_height = crouch_height
+		$Hitbox.shape.height = 1 + crouch_height
+	else:
+		$Hitbox.shape.height = 1 + target_height
 
 	camera.position.y = lerp(
 		camera.position.y,
