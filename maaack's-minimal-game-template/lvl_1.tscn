@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ckv8523518na3" path="res://assets/psx_-_hex_skyscraper.glb" id="6_t6wp4"]
 [ext_resource type="PackedScene" uid="uid://chf10bubmxc0t" path="res://assets/Wall.tscn" id="7_31jyx"]
 [ext_resource type="Texture2D" uid="uid://nwqhf3cc4eub" path="res://assets/Untitled.png" id="8_a1bqk"]
+[ext_resource type="Environment" uid="uid://bgowm2p8ukojq" path="res://assets/skybox/fog_grey.tres" id="8_v6ada"]
 [ext_resource type="Script" uid="uid://c375s1r80fxdg" path="res://area_3d.gd" id="9_a1bqk"]
 [ext_resource type="Script" uid="uid://df17f3kj0eibb" path="res://area_3d_2.gd" id="10_4snel"]
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
@@ -48,13 +49,6 @@ size = Vector2(20, 90)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6wp4"]
 albedo_texture = ExtResource("4_clg6b")
-
-[sub_resource type="Environment" id="Environment_8twhp"]
-glow_enabled = true
-glow_intensity = 8.0
-fog_light_color = Color(0.28860268, 0.3168768, 0.3592888, 1)
-fog_light_energy = 0.1
-fog_density = 0.2059
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6wp4"]
 
@@ -145,7 +139,7 @@ material_override = SubResource("StandardMaterial3D_t6wp4")
 mesh = ExtResource("4_okdh5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=583649867]
-environment = SubResource("Environment_8twhp")
+environment = ExtResource("8_v6ada")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1947946985 instance=ExtResource("6_t6wp4")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -48.667995, 0.050000016, 2.4000545)
