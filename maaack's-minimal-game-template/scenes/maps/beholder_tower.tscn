@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://b0l5dey5luor3"]
+
+[ext_resource type="PackedScene" uid="uid://dml2sei6gixmc" path="res://assets/models/beam_4.glb" id="1_phkhe"]
+[ext_resource type="Texture2D" uid="uid://ctdvtb288yb3i" path="res://assets/concrete_1.png" id="2_blsk3"]
+[ext_resource type="Texture2D" uid="uid://hgmfkcdmujuf" path="res://assets/Textures/concrete_3.png" id="3_ayfwp"]
+[ext_resource type="PackedScene" uid="uid://d21f4to2g3el5" path="res://assets/models/arc_2_wall_1_plain.glb" id="4_in2y4"]
+[ext_resource type="PackedScene" uid="uid://cqj46vyj1a676" path="res://assets/models/catwalk_1.glb" id="5_8q4f1"]
+[ext_resource type="PackedScene" uid="uid://dr23y6d47l7ha" path="res://assets/models/ceiling_lamp_4_1_a_off.glb" id="6_5m0ld"]
+[ext_resource type="PackedScene" uid="uid://c5qj4x1v5pqit" path="res://assets/models/wooden_crate_5.glb" id="7_qwp00"]
+[ext_resource type="PackedScene" uid="uid://de67roamebsbm" path="res://assets/models/button_12.glb" id="8_uk1hq"]
+[ext_resource type="PackedScene" uid="uid://cal0nrud8qmqk" path="res://scenes/maps/wood_stairs.tscn" id="9_blsk3"]
+[ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="9_tm2oy"]
+[ext_resource type="Texture2D" uid="uid://70vgcn6gr2dn" path="res://assets/models/arc_2_wall_1_plain_wall_mp_1.png" id="10_8q4f1"]
+[ext_resource type="PackedScene" uid="uid://dkhwftb5k1fxt" path="res://assets/models/window_metal_bars_single.glb" id="11_5m0ld"]
+[ext_resource type="PackedScene" uid="uid://cs2g3kehj0c6c" path="res://assets/models/arc_1_wall_1_plain.glb" id="12_qwp00"]
+[ext_resource type="Texture2D" uid="uid://b22r30an70pbo" path="res://assets/models/flat-lay-close-up-rope-texture-composition_23-2149016513.jpg" id="13_qwp00"]
+[ext_resource type="PackedScene" uid="uid://bjarxak0yndsa" path="res://assets/models/pipe_1.glb" id="14_uk1hq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
+albedo_texture = ExtResource("2_blsk3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3oyx"]
+albedo_texture = ExtResource("3_ayfwp")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lahpj"]
+albedo_texture = ExtResource("10_8q4f1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8q4f1"]
+albedo_texture = ExtResource("13_qwp00")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3oyx"]
+size = Vector3(0.37672424, 0.12625122, 0.94384766)
+
+[sub_resource type="Environment" id="Environment_phkhe"]
+glow_enabled = true
+glow_intensity = 1.53
+glow_bloom = 0.48
+fog_enabled = true
+fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
+fog_light_energy = 0.65
+fog_density = 0.1089
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.4676
+
+[node name="Beholder_Tower" type="Node3D" unique_id=225764706]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=2080709058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5766107, 0)
+text = "Beholder here
+"
+
+[node name="lights" type="Node3D" parent="." unique_id=896199144]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights" unique_id=1791850538]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, -0.9573608, 3.8050547, 4.20122)
+light_energy = 10.822
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lights" unique_id=1052492135]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0.86913955, 3.8349056, 4.1558156)
+light_energy = 10.822
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lights" unique_id=1658142109]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, -0.9573608, 3.8050547, -5.033815)
+light_energy = 10.822
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lights" unique_id=1174993562]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 1.1048653, 3.8050547, -5.033815)
+light_energy = 10.822
+
+[node name="SceneElements" type="Node3D" parent="." unique_id=416743397]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="beam_42" parent="SceneElements" unique_id=1739358826 instance=ExtResource("1_phkhe")]
+transform = Transform3D(0.21504463, 0, -0.20917884, 0, 0.29999995, 0, 0.20917884, 0, 0.21504463, 1.0472912, 0.025195926, -0.85339874)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="SceneElements" unique_id=90184302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11050415, 0)
+use_collision = true
+radius = 1.9316406
+height = 0.12701416
+sides = 15
+material = SubResource("StandardMaterial3D_gfc57")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="SceneElements" unique_id=1897524242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4572754, 0)
+use_collision = true
+radius = 0.96191406
+height = 1.0854492
+sides = 6
+material = SubResource("StandardMaterial3D_f3oyx")
+
+[node name="arc_2_wall_1_plain2" parent="SceneElements" unique_id=1399755111 instance=ExtResource("4_in2y4")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.07396585, -0.7812713)
+
+[node name="arc_2_wall_1_plain3" parent="SceneElements" unique_id=3282561 instance=ExtResource("4_in2y4")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.07865229, 0.78350234)
+
+[node name="arc_2_wall_1_plain4" parent="SceneElements" unique_id=270015505 instance=ExtResource("4_in2y4")]
+transform = Transform3D(0.15370397, 0, 0.25763363, 0, 0.29999998, 0, -0.25763363, 0, 0.15370397, 0.66956574, 0.08921063, 0.4002133)
+
+[node name="arc_2_wall_1_plain5" parent="SceneElements" unique_id=1794580709 instance=ExtResource("4_in2y4")]
+transform = Transform3D(0.15370397, 0, 0.2576336, 0, 0.29999998, 0, -0.2576336, 0, 0.15370397, -0.6500616, 0.08208385, -0.3911662)
+
+[node name="arc_2_wall_1_plain6" parent="SceneElements" unique_id=706784458 instance=ExtResource("4_in2y4")]
+transform = Transform3D(0.14999999, 0, -0.25980765, 0, 0.3, 0, 0.25980765, 0, 0.14999999, -0.66545635, 0.07865229, 0.3835345)
+
+[node name="arc_2_wall_1_plain7" parent="SceneElements" unique_id=917404742 instance=ExtResource("4_in2y4")]
+transform = Transform3D(0.14999999, 0, -0.25980765, 0, 0.3, 0, 0.25980765, 0, 0.14999999, 0.66855806, 0.07865229, -0.38337183)
+
+[node name="catwalk_12" parent="SceneElements" unique_id=803795095 instance=ExtResource("5_8q4f1")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.026129484, -0.05760616, 2.1098816)
+
+[node name="ceiling_lamp_4_1_a_off2" parent="SceneElements" unique_id=1075694401 instance=ExtResource("6_5m0ld")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.99692106, 0.9268496)
+
+[node name="ceiling_lamp_4_1_a_off3" parent="SceneElements" unique_id=1734999269 instance=ExtResource("6_5m0ld")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.99692106, -0.94114697)
+
+[node name="catwalk_13" parent="SceneElements" unique_id=1824125159 instance=ExtResource("5_8q4f1")]
+transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 0.026129484, -0.05760616, -2.1841977)
+
+[node name="wooden_crate_52" parent="SceneElements" unique_id=1317487230 instance=ExtResource("7_qwp00")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.02403, -0.029941201, 0.78166676)
+
+[node name="wooden_crate_53" parent="SceneElements" unique_id=557965502 instance=ExtResource("7_qwp00")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.2139881, -0.03749436, 0.5566331)
+
+[node name="wooden_crate_54" parent="SceneElements" unique_id=1431606406 instance=ExtResource("7_qwp00")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.0731056, 0.17619646, 0.65150213)
+
+[node name="button_122" parent="SceneElements" unique_id=2058293315 instance=ExtResource("8_uk1hq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.67753386, -2.4431953)
+
+[node name="button_123" parent="SceneElements" unique_id=310129298 instance=ExtResource("8_uk1hq")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.0023860633, -0.67753386, 2.3270736)
+
+[node name="beam_43" parent="SceneElements" unique_id=1707963350 instance=ExtResource("1_phkhe")]
+transform = Transform3D(0.21504463, 0, -0.20917884, 0, 0.29999995, 0, 0.20917884, 0, 0.21504463, 1.0472912, 0.035454392, -0.75071025)
+
+[node name="beam_44" parent="SceneElements" unique_id=1253720707 instance=ExtResource("1_phkhe")]
+transform = Transform3D(0.20603019, 0, -0.21806316, 0, 0.29999992, 0, 0.21806316, 0, 0.20603019, 1.0444438, 0.12138581, -0.7296661)
+
+[node name="beam_45" parent="SceneElements" unique_id=148164603 instance=ExtResource("1_phkhe")]
+transform = Transform3D(0.20603019, 0, -0.21806316, 0, 0.29999992, 0, 0.21806316, 0, 0.20603019, 1.1622562, 0.11110157, -0.7296661)
+
+[node name="beam_46" parent="SceneElements" unique_id=97598109 instance=ExtResource("1_phkhe")]
+transform = Transform3D(0.17680642, 0, -0.24236223, 0, 0.2999999, 0, 0.24236223, 0, 0.17680642, 1.0427388, 0.20128345, -0.7296661)
+
+[node name="catwalk_14" parent="SceneElements" unique_id=1175675165 instance=ExtResource("5_8q4f1")]
+transform = Transform3D(-0.576673, 0, -2.6226834e-08, 0, 0.3, 0, 5.0414354e-08, 0, -0.3, -1.5458493, 0.8911025, -0.9389413)
+
+[node name="beam_49" parent="SceneElements" unique_id=1714135799 instance=ExtResource("1_phkhe")]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, -1.2464765, 0.07267399, -0.9972496)
+
+[node name="Wood Stairs" parent="SceneElements" unique_id=1450770271 instance=ExtResource("9_blsk3")]
+transform = Transform3D(-0.7, 0, -6.119594e-08, 0, 0.7, 0, 6.119594e-08, 0, -0.7, -2.383442, -0.06886549, -0.12227841)
+
+[node name="beam_47" parent="SceneElements" unique_id=916805119 instance=ExtResource("1_phkhe")]
+transform = Transform3D(0.16852677, 0, -0.24819088, 0, 0.2999999, 0, 0.24819088, 0, 0.16852677, 1.1578135, 0.1893444, -0.7296661)
+
+[node name="beam_48" parent="SceneElements" unique_id=451261676 instance=ExtResource("1_phkhe")]
+transform = Transform3D(0.22773637, 0, -0.19528471, 0, 0.29999992, 0, 0.19528471, 0, 0.22773637, 1.0854427, 0.28182077, -0.7296661)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="SceneElements" unique_id=905879154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0016511917, 0.9523433, 0.0062608244)
+use_collision = true
+inner_radius = 0.8272437
+outer_radius = 0.97434336
+sides = 6
+smooth_faces = false
+material = SubResource("StandardMaterial3D_lahpj")
+
+[node name="window_metal_bars_single2" parent="SceneElements" unique_id=1395535315 instance=ExtResource("11_5m0ld")]
+transform = Transform3D(-4.3711392e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711392e-08, -1.9831539, -0.9214451, 0)
+
+[node name="arc_1_wall_1_plain2" parent="SceneElements" unique_id=938055193 instance=ExtResource("12_qwp00")]
+transform = Transform3D(0.42011592, 0, 0.27111366, 0, 0.3418617, 0, -0.27111366, 0, 0.42011592, 0, 0.9987075, 0)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="SceneElements" unique_id=1859441723]
+transform = Transform3D(0.6547832, 0.31574127, 0.36783323, 0, 0.69471407, -0.57395273, -0.41976672, 0.49251667, 0.57377356, -0.22553709, 1.3974593, -0.48450762)
+radius = 0.018066406
+height = 1.5396729
+material = SubResource("StandardMaterial3D_8q4f1")
+
+[node name="pipe_12" parent="SceneElements" unique_id=1398151840 instance=ExtResource("14_uk1hq")]
+transform = Transform3D(0.34, 0, 0, 0, -1.4861872e-08, -0.34, 0, 0.34, -1.4861872e-08, 0, 1.844283, -0.54361314)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SceneElements" unique_id=1277246879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2184896, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SceneElements/StaticBody3D" unique_id=1154418207]
+transform = Transform3D(-3.658624e-08, 0.5918452, 0.5918452, 0, 0.5918452, -0.5918452, -0.83699554, -2.5870376e-08, -2.5870376e-08, 0.13514256, 0.09757721, 0.014220865)
+shape = SubResource("BoxShape3D_f3oyx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SceneElements/StaticBody3D" unique_id=658286680]
+transform = Transform3D(0.83699554, 0, 0, 0, 0.5918452, -0.5918452, 0, 0.5918452, 0.5918452, -0.30317616, 0.6008789, -0.38585785)
+shape = SubResource("BoxShape3D_f3oyx")
+
+[node name="Player" parent="." unique_id=958992094 instance=ExtResource("9_tm2oy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.795407, 1.5537646, 0.9744749)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=31978674]
+environment = SubResource("Environment_phkhe")
