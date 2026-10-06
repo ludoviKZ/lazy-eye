@@ -73,12 +73,13 @@ script = ExtResource("5_l2lx5")
 metadata/_custom_type_script = "uid://b4wykaar5pl0n"
 
 [node name="PatrolEnemy" parent="." unique_id=728089667 node_paths=PackedStringArray("route") instance=ExtResource("7_l2lx5")]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 33.630665, 2.2714415, -24.813442)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 33.630665, 2.2714415, 33.628666)
 route = NodePath("../PatrolRoute")
 patrol_speed = 5.0
 default_wait_time = 1.0
 
 [node name="PatrolRoute" type="Node3D" parent="." unique_id=170191517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 44.83223)
 
 [node name="PatrolPoint" type="Marker3D" parent="PatrolRoute" unique_id=935682395]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.319942, 0.7068424, -24.880653)
