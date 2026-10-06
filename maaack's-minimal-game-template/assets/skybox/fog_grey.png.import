@@ -1,0 +1,27 @@
+[remap]
+
+importer="cubemap_texture"
+type="CompressedCubemap"
+uid="uid://bgoks8wd32bin"
+path="res://.godot/imported/fog_grey.png-86d52131406bb75883129f4c2e701d96.ccube"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/skybox/fog_grey.png"
+dest_files=["res://.godot/imported/fog_grey.png-86d52131406bb75883129f4c2e701d96.ccube"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/arrangement=2
