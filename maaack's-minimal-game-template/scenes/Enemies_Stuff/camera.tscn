@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dmvsf60xkwckh"]
+
+[ext_resource type="Script" uid="uid://n3noekn5t1mk" path="res://scenes/Enemies_Stuff/camera.gd" id="1_5xqg4"]
+[ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="1_bm884"]
+[ext_resource type="Script" uid="uid://dumwhcgkmvbng" path="res://scenes/Enemies_Stuff/detection_meter.gd" id="2_5xqg4"]
+[ext_resource type="Texture2D" uid="uid://c3b4he23tpwny" path="res://assets/Textures/d.jpg" id="3_fgrbf"]
+
+[node name="camera" type="Node3D" unique_id=288744070]
+script = ExtResource("1_5xqg4")
+
+[node name="EnemyFOV" type="Area3D" parent="." unique_id=1125619810]
+script = ExtResource("1_bm884")
+horizontal_fov = 45.0
+vertical_fov = 30.0
+view_distance = 12.0
+idle_color = Color(1, 1, 0.2, 0.13333334)
+alert_color = Color(1, 0.101960786, 0.101960786, 0.16862746)
+metadata/_custom_type_script = "uid://b4wykaar5pl0n"
+
+[node name="DetectionMeter" type="Node3D" parent="." unique_id=1549796255]
+script = ExtResource("2_5xqg4")
+metadata/_custom_type_script = "uid://dumwhcgkmvbng"
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1202254791]
+transform = Transform3D(-0.19253507, 0, -1.6831951e-08, 0, 0.19253507, 0, 1.6831951e-08, 0, -0.19253507, 0, 0.6825546, 0)
+texture = ExtResource("3_fgrbf")

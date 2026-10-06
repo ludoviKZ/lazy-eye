@@ -28,6 +28,8 @@ horizontal_fov = 41.5
 vertical_fov = 19.5
 view_distance = 10.9
 segments = 64
+idle_color = Color(1, 1, 0.2, 0.14509805)
+alert_color = Color(1, 0.101960786, 0.101960786, 0.13725491)
 metadata/_custom_type_script = "uid://b4wykaar5pl0n"
 
 [node name="DetectionMeter" type="Node3D" parent="." unique_id=1033843463]

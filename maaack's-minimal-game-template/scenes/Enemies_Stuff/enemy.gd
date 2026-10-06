@@ -51,7 +51,7 @@ enum State { PATROL, WAIT, SUSPICIOUS, CHASE, SEARCH }
 ## can't undo it.
 @export_range(-180.0, 180.0, 1.0) var model_yaw_offset: float = 0.0
 ## Prints whether the body faces its movement direction (twice a second).
-@export var debug_facing: bool = true
+@export var debug_facing: bool = false
 
 @export_group("Animation")
 @export var animation_player: AnimationPlayer
@@ -326,3 +326,14 @@ func _resolve_animation(anim_name: String) -> String:
 				break
 	_anim_cache[anim_name] = result
 	return result
+
+func alert(target_position: Vector3) -> void:
+	match state:
+		State.SUSPICIOUS:
+			pass
+		State.CHASE:
+			if not _can_see_player():
+				_last_known = target_position
+		_:
+			_set_state(State.CHASE)
+			_last_known = target_position
