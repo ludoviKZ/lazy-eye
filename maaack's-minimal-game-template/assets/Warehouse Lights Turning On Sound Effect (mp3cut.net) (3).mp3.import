@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1ife403pst1w"
+path="res://.godot/imported/Warehouse Lights Turning On Sound Effect (mp3cut.net) (3).mp3-f30742f583bb1d84fc872548ccdd9626.mp3str"
+
+[deps]
+
+source_file="res://assets/Warehouse Lights Turning On Sound Effect (mp3cut.net) (3).mp3"
+dest_files=["res://.godot/imported/Warehouse Lights Turning On Sound Effect (mp3cut.net) (3).mp3-f30742f583bb1d84fc872548ccdd9626.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

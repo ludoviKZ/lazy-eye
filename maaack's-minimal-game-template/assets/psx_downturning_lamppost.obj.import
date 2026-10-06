@@ -9,6 +9,7 @@ path="res://.godot/imported/psx_downturning_lamppost.obj-7bab2abd27a90a8d312db44
 [deps]
 
 files=["res://.godot/imported/psx_downturning_lamppost.obj-7bab2abd27a90a8d312db44de4ed8cd2.mesh"]
+
 source_file="res://assets/psx_downturning_lamppost.obj"
 dest_files=["res://.godot/imported/psx_downturning_lamppost.obj-7bab2abd27a90a8d312db44de4ed8cd2.mesh", "res://.godot/imported/psx_downturning_lamppost.obj-7bab2abd27a90a8d312db44de4ed8cd2.mesh"]
 

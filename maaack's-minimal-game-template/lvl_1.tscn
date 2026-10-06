@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://ckv8523518na3" path="res://assets/psx_-_hex_skyscraper.glb" id="6_t6wp4"]
 [ext_resource type="PackedScene" uid="uid://chf10bubmxc0t" path="res://assets/Wall.tscn" id="7_31jyx"]
 [ext_resource type="Texture2D" uid="uid://nwqhf3cc4eub" path="res://assets/Untitled.png" id="8_a1bqk"]
-[ext_resource type="Environment" uid="uid://bgowm2p8ukojq" path="res://assets/skybox/fog_grey.tres" id="8_v6ada"]
 [ext_resource type="Script" uid="uid://c375s1r80fxdg" path="res://area_3d.gd" id="9_a1bqk"]
 [ext_resource type="Script" uid="uid://df17f3kj0eibb" path="res://area_3d_2.gd" id="10_4snel"]
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
+[ext_resource type="AudioStream" uid="uid://c1ife403pst1w" path="res://assets/Warehouse Lights Turning On Sound Effect (mp3cut.net) (3).mp3" id="12_v6ada"]
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gfc57"]
@@ -50,6 +50,17 @@ size = Vector2(20, 90)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6wp4"]
 albedo_texture = ExtResource("4_clg6b")
+
+[sub_resource type="Environment" id="Environment_8twhp"]
+glow_enabled = true
+glow_intensity = 1.53
+glow_bloom = 0.48
+fog_enabled = true
+fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
+fog_light_energy = 0.65
+fog_density = 0.1089
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.4676
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6wp4"]
 
@@ -113,7 +124,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15, 
 transform = Transform3D(5.9604645e-08, -0.255, -1.09278474e-07, -1.231912e-16, -1.1146403e-08, 2.5, -2, 0, -1.9539925e-14, -13.385, 1, 0)
 
 [node name="PsxDownturningLamppost" type="MeshInstance3D" parent="." unique_id=1132580426]
-transform = Transform3D(1, 0, 0, 0, 1.2981685, 0, 0, 0, 1, 6, -0.20929444, -3)
+transform = Transform3D(1, 0, 0, 0, 1.2981685, 0, 0, 0, 1, 4, -0.20929444, -3)
 material_override = SubResource("StandardMaterial3D_t6wp4")
 mesh = ExtResource("4_okdh5")
 
@@ -122,7 +133,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3
 light_energy = 10.822
 
 [node name="PsxDownturningLamppost2" type="MeshInstance3D" parent="." unique_id=891818121]
-transform = Transform3D(-0.99999976, -0.00012430012, 0.00072883646, -9.667942e-05, 1.2981675, -0.0012512051, -0.00072871376, -0.0016243679, -0.9999989, 6, -0.20929444, 3.426467)
+transform = Transform3D(-0.99999976, -0.00012430012, 0.00072883646, -9.667942e-05, 1.2981675, -0.0012512051, -0.00072871376, -0.0016243679, -0.9999989, 4, -0.20929444, 3.426467)
 material_override = SubResource("StandardMaterial3D_t6wp4")
 mesh = ExtResource("4_okdh5")
 
@@ -131,17 +142,17 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3
 light_energy = 10.822
 
 [node name="PsxDownturningLamppost5" type="MeshInstance3D" parent="." unique_id=2020572891]
-transform = Transform3D(1, 0, 0, 0, 1.2981685, 0, 0, 0, 1, -10.510899, -0.20929444, -3)
+transform = Transform3D(1, 0, 0, 0, 1.2981685, 0, 0, 0, 1, -6.5108986, -0.20929444, -3)
 material_override = SubResource("StandardMaterial3D_t6wp4")
 mesh = ExtResource("4_okdh5")
 
 [node name="PsxDownturningLamppost6" type="MeshInstance3D" parent="." unique_id=711851050]
-transform = Transform3D(-0.99999976, -0.00012430012, 0.00072883646, -9.667942e-05, 1.2981675, -0.0012512051, -0.00072871376, -0.0016243679, -0.9999989, -10.510899, -0.20929444, 3.426467)
+transform = Transform3D(-0.99999976, -0.00012430012, 0.00072883646, -9.667942e-05, 1.2981675, -0.0012512051, -0.00072871376, -0.0016243679, -0.9999989, -6.5108986, -0.20929444, 3.426467)
 material_override = SubResource("StandardMaterial3D_t6wp4")
 mesh = ExtResource("4_okdh5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=583649867]
-environment = ExtResource("8_v6ada")
+environment = SubResource("Environment_8twhp")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1947946985 instance=ExtResource("6_t6wp4")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -48.667995, 0.050000016, 2.4000545)
@@ -157,12 +168,12 @@ texture = ExtResource("8_a1bqk")
 [node name="Lamppost" type="Node" parent="." unique_id=1723567185]
 
 [node name="PsxDownturningLamppost3" type="MeshInstance3D" parent="Lamppost" unique_id=1329730210]
-transform = Transform3D(1, 1.01181286e-11, 0, -3.637979e-12, 1.2981687, 0, -5.820766e-11, 0, 1, -3.0979295, -0.20929444, -3)
+transform = Transform3D(1, 1.01181286e-11, 0, -3.637979e-12, 1.2981687, 0, -5.820766e-11, 0, 1, -1.0979295, -0.20929444, -3)
 material_override = SubResource("StandardMaterial3D_t6wp4")
 mesh = ExtResource("4_okdh5")
 
 [node name="PsxDownturningLamppost4" type="MeshInstance3D" parent="Lamppost" unique_id=620101477]
-transform = Transform3D(-0.99999976, -0.00012430009, 0.0007288364, -9.667942e-05, 1.2981675, -0.0012512052, -0.0007287137, -0.0016243678, -0.9999989, -3.0979295, -0.20929442, 3.426467)
+transform = Transform3D(-0.99999976, -0.00012430009, 0.0007288364, -9.667942e-05, 1.2981675, -0.0012512052, -0.0007287137, -0.0016243678, -0.9999989, -1.0979295, -0.20929442, 3.426467)
 material_override = SubResource("StandardMaterial3D_t6wp4")
 mesh = ExtResource("4_okdh5")
 
@@ -171,55 +182,63 @@ transform = Transform3D(1, 0, 0, 0, 4.7, 0, 0, 0, 22.56, -2, 2, 0)
 script = ExtResource("9_a1bqk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D" unique_id=770485258]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 4, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 6, 0, 0)
 shape = SubResource("BoxShape3D_8twhp")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamppost/Area3D" unique_id=1564780072]
 unique_name_in_owner = true
-transform = Transform3D(1, -5.820766e-11, 3.6379756e-12, -7.740381e-13, -1.2073353e-08, 0.21276598, -2.580127e-12, -0.044326246, -2.5152818e-09, -3.0979295, 0.39068004, -0.10789881)
+transform = Transform3D(1, -5.820767e-11, 3.6379756e-12, -7.740381e-13, -1.2073351e-08, 0.21276598, -2.5801273e-12, -0.044326246, -2.5152815e-09, 0.9020705, 0.3906801, -0.10789883)
 visible = false
 light_energy = 10.822
 shadow_enabled = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Lamppost/Area3D" unique_id=1688382911]
+stream = ExtResource("12_v6ada")
 
 [node name="Area3D2" type="Area3D" parent="Lamppost" unique_id=577575391]
 script = ExtResource("10_4snel")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lamppost/Area3D2" unique_id=1056547578]
 unique_name_in_owner = true
-transform = Transform3D(-0.99999976, -0.0007288341, -9.576759e-05, -9.667942e-05, 0.0012511486, 0.9999993, -0.0007287137, 0.999999, -0.0012512188, -5.0979047, 3.835484, 2.8556025)
+transform = Transform3D(-0.99999976, -0.0007288341, -9.576759e-05, -9.667942e-05, 0.0012511486, 0.9999993, -0.0007287137, 0.999999, -0.0012512188, -1.0979047, 3.835484, 2.8556025)
 visible = false
 light_energy = 10.822
 shadow_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D2" unique_id=990868578]
-transform = Transform3D(1, 0, 0, 0, 30.056, 0, 0, 0, 18.564001, 2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 30.056, 0, 0, 0, 18.564001, 4, 0, 0)
 shape = SubResource("BoxShape3D_q0da8")
 
 [node name="Area3D3" type="Area3D" parent="Lamppost" unique_id=1858923707]
 script = ExtResource("11_g81ij")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lamppost/Area3D3" unique_id=1499897774]
-transform = Transform3D(1, 0, 0, 0, -5.674475e-08, 1, 0, -1, -5.674475e-08, -10.510899, 3.8361955, -2.434197)
+transform = Transform3D(1, 0, 0, 0, -5.674475e-08, 1, 0, -1, -5.674475e-08, -6.5108986, 3.8361955, -2.434197)
 visible = false
 light_energy = 10.822
 shadow_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D3" unique_id=1843527880]
-transform = Transform3D(0.3, 0, 0, 0, 15.048001, 0, 0, 0, 8.680001, -5, 0, -13.020002)
+transform = Transform3D(0.3, 0, 0, 0, 15.048001, 0, 0, 0, 8.680001, -2, 0, -13.020002)
 shape = SubResource("BoxShape3D_w5kdw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Lamppost/Area3D3" unique_id=915236039]
+stream = ExtResource("12_v6ada")
 
 [node name="Area3D4" type="Area3D" parent="Lamppost" unique_id=159072052]
 script = ExtResource("12_x5umw")
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lamppost/Area3D4" unique_id=2057442317]
-transform = Transform3D(-0.99999976, -0.0007288342, -9.5767595e-05, -9.667942e-05, 0.0012511485, 0.9999993, -0.00072871376, 0.999999, -0.0012512186, -10.510874, 3.835484, 2.8556025)
+transform = Transform3D(-0.99999976, -0.00072883413, -9.576759e-05, -9.667942e-05, 0.0012511485, 0.9999993, -0.00072871376, 0.999999, -0.0012512187, -6.510874, 3.835484, 2.8556025)
 visible = false
 light_energy = 10.822
 shadow_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D4" unique_id=1814738294]
-transform = Transform3D(2.2, 0, 0, 0, 27.132, 0, 0, 0, 7.8300004, -6, 0, -7.8300004)
+transform = Transform3D(2.2, 0, 0, 0, 27.132, 0, 0, 0, 7.8300004, -3, 0, -7.8300004)
 shape = SubResource("BoxShape3D_cwotn")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=46880961]
 
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]
