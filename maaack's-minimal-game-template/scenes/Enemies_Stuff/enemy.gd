@@ -1,32 +1,62 @@
 extends CharacterBody3D
+## Patrolling enemy.
+## PATROL -> WAIT (at each point) -> PATROL ...
+## Player seen  -> SUSPICIOUS (stops and stares until the DetectionMeter fills)
+## Meter full   -> CHASE (follows the player while in line of sight, then goes
+##                 to the last place it saw them)
+## Lost / gone  -> SEARCH (looks left and right) -> back to PATROL
+
 signal player_caught(player: Node3D)
 
 enum State { PATROL, WAIT, SUSPICIOUS, CHASE, SEARCH }
 
 @export_group("Patrol")
+## A Node3D whose children are the patrol points (PatrolPoint or any Node3D).
+## Must NOT be a child of the enemy, or the points would move with it.
 @export var route: Node3D
 @export var patrol_speed: float = 1.5
+## Wait time for points that aren't PatrolPoint nodes.
 @export var default_wait_time: float = 2.0
 @export var arrive_distance: float = 0.4
 
 @export_group("Detection")
+## Only used when the enemy has no DetectionMeter child: seconds it stares
+## at the player before starting to chase.
 @export var reaction_time: float = 1.0
+## The player must be out of sight this long before the enemy treats them as
+## lost. Stops rapid flip-flopping when the player is at the edge of the cone.
+@export var lose_sight_delay: float = 0.5
 
 @export_group("Chase")
 @export var chase_speed: float = 3.5
 @export var repath_interval: float = 0.2
+## Distance at which `player_caught` is emitted (once per chase).
 @export var catch_distance: float = 1.2
 
 @export_group("Search")
 @export var search_time: float = 4.0
+## How far (degrees) it turns left and right while searching.
 @export var look_angle: float = 70.0
+## Seconds for one full left-right-left sweep.
 @export var look_period: float = 2.5
 
 @export_group("Movement")
 @export var turn_speed: float = 8.0
 
+@export_group("Model")
+## The visible character node (e.g. ModernRebelSoldier). Optional.
+@export var model: Node3D
+## Extra turn applied to the model only, in degrees. Set to 180 if the model
+## walks backwards. Applied every frame, so scripts or animations on the model
+## can't undo it.
+@export_range(-180.0, 180.0, 1.0) var model_yaw_offset: float = 0.0
+## Prints whether the body faces its movement direction (twice a second).
+@export var debug_facing: bool = true
+
 @export_group("Animation")
 @export var animation_player: AnimationPlayer
+## Names must exist on the AnimationPlayer (add a library prefix if needed,
+## e.g. "UAL/Idle"). Missing names are skipped silently.
 @export var idle_animation: String = "Idle"
 @export var walk_animation: String = "Walk"
 @export var run_animation: String = "Jog_Fwd"
@@ -45,10 +75,16 @@ var _repath_timer: float = 0.0
 var _search_base_yaw: float = 0.0
 var _caught: bool = false
 var _active: bool = false
+var _time_since_seen: float = 999.0
+var _warned_no_path: bool = false
+var _anim_cache: Dictionary = {}
 var _gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _ready() -> void:
+	# Use the AnimationPlayer that's already inside the model.
+	if animation_player == null:
+		animation_player = find_child("AnimationPlayer", true, false) as AnimationPlayer
 	if route:
 		for child in route.get_children():
 			if child is Node3D:
@@ -57,7 +93,7 @@ func _ready() -> void:
 
 
 func _setup() -> void:
-
+	# The navigation map isn't ready on the first frame.
 	await get_tree().physics_frame
 	_active = true
 	_set_state(State.PATROL)
@@ -66,6 +102,11 @@ func _setup() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= _gravity * delta
+
+	if fov != null and fov.is_player_inside():
+		_time_since_seen = 0.0
+	else:
+		_time_since_seen += delta
 
 	if _active:
 		_state_time += delta
@@ -76,8 +117,13 @@ func _physics_process(delta: float) -> void:
 			State.CHASE: _process_chase(delta)
 			State.SEARCH: _process_search(delta)
 
+	if model:
+		model.rotation.y = deg_to_rad(model_yaw_offset)
+
 	move_and_slide()
 	_update_animation()
+	if debug_facing:
+		_debug_facing()
 
 
 # --- States ------------------------------------------------------------------
@@ -96,7 +142,7 @@ func _set_state(new_state: State) -> void:
 			if player:
 				_last_known = player.global_position
 		State.SEARCH:
-			_search_base_yaw = rotation.y
+			_search_base_yaw = global_rotation.y
 			if meter:
 				meter.reset()
 
@@ -109,6 +155,9 @@ func _process_patrol(delta: float) -> void:
 		_stop(delta)
 		return
 	_move_along_path(patrol_speed, delta)
+	if not _warned_no_path and _state_time > 0.5 and nav.get_current_navigation_path().is_empty():
+		_warned_no_path = true
+		push_warning("Enemy has no navigation path to its patrol point. Is the navmesh baked, and is the level geometry a child of the NavigationRegion3D?")
 	if _arrived():
 		_set_state(State.WAIT)
 
@@ -130,7 +179,7 @@ func _process_suspicious(delta: float) -> void:
 		_face_position(player.global_position, delta)
 
 	if not _can_see_player():
-		_set_state(State.SEARCH)  
+		_set_state(State.SEARCH)  # player left before being confirmed
 		return
 
 	var confirmed: bool
@@ -159,19 +208,20 @@ func _process_chase(delta: float) -> void:
 
 	_move_along_path(chase_speed, delta)
 
+	# Lost sight: keep going to the last known position, then search there.
 	if not sees_player and _arrived():
 		_set_state(State.SEARCH)
 
 
 func _process_search(delta: float) -> void:
 	_stop(delta)
-	rotation.y = _search_base_yaw + sin(_state_time * TAU / look_period) * deg_to_rad(look_angle)
+	global_rotation.y = _search_base_yaw + sin(_state_time * TAU / look_period) * deg_to_rad(look_angle)
 
 	if _can_see_player():
 		_set_state(State.SUSPICIOUS)
 		return
 	if _state_time >= search_time:
-		_set_state(State.PATROL) 
+		_set_state(State.PATROL)  # resumes at the point it was heading to
 
 
 # --- Helpers -----------------------------------------------------------------
@@ -181,7 +231,8 @@ func _get_player() -> Node3D:
 
 
 func _can_see_player() -> bool:
-	return fov != null and fov.is_player_inside()
+	# True while the player is visible, plus a short grace period after.
+	return _time_since_seen < lose_sight_delay
 
 
 func _wait_time_at(index: int) -> float:
@@ -196,6 +247,7 @@ func _arrived() -> bool:
 	offset.y = 0.0
 	if offset.length() <= arrive_distance:
 		return true
+	# Fallback for targets that can't be reached exactly.
 	return _state_time > 0.3 and nav.is_navigation_finished()
 
 
@@ -219,8 +271,9 @@ func _stop(delta: float) -> void:
 
 func _face_direction(direction: Vector3, delta: float) -> void:
 	# The body's forward is -Z, which is also where the EnemyFOV points.
-	var target_yaw := atan2(-direction.x, -direction.z)
-	rotation.y = lerp_angle(rotation.y, target_yaw, clampf(turn_speed * delta, 0.0, 1.0))
+	# Uses world rotation so a rotated parent node can't flip the enemy.
+	var target_yaw := atan2(direction.x, direction.z)
+	global_rotation.y = lerp_angle(global_rotation.y, target_yaw, clampf(turn_speed * delta, 0.0, 1.0))
 
 
 func _face_position(target: Vector3, delta: float) -> void:
@@ -228,6 +281,16 @@ func _face_position(target: Vector3, delta: float) -> void:
 	direction.y = 0.0
 	if direction.length() > 0.01:
 		_face_direction(direction.normalized(), delta)
+
+
+func _debug_facing() -> void:
+	if Engine.get_physics_frames() % 30 != 0:
+		return
+	var flat := Vector3(velocity.x, 0.0, velocity.z)
+	if flat.length() < 0.5:
+		return
+	var dot := (-global_transform.basis.z).dot(flat.normalized())
+	print("body forward vs movement: ", snappedf(dot, 0.01), "  (1 = same direction, -1 = opposite)")
 
 
 func _update_animation() -> void:
@@ -239,8 +302,27 @@ func _update_animation() -> void:
 
 
 func _play_animation(anim_name: String) -> void:
-	if animation_player == null or not animation_player.has_animation(anim_name):
+	if animation_player == null:
 		return
-	if animation_player.current_animation != anim_name:
-		animation_player.get_animation(anim_name).loop_mode = Animation.LOOP_LINEAR
-		animation_player.play(anim_name, 0.2)
+	var resolved := _resolve_animation(anim_name)
+	if resolved.is_empty():
+		return
+	if animation_player.current_animation != resolved:
+		animation_player.get_animation(resolved).loop_mode = Animation.LOOP_LINEAR
+		animation_player.play(resolved, 0.2)
+
+
+## Finds "Idle" even when it's stored as "SomeLibrary/Idle".
+func _resolve_animation(anim_name: String) -> String:
+	if _anim_cache.has(anim_name):
+		return _anim_cache[anim_name]
+	var result := ""
+	if animation_player.has_animation(anim_name):
+		result = anim_name
+	else:
+		for candidate in animation_player.get_animation_list():
+			if candidate.ends_with("/" + anim_name):
+				result = candidate
+				break
+	_anim_cache[anim_name] = result
+	return result
