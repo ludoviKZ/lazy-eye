@@ -23,6 +23,8 @@ buses/default_bus_layout="uid://dlo5inop6ahho"
 
 InteractionManager3d="*uid://o20wulkuoo5s"
 SceneLoader="*uid://cpehcs7n5c62p"
+AudioMaster="*uid://b40hit4sm233t"
+SoundLibrary="*uid://vut2yxviveyf"
 
 [clean_copy_examples]
 
