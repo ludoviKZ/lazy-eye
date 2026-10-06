@@ -43,6 +43,16 @@ enum State { PATROL, WAIT, SUSPICIOUS, CHASE, SEARCH }
 @export_group("Movement")
 @export var turn_speed: float = 8.0
 
+@export_group("Model")
+## The visible character node (e.g. ModernRebelSoldier). Optional.
+@export var model: Node3D
+## Extra turn applied to the model only, in degrees. Set to 180 if the model
+## walks backwards. Applied every frame, so scripts or animations on the model
+## can't undo it.
+@export_range(-180.0, 180.0, 1.0) var model_yaw_offset: float = 0.0
+## Prints whether the body faces its movement direction (twice a second).
+@export var debug_facing: bool = true
+
 @export_group("Animation")
 @export var animation_player: AnimationPlayer
 ## Names must exist on the AnimationPlayer (add a library prefix if needed,
@@ -107,8 +117,13 @@ func _physics_process(delta: float) -> void:
 			State.CHASE: _process_chase(delta)
 			State.SEARCH: _process_search(delta)
 
+	if model:
+		model.rotation.y = deg_to_rad(model_yaw_offset)
+
 	move_and_slide()
 	_update_animation()
+	if debug_facing:
+		_debug_facing()
 
 
 # --- States ------------------------------------------------------------------
@@ -257,7 +272,7 @@ func _stop(delta: float) -> void:
 func _face_direction(direction: Vector3, delta: float) -> void:
 	# The body's forward is -Z, which is also where the EnemyFOV points.
 	# Uses world rotation so a rotated parent node can't flip the enemy.
-	var target_yaw := atan2(-direction.x, -direction.z)
+	var target_yaw := atan2(direction.x, direction.z)
 	global_rotation.y = lerp_angle(global_rotation.y, target_yaw, clampf(turn_speed * delta, 0.0, 1.0))
 
 
@@ -266,6 +281,16 @@ func _face_position(target: Vector3, delta: float) -> void:
 	direction.y = 0.0
 	if direction.length() > 0.01:
 		_face_direction(direction.normalized(), delta)
+
+
+func _debug_facing() -> void:
+	if Engine.get_physics_frames() % 30 != 0:
+		return
+	var flat := Vector3(velocity.x, 0.0, velocity.z)
+	if flat.length() < 0.5:
+		return
+	var dot := (-global_transform.basis.z).dot(flat.normalized())
+	print("body forward vs movement: ", snappedf(dot, 0.01), "  (1 = same direction, -1 = opposite)")
 
 
 func _update_animation() -> void:

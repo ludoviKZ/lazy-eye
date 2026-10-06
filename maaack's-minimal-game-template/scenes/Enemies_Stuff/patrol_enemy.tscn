@@ -9,11 +9,11 @@
 height = 2.8533936
 
 [node name="PatrolEnemy" type="CharacterBody3D" unique_id=728089667]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-0.9998477, 0, -0.017452395, 0, 1, 0, 0.017452395, 0, -0.9998477, 0, 0, 0)
 script = ExtResource("1_lkts1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=420811080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2068481, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4550505, 0)
 shape = SubResource("CapsuleShape3D_gfc57")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=620779836]
@@ -22,10 +22,12 @@ shape = SubResource("CapsuleShape3D_gfc57")
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="EnemyFOV" type="Area3D" parent="." unique_id=388635153]
-transform = Transform3D(-0.999983, 0, -0.0058268295, 0, 1, 0, 0.0058268295, 0, -0.999983, -0.023537993, 2.4041984, 0.013724029)
+transform = Transform3D(-0.999978, -0.0028005636, -0.006052943, -0.0037353993, 0.98704106, 0.16042522, 0.005525211, 0.16044445, -0.9870298, -0.023537993, 2.4041984, 0.013724029)
 script = ExtResource("3_ypcfe")
-horizontal_fov = 74.0
-view_distance = 7.0
+horizontal_fov = 41.5
+vertical_fov = 19.5
+view_distance = 10.9
+segments = 64
 metadata/_custom_type_script = "uid://b4wykaar5pl0n"
 
 [node name="DetectionMeter" type="Node3D" parent="." unique_id=1033843463]
