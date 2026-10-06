@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://gw0hvn8i4xqn"]
 
+[ext_resource type="Script" uid="uid://qjkka8v56thx" path="res://lvl_1.gd" id="1_g5nw0"]
 [ext_resource type="Script" uid="uid://bshydkcpn2e12" path="res://elevator_2.gd" id="1_s5spe"]
 [ext_resource type="PackedScene" uid="uid://c4ht7cv35gm8x" path="res://assets/elevator_1.glb" id="1_x5umw"]
 [ext_resource type="Script" uid="uid://cqii4r67h2f2j" path="res://scenes/Interaction_Scenes/interact_area_3d.gd" id="2_akum8"]
@@ -74,6 +75,7 @@ size = Vector3(1, 1, 6)
 size = Vector3(1, 1, 7)
 
 [node name="LVL1" type="Node" unique_id=289565252]
+script = ExtResource("1_g5nw0")
 
 [node name="Elevator2" type="Node3D" parent="." unique_id=2062897860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.466248, 2.0396423, 0)

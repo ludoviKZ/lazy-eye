@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://do6gcohofmocn" path="res://assets/Textures/concrete_2.png" id="1_a6ifl"]
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="1_g1gc8"]
 [ext_resource type="Texture2D" uid="uid://diuwbn1b172tc" path="res://assets/Textures/window_2_1.png" id="1_qmw3c"]
+[ext_resource type="Script" uid="uid://bhhkxjqrelf3g" path="res://scenes/maps/map_1.gd" id="1_wnico"]
 [ext_resource type="Texture2D" uid="uid://c3b4he23tpwny" path="res://assets/Textures/d.jpg" id="4_smh7c"]
 [ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="5_l2lx5"]
 [ext_resource type="PackedScene" uid="uid://db6fah17ysh0k" path="res://assets/metal_barrel_mp_3.glb" id="5_p4o1l"]
@@ -28,6 +29,7 @@ uv1_triplanar = true
 texture_filter = 0
 
 [node name="map1" type="Node3D" unique_id=181013177]
+script = ExtResource("1_wnico")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=718117489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.206, 0, 12.458)
