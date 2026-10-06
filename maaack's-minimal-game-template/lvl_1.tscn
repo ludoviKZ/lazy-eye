@@ -13,11 +13,13 @@
 [ext_resource type="AudioStream" uid="uid://c43ohkl0jra8u" path="res://assets/Warehouse Lights Turning On Sound Effect (mp3cut.net).mp3" id="10_akum8"]
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
+[ext_resource type="PackedScene" uid="uid://ci8nqikhawcqn" path="res://Horror_Game_Starter_Kit.fbx" id="16_g5nw0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6wp4"]
 albedo_texture = ExtResource("4_clg6b")
 
 [sub_resource type="Environment" id="Environment_8twhp"]
+<<<<<<< Updated upstream
 ambient_light_color = Color(0.064696476, 0.06469654, 0.06469653, 1)
 glow_enabled = true
 glow_intensity = 1.01
@@ -28,6 +30,18 @@ fog_density = 0.2187
 adjustment_enabled = true
 adjustment_contrast = 1.08
 adjustment_saturation = 0.55
+=======
+ambient_light_source = 2
+glow_enabled = true
+glow_intensity = 0.8
+glow_bloom = 0.48
+fog_enabled = true
+fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
+fog_light_energy = 0.1
+fog_density = 0.08
+volumetric_fog_enabled = true
+volumetric_fog_density = 1.0
+>>>>>>> Stashed changes
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6wp4"]
 
@@ -44,6 +58,7 @@ size = Vector3(1, 1, 7)
 [node name="LVL1" type="Node" unique_id=289565252]
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("2_okdh5")]
+<<<<<<< Updated upstream
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23, 1, 1)
 
 [node name="Floor" parent="." unique_id=123787244 instance=ExtResource("1_jschv")]
@@ -161,6 +176,9 @@ transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 
 
 [node name="Floor24" parent="." unique_id=1441512381 instance=ExtResource("1_jschv")]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, -29, 0, -40)
+=======
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 1.7268829, 1)
+>>>>>>> Stashed changes
 
 [node name="Elevator" parent="." unique_id=436364622 instance=ExtResource("3_clg6b")]
 transform = Transform3D(5.9604645e-08, -0.255, -1.09278474e-07, -1.231912e-16, -1.1146403e-08, 2.5, -2, 0, -1.9539925e-14, -13.385, 1, 0)
@@ -294,6 +312,9 @@ stream = ExtResource("10_akum8")
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 38, 116, 89)
 visible = false
 light_energy = 0.05
+
+[node name="Horror_Game_Starter_Kit" parent="." unique_id=1433319341 instance=ExtResource("16_g5nw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, -3)
 
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]
