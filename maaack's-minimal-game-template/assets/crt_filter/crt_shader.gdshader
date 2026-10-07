@@ -1,6 +1,7 @@
 shader_type canvas_item;
 render_mode unshaded;
 uniform sampler2D screen_texture: hint_screen_texture, filter_linear_mipmap;
+uniform float intensity : hint_range(0.0, 1.0) = 0.5;   // 0 = no filter, 1 = full CRT
 
 // Full-screen: the ColorRect anchors fill the viewport, no manual sizing needed.
  
@@ -35,4 +36,6 @@ void fragment() {
 // warm tint  [ delete // to enable or add // to disable ]
 	//COLOR.rgb *= vec3(warm_tint, 0.98, 0.90);
 
+	// Blend between the clean image and the CRT look
+	COLOR.rgb = mix(texture(screen_texture, SCREEN_UV).rgb, COLOR.rgb, intensity);
 }
