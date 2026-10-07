@@ -118,10 +118,6 @@ jump={
 ]
 }
 
-[internationalization]
-
-locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_game_template/base/translations/menus_translations.fr.translation")
-
 [maaacks_game_template]
 
 copy_path="res://"
@@ -147,4 +143,4 @@ plugins={
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_environment="res://default_env.tres"
+environment/defaults/default_environment="uid://dg6gkweta8kyo"

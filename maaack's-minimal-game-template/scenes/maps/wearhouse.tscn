@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://btbe1dj41srr4"]
+
+[ext_resource type="PackedScene" uid="uid://dyk8fv7lil7pk" path="res://addons/maaacks_game_template/base/assets/cardboard_box_2.glb" id="1_dc8jb"]
+[ext_resource type="PackedScene" uid="uid://c5qj4x1v5pqit" path="res://assets/models/wooden_crate_5.glb" id="2_rbq5a"]
+[ext_resource type="PackedScene" uid="uid://dml2sei6gixmc" path="res://assets/models/beam_4.glb" id="3_abgkd"]
+[ext_resource type="PackedScene" uid="uid://de67roamebsbm" path="res://assets/models/button_12.glb" id="4_e66fk"]
+[ext_resource type="PackedScene" uid="uid://cqj46vyj1a676" path="res://assets/models/catwalk_1.glb" id="5_8l6ko"]
+[ext_resource type="PackedScene" uid="uid://d4nx2bbw838a2" path="res://assets/models/door_3_loose.glb" id="6_50f8k"]
+[ext_resource type="PackedScene" uid="uid://7vrrmimu7leo" path="res://assets/models/metal_barrel_mp_2.glb" id="7_g3hcc"]
+[ext_resource type="PackedScene" uid="uid://bjarxak0yndsa" path="res://assets/models/pipe_1.glb" id="8_k48yw"]
+[ext_resource type="Texture2D" uid="uid://ctdvtb288yb3i" path="res://assets/concrete_1.png" id="9_140bu"]
+[ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="10_u71su"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
+albedo_texture = ExtResource("9_140bu")
+
+[node name="wearhouse" type="Node3D" unique_id=1283859626]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=922112784]
+
+[node name="cardboard_box_22" parent="NavigationRegion3D" unique_id=1128675643 instance=ExtResource("1_dc8jb")]
+
+[node name="wooden_crate_52" parent="NavigationRegion3D" unique_id=1317487230 instance=ExtResource("2_rbq5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8194044, 0, 0)
+
+[node name="beam_42" parent="NavigationRegion3D" unique_id=106605885 instance=ExtResource("3_abgkd")]
+
+[node name="button_122" parent="NavigationRegion3D" unique_id=310129298 instance=ExtResource("4_e66fk")]
+
+[node name="catwalk_12" parent="NavigationRegion3D" unique_id=563956760 instance=ExtResource("5_8l6ko")]
+
+[node name="door_3_loose2" parent="NavigationRegion3D" unique_id=734744560 instance=ExtResource("6_50f8k")]
+
+[node name="metal_barrel_mp_22" parent="NavigationRegion3D" unique_id=1747696949 instance=ExtResource("7_g3hcc")]
+
+[node name="pipe_12" parent="NavigationRegion3D" unique_id=1398151840 instance=ExtResource("8_k48yw")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1238724505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47155762, 0, 12.640442)
+size = Vector3(25.801514, 1, 26.280884)
+material = SubResource("StandardMaterial3D_gfc57")
+
+[node name="Player" parent="." unique_id=958992094 instance=ExtResource("10_u71su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0101814, 1.96242)

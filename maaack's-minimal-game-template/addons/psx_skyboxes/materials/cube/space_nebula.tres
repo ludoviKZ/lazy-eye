@@ -1,7 +1,7 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bqy586xtrk545"]
 
-[ext_resource type="Shader" path="res://addons/psx_skyboxes/psx_sky.gdshader" id="1"]
-[ext_resource type="CompressedCubemap" path="res://addons/psx_skyboxes/cubemaps/space_nebula.png" id="2"]
+[ext_resource type="Shader" uid="uid://c48dwi4qot26r" path="res://addons/psx_skyboxes/psx_sky.gdshader" id="1"]
+[ext_resource type="CompressedCubemap" uid="uid://brfqo68abn4d6" path="res://addons/psx_skyboxes/cubemaps/space_nebula.png" id="2"]
 
 [resource]
 resource_name = "space_nebula"

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p4mctop1ay1o"
-path.s3tc="res://.godot/imported/vents.png-3adf63b7375f42fd8259006f9b8c5177.s3tc.ctex"
-path.etc2="res://.godot/imported/vents.png-3adf63b7375f42fd8259006f9b8c5177.etc2.ctex"
+path.s3tc="res://.godot/imported/vents.png-ca199ff2fe0da151dc90f8fff7de1b87.s3tc.ctex"
+path.etc2="res://.godot/imported/vents.png-ca199ff2fe0da151dc90f8fff7de1b87.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/vents_modular/textures/vents.png"
-dest_files=["res://.godot/imported/vents.png-3adf63b7375f42fd8259006f9b8c5177.s3tc.ctex", "res://.godot/imported/vents.png-3adf63b7375f42fd8259006f9b8c5177.etc2.ctex"]
+source_file="res://assets/vents_modular/Textures/vents.png"
+dest_files=["res://.godot/imported/vents.png-ca199ff2fe0da151dc90f8fff7de1b87.s3tc.ctex", "res://.godot/imported/vents.png-ca199ff2fe0da151dc90f8fff7de1b87.etc2.ctex"]
 
 [params]
 

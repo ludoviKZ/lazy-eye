@@ -1,6 +1,6 @@
-[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3]
+[gd_resource type="PanoramaSkyMaterial" format=3 uid="uid://dx7mg4vng46m0"]
 
-[ext_resource type="Texture2D" path="res://addons/psx_skyboxes/panoramas/sunset_clouds.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://715u8c55f7k6" path="res://addons/psx_skyboxes/panoramas/sunset_clouds.png" id="1"]
 
 [resource]
 resource_name = "sunset_clouds"

@@ -1,6 +1,6 @@
 [gd_resource type="Environment" format=3 uid="uid://bgowm2p8ukojq"]
 
-[ext_resource type="Material" path="res://addons/psx_skyboxes/materials/cube/fog_grey.tres" id="1"]
+[ext_resource type="Material" uid="uid://dowrd8bqd2aoy" path="res://addons/psx_skyboxes/materials/cube/fog_grey.tres" id="1"]
 
 [sub_resource type="Sky" id="Sky_1"]
 sky_material = ExtResource("1")

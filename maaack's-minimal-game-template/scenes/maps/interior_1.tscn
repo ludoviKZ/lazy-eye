@@ -24,6 +24,7 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 glow_enabled = true
 glow_intensity = 1.53
 glow_bloom = 0.48
+fog_enabled = true
 fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
 fog_light_energy = 0.65
 fog_density = 0.1089

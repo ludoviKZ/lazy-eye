@@ -7,7 +7,7 @@
 [node name="ModernRebelSoldier" unique_id=2134944198 instance=ExtResource("1_kavt8")]
 script = ExtResource("2_dpnbh")
 
-[node name="GeneralSkeleton" parent="Armature" parent_id_path=PackedInt32Array(1959928770) index="0" unique_id=1385773993]
+[node name="GeneralSkeleton" parent="Armature" parent_id_path=PackedInt32Array(1826559625) index="0" unique_id=1420860240]
 bones/0/position = Vector3(0.055060305, 2.4211526, -0.16528115)
 bones/0/rotation = Quaternion(0.04954631, -0.002394505, 0.048211917, 0.99760467)
 bones/1/rotation = Quaternion(3.9471856e-06, -1.5260766e-05, 0.0005080134, 0.9999999)
@@ -43,5 +43,5 @@ bones/33/rotation = Quaternion(0.003972204, 0.92278546, -0.38517737, 0.009468584
 bones/34/rotation = Quaternion(0.004037544, 0.7881303, -0.61498857, -0.024970422)
 bones/35/rotation = Quaternion(4.993618e-08, 1, 5.960463e-08, 1.595941e-08)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=601809331]
+[node name="AnimationPlayer" parent="." index="1" unique_id=647194183]
 libraries/UAL1_Standard = ExtResource("2_c5ltc")
