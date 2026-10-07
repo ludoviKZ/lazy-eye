@@ -4,3 +4,5 @@
 
 [node name="EnemyFOV" type="Area3D" unique_id=513511883]
 script = ExtResource("1_fov")
+view_distance = 13.0
+segments = 64
