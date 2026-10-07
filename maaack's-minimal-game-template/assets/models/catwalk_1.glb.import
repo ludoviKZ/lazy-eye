@@ -43,6 +43,9 @@ _subresources={
 "nodes": {
 "PATH:catwalk_1": {
 "generate/physics": true
+},
+"PATH:catwalk_1/handrail_4": {
+"generate/physics": true
 }
 }
 }
