@@ -65,6 +65,9 @@ radius = 1.5494962
 [sub_resource type="SphereShape3D" id="SphereShape3D_68odf"]
 radius = 1.2796887
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68odf"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="Beholder_Tower" type="Node3D" unique_id=225764706]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_si41g")
@@ -99,10 +102,10 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 transform = Transform3D(0.21504463, 0, -0.20917884, 0, 0.29999995, 0, 0.20917884, 0, 0.21504463, 1.0472912, 0.025195926, -0.85339874)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="SceneElements" unique_id=90184302]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11050415, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5523834, 0)
 use_collision = true
 radius = 1.9316406
-height = 0.12701416
+height = 1.0107727
 sides = 15
 material = SubResource("StandardMaterial3D_gfc57")
 
@@ -231,7 +234,7 @@ transform = Transform3D(0.83699554, 0, 0, 0, 0.5918452, -0.5918452, 0, 0.5918452
 shape = SubResource("BoxShape3D_f3oyx")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("9_tm2oy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.182655, 8.695024, -4.4413385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3471375, 0.23391628, 1.5096321)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=31978674]
 environment = SubResource("Environment_phkhe")
@@ -283,3 +286,25 @@ shape = SubResource("SphereShape3D_68odf")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="whire" unique_id=763887984]
 stream = ExtResource("22_ogcd4")
 volume_db = -4.156
+
+[node name="background palaces" type="Node3D" parent="." unique_id=1745950536]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="background palaces" unique_id=1765169262]
+transform = Transform3D(4.2947206, 0, 2.5603461, 0, 5, 0, -2.5603461, 0, 4.2947206, 20.308445, 0.35050583, -12.569624)
+size = Vector3(1, 3.7147217, 1.7670898)
+material = SubResource("StandardMaterial3D_68odf")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="background palaces" unique_id=41933500]
+transform = Transform3D(-0.45506263, 0, 4.979248, 0, 4.9999995, 0, -4.979248, 0, -0.45506263, 2.170454, 0.70101166, 22.517616)
+size = Vector3(1, 3.7147217, 1.7670898)
+material = SubResource("StandardMaterial3D_68odf")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="background palaces" unique_id=1949366193]
+transform = Transform3D(-3.0685112, 0, 3.9476871, 0, 5, 0, -3.9476871, 0, -3.0685112, -11.774298, 0.70101166, -25.616167)
+size = Vector3(1, 3.7147217, 1.7670898)
+material = SubResource("StandardMaterial3D_68odf")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="background palaces" unique_id=2034720322]
+transform = Transform3D(-0.45506263, 0, 4.979248, 0, 4.9999995, 0, -4.979248, 0, -0.45506263, -15.756634, -4.2001247, 12.772697)
+size = Vector3(1, 3.7147217, 1.7670898)
+material = SubResource("StandardMaterial3D_68odf")
