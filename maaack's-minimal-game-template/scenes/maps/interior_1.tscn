@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dl20ljxu1r652"]
 
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="1_146jf"]
+[ext_resource type="PackedScene" uid="uid://cvhak4dugwpxc" path="res://assets/crt_filter/crt_filter.tscn" id="1_ausy0"]
 [ext_resource type="Material" uid="uid://bemgtm88vg7js" path="res://assets/Textures/new_standard_material_3d.tres" id="2_pel0d"]
 [ext_resource type="PackedScene" uid="uid://si3t7spclbm0" path="res://assets/models/armchair_2_2.glb" id="3_ce8j0"]
 [ext_resource type="PackedScene" uid="uid://db5uxpn6o3tim" path="res://assets/models/chair_mp_5.glb" id="4_td8n2"]
@@ -24,6 +25,7 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 glow_enabled = true
 glow_intensity = 1.53
 glow_bloom = 0.48
+fog_enabled = true
 fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
 fog_light_energy = 0.65
 fog_density = 0.1089
@@ -222,3 +224,5 @@ metadata/_custom_type_script = "uid://dg6c76ay2mfyt"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.667873, 0.7505288, -69.35971)
 script = ExtResource("13_iw84g")
 metadata/_custom_type_script = "uid://dg6c76ay2mfyt"
+
+[node name="crt_filter" parent="." unique_id=1678918676 instance=ExtResource("1_ausy0")]

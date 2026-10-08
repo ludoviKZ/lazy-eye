@@ -5,14 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://c4ht7cv35gm8x" path="res://assets/elevator_1.glb" id="1_x5umw"]
 [ext_resource type="Script" uid="uid://cqii4r67h2f2j" path="res://scenes/Interaction_Scenes/interact_area_3d.gd" id="2_akum8"]
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="2_okdh5"]
-[ext_resource type="PackedScene" uid="uid://c82o3dpqpyxto" path="res://assets/elevator.tscn" id="3_clg6b"]
 [ext_resource type="Texture2D" uid="uid://ctdvtb288yb3i" path="res://assets/concrete_1.png" id="4_clg6b"]
 [ext_resource type="ArrayMesh" uid="uid://law73iqpewlb" path="res://assets/psx_downturning_lamppost.obj" id="4_okdh5"]
 [ext_resource type="PackedScene" uid="uid://ckv8523518na3" path="res://assets/psx_-_hex_skyscraper.glb" id="6_t6wp4"]
 [ext_resource type="PackedScene" uid="uid://chf10bubmxc0t" path="res://assets/Wall.tscn" id="7_31jyx"]
-[ext_resource type="Texture2D" uid="uid://nwqhf3cc4eub" path="res://assets/Untitled.png" id="8_a1bqk"]
 [ext_resource type="Script" uid="uid://c375s1r80fxdg" path="res://area_3d.gd" id="9_a1bqk"]
 [ext_resource type="Script" uid="uid://df17f3kj0eibb" path="res://area_3d_2.gd" id="10_4snel"]
+[ext_resource type="Texture2D" uid="uid://cyj2y4wr2p2na" path="res://assets/models/logo corp.png" id="11_g5nw0"]
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
 [ext_resource type="AudioStream" uid="uid://c1ife403pst1w" path="res://assets/Warehouse Lights Turning On Sound Effect (mp3cut.net) (3).mp3" id="12_v6ada"]
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
@@ -91,13 +90,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71404076, 0.8020935, 0.1468
 shape = SubResource("SphereShape3D_gfc57")
 
 [node name="elevator_12" parent="Elevator2" unique_id=165631191 instance=ExtResource("1_x5umw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.1958313, -1.6249084, 0.24843836)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.43737125, -1.2714272, -0.15816498)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1824486393]
 navigation_mesh = SubResource("NavigationMesh_x5umw")
 
 [node name="floorfinal" type="StaticBody3D" parent="NavigationRegion3D" unique_id=2033413509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.349083, 0, -1.2816253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.349083, 0.031481028, -1.2816253)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floorfinal" unique_id=1767241033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39785, 0, 1.2619629)
@@ -119,9 +118,6 @@ mesh = SubResource("QuadMesh_gfc57")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("2_okdh5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15, 1.7268829, 1)
-
-[node name="Elevator" parent="." unique_id=436364622 instance=ExtResource("3_clg6b")]
-transform = Transform3D(5.9604645e-08, -0.255, -1.09278474e-07, -1.231912e-16, -1.1146403e-08, 2.5, -2, 0, -1.9539925e-14, -13.385, 1, 0)
 
 [node name="PsxDownturningLamppost" type="MeshInstance3D" parent="." unique_id=1132580426]
 transform = Transform3D(1, 0, 0, 0, 1.2981685, 0, 0, 0, 1, 4, -0.20929444, -3)
@@ -155,15 +151,15 @@ mesh = ExtResource("4_okdh5")
 environment = SubResource("Environment_8twhp")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1947946985 instance=ExtResource("6_t6wp4")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -48.667995, 0.050000016, 2.4000545)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -48.65014, -0.085124195, 3.957171)
 
 [node name="Wall" parent="." unique_id=1780642556 instance=ExtResource("7_31jyx")]
 transform = Transform3D(0, 0, 1, 0, 3.0000005, 0, -5.0000005, 0, -5.9604645e-08, -14, 4, 0)
 physics_material_override = SubResource("PhysicsMaterial_t6wp4")
 
 [node name="Sprite3D" type="Sprite3D" parent="Wall" unique_id=483064105]
-transform = Transform3D(0.039999988, 0, 0, 0, 0.09999997, 0, 0, 0, 1, -6.0844343e-09, 0, 0.51039886)
-texture = ExtResource("8_a1bqk")
+transform = Transform3D(0.13483822, 0, 0, 0, 0.18786602, 0, 0, 0, 1, -0.00540629, 0.26502824, 0.51039886)
+texture = ExtResource("11_g5nw0")
 
 [node name="Lamppost" type="Node" parent="." unique_id=1723567185]
 
