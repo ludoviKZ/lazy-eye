@@ -1,0 +1,38 @@
+shader_type canvas_item;
+render_mode unshaded;
+uniform sampler2D screen_texture: hint_screen_texture, filter_linear_mipmap;
+
+// Full-screen: the ColorRect anchors fill the viewport, no manual sizing needed.
+ 
+// CONTROLS:
+const float curvature = 9.0;                         // recommended = 6.0 
+const float horizontal_lines = 180.0;                // recommended = 180
+const float vignette_multiplier = 1.08;               // recommended = 1.4
+const float bleed = 0.2;                             // recommended = 0.2
+const float static = 0.2;                            // recommended = 0.1  [ MAKE SURE ITS ENABLE DOWN ]
+const float green_tint = 2.5;                        // recommended = 2.5  [ MAKE SURE ITS ENABLE DOWN ]
+const float warm_tint = 1.4;                         // recommended = 1.3  [ MAKE SURE ITS ENABLE DOWN ]
+uniform float intensity : hint_range(0.0, 1.0) = 0.5;
+
+
+void fragment() {
+	vec2 centered_uv = SCREEN_UV * 2.0 - 1.0;
+	vec2 uv_offcet = centered_uv.yx / curvature;
+	vec2 warped_uv = centered_uv + centered_uv * uv_offcet * uv_offcet;
+	vec3 cutoff = vec3(step(abs(warped_uv.x), 1.0) * step(abs(warped_uv.y), 1.0));
+	vec3 lines = vec3(sin(2.0 * warped_uv.y * horizontal_lines)* 0.2 + 0.9);
+	vec3 vignette = vec3(length(pow(abs(centered_uv), vec2(4.0))/ 3.0));
+	vec3 screen_color = textureLod(screen_texture, (warped_uv + 1.0) / 2.0, bleed).rgb * cutoff * lines;
+	screen_color -= vignette * vignette_multiplier;
+	COLOR = vec4(screen_color, 1.0);
+
+// Analog TV Static  [ delete // to enable or add // to disable ]
+	COLOR.rgb += (fract(sin(dot(SCREEN_UV / SCREEN_PIXEL_SIZE + TIME, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * static;
+
+// game boy tint  [ delete // to enable or add // to disable ]
+	//COLOR.rgb = mix(vec3(0.1, 0.15, 0.05), vec3(0.6, 0.75, 0.1), (COLOR.r + COLOR.g + COLOR.b) / green_tint);
+
+// warm tint  [ delete // to enable or add // to disable ]
+	//COLOR.rgb *= vec3(warm_tint, 0.98, 0.90);
+
+}

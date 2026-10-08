@@ -82,6 +82,8 @@ var _gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _ready() -> void:
+	# Lets security cameras find this enemy (see alert()).
+	add_to_group("patrol_enemies")
 	# Use the AnimationPlayer that's already inside the model.
 	if animation_player == null:
 		animation_player = find_child("AnimationPlayer", true, false) as AnimationPlayer
@@ -127,6 +129,23 @@ func _physics_process(delta: float) -> void:
 
 
 # --- States ------------------------------------------------------------------
+
+## Called by security cameras (or anything else) to send this enemy to a
+## position. The enemy walks there at chase speed, chases the player if it
+## spots them on the way, and otherwise searches the area and goes back to
+## its patrol.
+func alert(target_position: Vector3) -> void:
+	match state:
+		State.SUSPICIOUS:
+			pass  # already staring at the player
+		State.CHASE:
+			# Only take the new position if we can't see the player ourselves.
+			if not _can_see_player():
+				_last_known = target_position
+		_:
+			_set_state(State.CHASE)
+			_last_known = target_position
+
 
 func _set_state(new_state: State) -> void:
 	state = new_state
@@ -270,8 +289,10 @@ func _stop(delta: float) -> void:
 
 
 func _face_direction(direction: Vector3, delta: float) -> void:
-	# The body's forward is -Z, which is also where the EnemyFOV points.
+	# Note: the EnemyFOV cone points along its own -Z, so it needs a 180 degree
+	# Y rotation in the enemy scene to line up with this +Z front.
 	# Uses world rotation so a rotated parent node can't flip the enemy.
+	# This model's front is +Z, so the body's +Z axis is turned toward the target.
 	var target_yaw := atan2(direction.x, direction.z)
 	global_rotation.y = lerp_angle(global_rotation.y, target_yaw, clampf(turn_speed * delta, 0.0, 1.0))
 
@@ -289,7 +310,7 @@ func _debug_facing() -> void:
 	var flat := Vector3(velocity.x, 0.0, velocity.z)
 	if flat.length() < 0.5:
 		return
-	var dot := (-global_transform.basis.z).dot(flat.normalized())
+	var dot := global_transform.basis.z.dot(flat.normalized())
 	print("body forward vs movement: ", snappedf(dot, 0.01), "  (1 = same direction, -1 = opposite)")
 
 
@@ -326,14 +347,3 @@ func _resolve_animation(anim_name: String) -> String:
 				break
 	_anim_cache[anim_name] = result
 	return result
-
-func alert(target_position: Vector3) -> void:
-	match state:
-		State.SUSPICIOUS:
-			pass
-		State.CHASE:
-			if not _can_see_player():
-				_last_known = target_position
-		_:
-			_set_state(State.CHASE)
-			_last_known = target_position

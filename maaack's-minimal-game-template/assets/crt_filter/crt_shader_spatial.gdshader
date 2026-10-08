@@ -1,11 +1,12 @@
 shader_type spatial;
 render_mode unshaded, depth_test_disabled, skip_vertex_transform, cull_disabled;
 uniform sampler2D screen_texture: hint_screen_texture, filter_linear_mipmap;
+uniform float intensity : hint_range(0.0, 1.0) = 0;   // 0 = no filter, 1 = full CRT
 
 // CONTROLS:
 const float curvature = 9.0;
 const float horizontal_lines = 180.0;
-const float vignette_multiplier = 1.08;
+const float vignette_multiplier = 0.08;
 const float bleed = 0.2;
 const float static_amount = 0.2;
 const float green_tint = 2.5;
@@ -34,6 +35,9 @@ void fragment() {
 
 	// warm tint (uncomment to enable)
 	//screen_color *= vec3(warm_tint, 0.98, 0.90);
+
+	// Blend between the clean image and the CRT look
+	screen_color = mix(texture(screen_texture, SCREEN_UV).rgb, screen_color, intensity);
 
 	ALBEDO = max(screen_color, vec3(0.0));
 }
