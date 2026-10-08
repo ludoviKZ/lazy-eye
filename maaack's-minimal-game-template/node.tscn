@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://b7jta1ox58f84"]
 
-[ext_resource type="PackedScene" uid="uid://c4ht7cv35gm8x" path="res://assets/elevator_1.glb" id="1_l6pdb"]
-[ext_resource type="PackedScene" uid="uid://cua2uoi8hlkkx" path="res://assets/models/toilet_mp_1.glb" id="2_r657h"]
-[ext_resource type="PackedScene" uid="uid://db5uxpn6o3tim" path="res://assets/models/chair_mp_5.glb" id="3_f0urt"]
-[ext_resource type="PackedScene" uid="uid://vet1qdbe576n" path="res://assets/models/meat_1.glb" id="4_jfkdj"]
-[ext_resource type="PackedScene" uid="uid://chsfwjtlqyhct" path="res://assets/models/painting_1.glb" id="5_wt6go"]
-[ext_resource type="PackedScene" uid="uid://dvcusuvuro21n" path="res://assets/models/lockers.glb" id="6_436f3"]
-[ext_resource type="PackedScene" uid="uid://db6fah17ysh0k" path="res://assets/metal_barrel_mp_3.glb" id="7_bcos8"]
-[ext_resource type="PackedScene" uid="uid://p618souqbb2u" path="res://scenes/Enemies_Stuff/poster_cam.tscn" id="8_cmsyx"]
+[ext_resource type="PackedScene" uid="uid://cua2uoi8hlkkx" path="res://toilet_mp_1.glb" id="2_r657h"]
+[ext_resource type="PackedScene" path="res://assets/models/chair_mp_5.glb" id="3_f0urt"]
+[ext_resource type="PackedScene" uid="uid://c82o3dpqpyxto" path="res://assets/elevator.tscn" id="4_e2u21"]
+[ext_resource type="PackedScene" uid="uid://chsfwjtlqyhct" path="res://painting_1.glb" id="5_wt6go"]
 
 [node name="Node" type="Node" unique_id=1120725842]
 
@@ -61,7 +57,7 @@ size = Vector3(1.1542969, 1, 1.1049805)
 transform = Transform3D(4.9501624, 0, 0, 0, -0.26853007, 3.6229048, 0, 0.08944859, 10.87618, 1.1157073, -0.4540612, -9.782512)
 size = Vector3(1.0791016, 1, 1.1039276)
 
-[node name="elevator_12" parent="." unique_id=962124707 instance=ExtResource("1_l6pdb")]
+[node name="elevator_12" parent="." unique_id=962124707]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4931512, 1.3666102, -0.68356323)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=709761628]
@@ -101,8 +97,8 @@ transform = Transform3D(2.1316282e-14, 3.7252903e-08, -11.463713, -4.950163, 1.2
 size = Vector3(1.5255127, 1, 1.2850342)
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="." unique_id=1770418651]
-transform = Transform3D(2.1316285e-14, 3.7252903e-08, -11.463713, 7.1054274e-14, -0.2830361, -1.4305115e-06, 4.950163, -8.881784e-16, 8.28933e-14, 10.717635, -1.5106795, -2.547546)
-size = Vector3(1, 1, 1.2850342)
+transform = Transform3D(2.1316285e-14, 3.7252903e-08, -11.463713, 7.1054274e-14, -0.2830361, -1.4305115e-06, 4.950163, -8.881784e-16, 8.28933e-14, 10.717635, -1.5106795, -1.9580826)
+size = Vector3(1.2381592, 1, 1.2850342)
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="." unique_id=792139174]
 transform = Transform3D(2.1316282e-14, 3.7252903e-08, -11.463713, -4.950163, 1.2371903e-08, -2.0363651e-14, -2.1637842e-07, -0.2830361, -1.4305115e-06, 14.339659, -2.089168, -5.02356)
@@ -151,35 +147,38 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12.442539, -4.9689436, 
 [node name="chair_mp_58" parent="." unique_id=1937013643 instance=ExtResource("3_f0urt")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.442539, -4.9689436, -3.808016)
 
-[node name="meat_12" parent="." unique_id=457837430 instance=ExtResource("4_jfkdj")]
+[node name="meat_12" parent="." unique_id=457837430]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 13.478354, -4.267937, -3.8075163)
 
-[node name="meat_13" parent="." unique_id=108621349 instance=ExtResource("4_jfkdj")]
+[node name="meat_13" parent="." unique_id=108621349]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.478355, -4.267937, -3.8075163)
 
-[node name="meat_14" parent="." unique_id=1381437452 instance=ExtResource("4_jfkdj")]
+[node name="meat_14" parent="." unique_id=1381437452]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.615068, -4.267937, 0.0006656647)
 
-[node name="meat_15" parent="." unique_id=318228674 instance=ExtResource("4_jfkdj")]
+[node name="meat_15" parent="." unique_id=318228674]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15.615068, -4.267937, 0.0006656647)
 
-[node name="meat_16" parent="." unique_id=1131733375 instance=ExtResource("4_jfkdj")]
+[node name="meat_16" parent="." unique_id=1131733375]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12.615068, -4.267937, 0.0006656647)
 
 [node name="painting_12" parent="." unique_id=682490957 instance=ExtResource("5_wt6go")]
 transform = Transform3D(0, 0, -2.0000002, 0, 2, 0, 2.0000002, 0, 0, 17.826097, -3, -0.42634594)
 
-[node name="lockers2" parent="." unique_id=2130449604 instance=ExtResource("6_436f3")]
+[node name="lockers2" parent="." unique_id=2130449604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1958909, -1.3511679, -3.269031)
 
-[node name="lockers3" parent="." unique_id=329916182 instance=ExtResource("6_436f3")]
+[node name="lockers3" parent="." unique_id=329916182]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.0143263, -1.3065397, 1.4642767)
 
-[node name="metal_barrel_mp_32" parent="." unique_id=452025144 instance=ExtResource("7_bcos8")]
+[node name="metal_barrel_mp_32" parent="." unique_id=452025144]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.388549, -1.3511679, -1.6430455)
 
-[node name="metal_barrel_mp_33" parent="." unique_id=1298052162 instance=ExtResource("7_bcos8")]
+[node name="metal_barrel_mp_33" parent="." unique_id=1298052162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2633893, -1.3511679, -0.43433118)
 
-[node name="Poster_cam" parent="." unique_id=56230212 instance=ExtResource("8_cmsyx")]
+[node name="Poster_cam" parent="." unique_id=56230212]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -3.1692429, 0.3597411, -0.044900417)
+
+[node name="Elevator" parent="." unique_id=123787244 instance=ExtResource("4_e2u21")]
+transform = Transform3D(-2, 4.371139e-09, 9.744496e-15, 0, -2.1855695e-09, 2.55, 1.7484555e-07, 0.05, 1.1146404e-07, 1.5474095, 2.9747324, -0.1456716)

@@ -1,15 +1,9 @@
 [gd_scene format=4 uid="uid://c1m5gdd46qy37"]
 
-[ext_resource type="Texture2D" uid="uid://bgelsk16or8me" path="res://sofa_5_wood_6.png" id="1_7rxco"]
 [ext_resource type="Texture2D" uid="uid://wpji15fi56ry" path="res://assets/wall_1_1_half_door_frame_wood_1.png" id="1_bmf8x"]
-[ext_resource type="PackedScene" uid="uid://nmcxdbrucpad" path="res://sofa_5.glb" id="1_dbx23"]
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="2_tu4c3"]
-[ext_resource type="PackedScene" uid="uid://gg61tmsx5yth" path="res://scenes/Player/tv_mp_1.glb" id="3_1v3ac"]
-[ext_resource type="PackedScene" uid="uid://dktlou7pxd3pw" path="res://scenes/Enemies_Stuff/patrol_enemy.tscn" id="4_bmf8x"]
-[ext_resource type="PackedScene" uid="uid://coneo7n72ia72" path="res://scenes/Player/tv_table_4.glb" id="4_l31ol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beans"]
-albedo_texture = ExtResource("1_7rxco")
 
 [sub_resource type="BoxMesh" id="BoxMesh_fxdce"]
 
@@ -22,13 +16,10 @@ albedo_texture = ExtResource("1_bmf8x")
 albedo_texture = ExtResource("1_bmf8x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmnqu"]
-albedo_texture = ExtResource("1_7rxco")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbeg1"]
-albedo_texture = ExtResource("1_7rxco")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22vjt"]
-albedo_texture = ExtResource("1_7rxco")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0da8"]
 size = Vector3(1.4510498, 1.5024414, 1)
@@ -43,7 +34,6 @@ ambient_light_energy = 0.2
 volumetric_fog_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0ydl"]
-albedo_texture = ExtResource("1_7rxco")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgviv"]
 resource_name = "Wall_01_With_Door"
@@ -86,7 +76,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e03lu")
 
-[node name="Node" type="Node" unique_id=2070860897]
+[node name="Node2" type="Node" unique_id=2070860897]
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=200807357]
 transform = Transform3D(-7.7631415e-07, 0, 17.582401, 0, 0.099999964, 0, -17.759998, 0, -7.6855116e-07, -21, 0, 0)
@@ -250,10 +240,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 1)
 [node name="tv" type="StaticBody3D" parent="." unique_id=1187455519]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, -3)
 
-[node name="tv_mp_12" parent="tv" unique_id=2140919973 instance=ExtResource("3_1v3ac")]
+[node name="tv_mp_12" parent="tv" unique_id=2140919973]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="tv_table_42" parent="tv" unique_id=775456686 instance=ExtResource("4_l31ol")]
+[node name="tv_table_42" parent="tv" unique_id=775456686]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tv" unique_id=998328981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028686523, 0.7487793, 0)
@@ -265,7 +255,7 @@ light_energy = 16.0
 area_range = 5.957
 area_attenuation = 1.632
 
-[node name="PatrolEnemy" parent="tv" unique_id=728089667 instance=ExtResource("4_bmf8x")]
+[node name="PatrolEnemy" parent="tv" unique_id=728089667]
 transform = Transform3D(-0.49992386, 0, -0.008726197, 0, 0.5, 0, 0.008726197, 0, -0.49992386, 0.08748627, 0.031011462, 4.044496)
 
 [node name="SOFA" type="StaticBody3D" parent="." unique_id=53082921]
@@ -275,7 +265,7 @@ transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -19.
 transform = Transform3D(0.99999994, 0, -2.842171e-14, 0, 0.99999994, 0, 2.842171e-14, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("BoxShape3D_fxdce")
 
-[node name="sofa_52" parent="SOFA" unique_id=1167433631 instance=ExtResource("1_dbx23")]
+[node name="sofa_52" parent="SOFA" unique_id=1167433631]
 transform = Transform3D(0.9999998, 0, -5.684342e-14, 0, 0.9999998, 0, 5.684342e-14, 0, 0.9999998, 0.0010991096, -0.12316897, -0.49145842)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1325559509]
