@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
 [ext_resource type="AudioStream" uid="uid://c1ife403pst1w" path="res://assets/Warehouse Lights Turning On Sound Effect (mp3cut.net) (3).mp3" id="12_v6ada"]
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
+[ext_resource type="Shader" uid="uid://b3j0vcft52st1" path="res://dithering.gdshader" id="17_tp2bi"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gfc57"]
 radius = 1.2843859
@@ -72,6 +73,14 @@ size = Vector3(1, 1, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cwotn"]
 size = Vector3(1, 1, 7)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8twhp"]
+render_priority = 0
+shader = ExtResource("17_tp2bi")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
 
 [node name="LVL1" type="Node" unique_id=289565252]
 script = ExtResource("1_g5nw0")
@@ -235,6 +244,9 @@ transform = Transform3D(2.2, 0, 0, 0, 27.132, 0, 0, 0, 7.8300004, -3, 0, -7.8300
 shape = SubResource("BoxShape3D_cwotn")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=46880961]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=94557506]
+material_override = SubResource("ShaderMaterial_8twhp")
 
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]

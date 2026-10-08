@@ -16,10 +16,19 @@
 [ext_resource type="PackedScene" uid="uid://db6fah17ysh0k" path="res://assets/metal_barrel_mp_3.glb" id="12_ausy0"]
 [ext_resource type="PackedScene" uid="uid://dmvsf60xkwckh" path="res://scenes/Enemies_Stuff/camera.tscn" id="12_iw84g"]
 [ext_resource type="Script" uid="uid://dg6c76ay2mfyt" path="res://scenes/Enemies_Stuff/patrol_point.gd" id="13_iw84g"]
+[ext_resource type="Shader" uid="uid://txk1jnecau8s" path="res://scenes/maps/dithering.gdshader" id="16_ausy0"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_gfc57"]
 vertices = PackedVector3Array(16.832672, 6.4998174, -29.315382, 16.832672, 6.4998174, 19.184618, 49.832672, 6.4998174, 19.184618, 49.832672, 6.4998174, -29.315382, 10.082672, 0.24981737, -9.065382, 10.332672, 0.24981737, -6.815382, 15.832672, 0.24981737, -6.815382, 15.832672, 0.24981737, -29.065382, -15.667328, 0.24981737, -6.315382, -9.917328, 0.24981737, -6.565382, -9.667328, 0.24981737, -9.065382, -15.667328, 0.24981737, -29.065382, -8.917328, 6.4998174, -8.065382, -8.917328, 6.4998174, -5.815382, 9.332672, 6.4998174, -5.815382, 9.332672, 6.4998174, -8.065382, -8.667328, 0.24981737, -7.815382, -8.667328, 0.24981737, -6.065382, 9.082672, 0.24981737, -6.065382, 9.082672, 0.24981737, -7.815382, 10.082672, 0.24981737, -4.815382, 15.832672, 0.24981737, 19.184618, -9.667328, 0.24981737, -4.815382, -15.667328, 0.24981737, 19.184618)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(4, 10, 7), PackedInt32Array(7, 10, 11), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(5, 6, 20), PackedInt32Array(20, 6, 21), PackedInt32Array(9, 22, 8), PackedInt32Array(8, 22, 23), PackedInt32Array(20, 21, 22), PackedInt32Array(22, 21, 23)]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8twhp"]
+render_priority = 0
+shader = ExtResource("16_ausy0")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
 
 [sub_resource type="Environment" id="Environment_pel0d"]
 glow_enabled = true
@@ -58,6 +67,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29042244, 2.9786716, -6.983
 use_collision = true
 size = Vector3(19.05299, 6.4577084, 2.7820206)
 material = ExtResource("2_pel0d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/CSGBox3D4" unique_id=2134962226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7507005, -3.727856, 26.193905)
+material_override = SubResource("ShaderMaterial_8twhp")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D" unique_id=672636478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4938, 6.2070255, -5.109644)
