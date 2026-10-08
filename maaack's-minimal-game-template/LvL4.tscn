@@ -1,10 +1,5 @@
 [gd_scene format=3 uid="uid://b7jta1ox58f84"]
 
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://cua2uoi8hlkkx" path="res://toilet_mp_1.glb" id="1_mw5y5"]
-[ext_resource type="PackedScene" uid="uid://chsfwjtlqyhct" path="res://painting_1.glb" id="2_j1ngf"]
-[ext_resource type="PackedScene" uid="uid://c82o3dpqpyxto" path="res://assets/elevator.tscn" id="3_men2y"]
-=======
 [ext_resource type="Texture2D" uid="uid://eajh7iyu61r2" path="res://assets/models/arc_1_wall_1_plain_wall_mp_1.png" id="1_1s0vn"]
 [ext_resource type="Texture2D" uid="uid://wpji15fi56ry" path="res://assets/wall_1_1_half_door_frame_wood_1.png" id="2_jvi45"]
 [ext_resource type="PackedScene" uid="uid://cua2uoi8hlkkx" path="res://toilet_mp_1.glb" id="2_r657h"]
@@ -34,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://g8sdkflfm81s" path="res://ceiling_fan_mp_2_1_light_on.glb" id="27_kyyjm"]
 [ext_resource type="PackedScene" uid="uid://dyk8fv7lil7pk" path="res://addons/maaacks_game_template/base/assets/cardboard_box_2.glb" id="28_m18md"]
 [ext_resource type="PackedScene" uid="uid://cyor545hm058q" path="res://assets/models/table_large_3_3.glb" id="29_aku34"]
+[ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="30_aku34"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6a4r"]
 albedo_texture = ExtResource("1_1s0vn")
@@ -124,7 +120,6 @@ glow_bloom = 0.16
 fog_enabled = true
 fog_light_color = Color(0.1337268, 0.1488863, 0.17314225, 1)
 fog_density = 0.032
->>>>>>> Stashed changes
 
 [node name="Node" type="Node" unique_id=1120725842]
 
@@ -138,15 +133,10 @@ material = SubResource("StandardMaterial3D_k6a4r")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=173163736]
-<<<<<<< Updated upstream
-transform = Transform3D(8.255519, 0, 0, 0, 3.3779197, 0, 0, 0, 7.4800005, -0.03577526, 0.0053862333, 0)
-size = Vector3(0.991333, 1.0031891, 1)
-=======
 transform = Transform3D(8.255519, 0, 0, 0, 4.276659, 0, 0, 0, 7.4800005, -0.03577526, -1.9563097, -1.9503516)
 material_override = SubResource("StandardMaterial3D_5vtku")
 size = Vector3(0.991333, 1.4569864, 1.5214844)
 material = SubResource("StandardMaterial3D_q0da8")
->>>>>>> Stashed changes
 
 [node name="subtractionbox3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" unique_id=1443737465]
 transform = Transform3D(0.19230744, 0, 0, 0, 0.47999948, 0, 0, 0, 0.8999904, -0.28673527, 0.057740033, -0.5347592)
@@ -193,17 +183,11 @@ visible = false
 [node name="ceiling_lamp_4_1_a_off2" parent="CSGCombiner3D" unique_id=1809838033 instance=ExtResource("4_aku34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3494879, -0.3575903, -0.7480222)
 
-<<<<<<< Updated upstream
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=546474705]
-transform = Transform3D(4.9501624, 0, 0, 0, -0.26853007, 3.6229048, 0, 0.08944859, 10.87618, 1.1157073, -0.4540612, -9.782512)
-size = Vector3(1.0791016, 1, 1.1039276)
-=======
 [node name="OmniLight3D" type="OmniLight3D" parent="CSGCombiner3D/ceiling_lamp_4_1_a_off2" unique_id=1626454488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5152433, 0)
 light_color = Color(0.51718444, 0.5171845, 0.51718444, 1)
 light_energy = 2.853
 omni_range = 12.261
->>>>>>> Stashed changes
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=709761628]
 transform = Transform3D(-2.1637847e-07, -0.28303614, -1.0021896e-06, -4.9501624, 1.2371903e-08, 0, -1.8916407e-14, -2.4743805e-08, 11.463713, 3.9099643, -0.46519804, -4.735679)
@@ -218,23 +202,15 @@ use_collision = true
 size = Vector3(1.656826, 1, 0.20313835)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=433633802]
-<<<<<<< Updated upstream
-transform = Transform3D(-2.1637847e-07, -0.28303614, -1.0021896e-06, -4.9501624, 1.2371903e-08, 0, -1.8916407e-14, -2.4743805e-08, 11.463713, -1.1187677, 2.904672, -4.7741623)
-=======
 transform = Transform3D(-2.1637847e-07, -0.28303614, -1.0021896e-06, -4.9501624, 1.2371903e-08, 0, -1.8916407e-14, -2.4743805e-08, 11.463713, -1.1187677, 2.07728, -4.7741623)
 material_override = SubResource("StandardMaterial3D_r3a83")
 use_collision = true
->>>>>>> Stashed changes
 size = Vector3(0.6427841, 1, 1.5456543)
 material = SubResource("StandardMaterial3D_cwotn")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=677499377]
-<<<<<<< Updated upstream
-transform = Transform3D(-4.950162, 2.4743803e-08, -1.1910206e-13, 4.327569e-07, 0.28303614, 1.0021895e-06, -1.8916406e-14, -2.4743803e-08, 11.463713, 1.3457414, 4.229112, -4.7741623)
-=======
 transform = Transform3D(-4.950162, 2.4743803e-08, -1.1910206e-13, 4.327569e-07, 0.28303614, 1.0021895e-06, -1.8916406e-14, -2.4743803e-08, 11.463713, 1.3457414, 3.7173314, -4.7741623)
 use_collision = true
->>>>>>> Stashed changes
 size = Vector3(0.9769287, 1, 1.5456543)
 material = SubResource("StandardMaterial3D_qne0x")
 
@@ -244,13 +220,6 @@ use_collision = true
 size = Vector3(0.97595215, 1, 0.21144676)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1408850257]
-<<<<<<< Updated upstream
-transform = Transform3D(3.5527137e-15, 1.4901161e-08, -11.463712, -4.950163, 1.2371904e-08, -1.0541002e-14, -2.1637848e-07, -0.28303614, -4.7683716e-07, 3.2659216, 3.2086, -0.04113406)
-size = Vector3(0.6532593, 1, 0.12243652)
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1528032466]
-transform = Transform3D(3.5527137e-15, 1.4901161e-08, -11.463712, -4.950163, 1.2371904e-08, -1.0541002e-14, -2.1637848e-07, -0.28303614, -4.7683716e-07, -0.23591006, 3.177178, -0.04113406)
-=======
 transform = Transform3D(3.5527137e-15, 1.4901161e-08, -11.463712, -4.950163, 1.2371904e-08, -1.0541002e-14, -2.1637848e-07, -0.28303614, -4.7683716e-07, 3.2659216, 1.780613, -0.04113406)
 material_override = SubResource("StandardMaterial3D_e54ia")
 use_collision = true
@@ -260,7 +229,6 @@ size = Vector3(0.6532593, 1, 0.12243652)
 transform = Transform3D(3.5527137e-15, 1.4901161e-08, -11.463712, -4.950163, 1.2371904e-08, -1.0541002e-14, -2.1637848e-07, -0.28303614, -4.7683716e-07, -0.1534527, 1.985307, -0.04113406)
 material_override = SubResource("StandardMaterial3D_48ubt")
 use_collision = true
->>>>>>> Stashed changes
 size = Vector3(0.64056396, 1, 0.12243652)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=1724556710]
@@ -293,52 +261,12 @@ material_override = SubResource("StandardMaterial3D_8w865")
 use_collision = true
 size = Vector3(1.5255127, 1, 0.6572571)
 
-[node name="toilet_mp_12" parent="." unique_id=820771628 instance=ExtResource("1_mw5y5")]
+[node name="toilet_mp_12" parent="." unique_id=820771628 instance=ExtResource("2_r657h")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 16.896194, -4.642565, -1.8408533)
 
-[node name="chair_mp_52" parent="." unique_id=579041600]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 16.640686, -4.9689436, -3.786462)
-
-[node name="chair_mp_53" parent="." unique_id=633256671]
-transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 16.640686, -4.9689436, 0.020333052)
-
-[node name="chair_mp_59" parent="." unique_id=476284433]
-transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 15.640686, -4.9689436, 0.020333052)
-
-[node name="chair_mp_60" parent="." unique_id=930065817]
-transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 14.640686, -4.9689436, 0.020333052)
-
-[node name="chair_mp_61" parent="." unique_id=25109923]
-transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 13.640686, -4.9689436, 0.020333052)
-
-[node name="chair_mp_62" parent="." unique_id=291288297]
-transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 12.640686, -4.9689436, 0.020333052)
-
-[node name="chair_mp_63" parent="." unique_id=1538388212]
-transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 11.640686, -4.9689436, 0.020333052)
-
-[node name="chair_mp_54" parent="." unique_id=1206660127]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15.442539, -4.9689436, -3.808016)
-
-[node name="chair_mp_55" parent="." unique_id=1226005607]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 14.442539, -4.9689436, -3.808016)
-
-[node name="chair_mp_56" parent="." unique_id=610443435]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 13.442539, -4.9689436, -3.808016)
-
-[node name="chair_mp_57" parent="." unique_id=532871534]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12.442539, -4.9689436, -3.808016)
-
-[node name="chair_mp_58" parent="." unique_id=1937013643]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.442539, -4.9689436, -3.808016)
-
-[node name="painting_12" parent="." unique_id=682490957 instance=ExtResource("2_j1ngf")]
+[node name="painting_12" parent="." unique_id=682490957 instance=ExtResource("5_wt6go")]
 transform = Transform3D(0, 0, -2.0000002, 0, 2, 0, 2.0000002, 0, 0, 17.826097, -3, -0.42634594)
 
-<<<<<<< Updated upstream
-[node name="Elevator" parent="." unique_id=123787244 instance=ExtResource("3_men2y")]
-transform = Transform3D(-2, 4.371139e-09, 9.744496e-15, 0, -2.1855695e-09, 2.55, 1.7484555e-07, 0.05, 1.1146404e-07, 1.5474095, 2.9747324, -0.1456716)
-=======
 [node name="Elevator" parent="." unique_id=123787244 instance=ExtResource("4_e2u21")]
 transform = Transform3D(-2, 4.371139e-09, 9.744496e-15, 0, -2.1855695e-09, 2.55, 1.7484555e-07, 0.05, 1.1146404e-07, 1.5474095, 1.5491524, -0.1456716)
 
@@ -542,4 +470,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.323448, -2.9453955, -16.881
 
 [node name="chair_mp_66" parent="." unique_id=792127232 instance=ExtResource("3_f0urt")]
 transform = Transform3D(-0.91863286, 0, -0.39511228, 0, 1, 0, 0.39511228, 0, -0.91863286, 5.323448, -2.9453955, -15.275142)
->>>>>>> Stashed changes
+
+[node name="Player" parent="." unique_id=958992094 instance=ExtResource("30_aku34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.655036, -2.2413702, 0)
