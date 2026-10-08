@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cvnigbqr60186"]
+
+[ext_resource type="PackedScene" uid="uid://ci8nqikhawcqn" path="res://Horror_Game_Starter_Kit.fbx" id="1_ee3jb"]
+
+[node name="Horror_Game_Starter_Kit" unique_id=1433319341 instance=ExtResource("1_ee3jb")]
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." index="17" unique_id=965204015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.96303, 0)
+light_energy = 16.0
+area_range = 4096.0
+area_attenuation = -10.0
