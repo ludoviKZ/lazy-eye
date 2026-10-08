@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b7ecfejonhwtv"]
+
+[ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="1_mcbcr"]
+[ext_resource type="PackedScene" uid="uid://cmtfam77dnqxj" path="res://beholder_reception_level_1.tscn" id="2_lbuoi"]
+
+[node name="LevelReception" type="Node" unique_id=1471427238]
+
+[node name="Player" parent="." unique_id=958992094 instance=ExtResource("1_mcbcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 3)
+
+[node name="beholder_reception_level1" parent="." unique_id=977213101 instance=ExtResource("2_lbuoi")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 3)
