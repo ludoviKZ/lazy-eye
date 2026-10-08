@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cw1lwu6l1ek78"]
+
+[ext_resource type="Shader" uid="uid://c48dwi4qot26r" path="res://addons/psx_skyboxes/psx_sky.gdshader" id="1"]
+[ext_resource type="CompressedCubemap" uid="uid://c6n5oa2vkk7wf" path="res://addons/psx_skyboxes/cubemaps/sunset_clouds.png" id="2"]
+
+[resource]
+resource_name = "sunset_clouds"
+shader = ExtResource("1")
+shader_parameter/cubemap = ExtResource("2")
+shader_parameter/rotation = 0.0
+shader_parameter/energy = 1.0

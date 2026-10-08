@@ -4,3 +4,6 @@
 
 [node name="InteractArea3D" type="Area3D" unique_id=891073404]
 script = ExtResource("1_2brnr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

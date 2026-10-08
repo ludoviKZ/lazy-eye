@@ -60,5 +60,7 @@ func _physics_process(delta):
 
 	velocity.x = direction.x * current_speed
 	velocity.z = direction.z * current_speed
-
+	
+	if Input.is_action_just_pressed("ui_text_backspace"):
+		get_tree().quit()
 	move_and_slide()

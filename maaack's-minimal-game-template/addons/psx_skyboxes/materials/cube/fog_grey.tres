@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dowrd8bqd2aoy"]
+
+[ext_resource type="Shader" uid="uid://c48dwi4qot26r" path="res://addons/psx_skyboxes/psx_sky.gdshader" id="1"]
+[ext_resource type="CompressedCubemap" uid="uid://bgoks8wd32bin" path="res://addons/psx_skyboxes/cubemaps/fog_grey.png" id="2"]
+
+[resource]
+resource_name = "fog_grey"
+shader = ExtResource("1")
+shader_parameter/cubemap = ExtResource("2")
+shader_parameter/rotation = 0.0
+shader_parameter/energy = 1.0

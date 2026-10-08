@@ -15,9 +15,6 @@
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
 [ext_resource type="PackedScene" uid="uid://ci8nqikhawcqn" path="res://Horror_Game_Starter_Kit.fbx" id="16_g5nw0"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gfc57"]
-size = Vector3(52.074554, 1, 30.219238)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6wp4"]
 albedo_texture = ExtResource("4_clg6b")
 
@@ -59,13 +56,6 @@ size = Vector3(1, 1, 6)
 size = Vector3(1, 1, 7)
 
 [node name="LVL1" type="Node" unique_id=289565252]
-
-[node name="floorfinal" type="StaticBody3D" parent="." unique_id=2033413509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.349083, 0, -1.2816253)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floorfinal" unique_id=1767241033]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.493637, 0, 1.2619629)
-shape = SubResource("BoxShape3D_gfc57")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("2_okdh5")]
 <<<<<<< Updated upstream

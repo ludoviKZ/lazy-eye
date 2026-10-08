@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://p618souqbb2u"]
+
+[ext_resource type="Texture2D" uid="uid://c3b4he23tpwny" path="res://assets/Textures/d.jpg" id="1_eaeio"]
+[ext_resource type="Script" uid="uid://br8baf6glvgsm" path="res://scenes/Enemies_Stuff/poster_cam.gd" id="1_y8kh5"]
+[ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="2_pmba6"]
+[ext_resource type="PackedScene" uid="uid://bd2ygsxwin7ds" path="res://scenes/Enemies_Stuff/detection_meter.tscn" id="2_y0n0w"]
+
+[node name="Poster_cam" type="Node3D" unique_id=56230212]
+script = ExtResource("1_y8kh5")
+
+[node name="DetectionMeter" parent="." unique_id=1693148647 instance=ExtResource("2_y0n0w")]
+max_time = 1.5
+drain_rate = 0.3
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1245113019]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+texture = ExtResource("1_eaeio")
+
+[node name="rotation" type="Node3D" parent="." unique_id=1561454089]
+
+[node name="EnemyFOV" type="Area3D" parent="rotation" unique_id=1527119604]
+transform = Transform3D(-1, 0, -8.742278e-08, -4.109013e-08, 0.88265777, 0.47001642, 7.71644e-08, 0.47001642, -0.88265777, 0, -1.1162692, 0)
+script = ExtResource("2_pmba6")
+horizontal_fov = 42.5
+vertical_fov = 30.0
+view_distance = 21.2
+metadata/_custom_type_script = "uid://b4wykaar5pl0n"

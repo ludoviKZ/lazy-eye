@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bmjo5rfa7j607"]
+
+[ext_resource type="Script" uid="uid://dq775adeusgsn" path="res://addons/psx_skyboxes/demo/viewer.gd" id="1"]
+
+[node name="Viewer" type="Node" unique_id=860015823]
+script = ExtResource("1")

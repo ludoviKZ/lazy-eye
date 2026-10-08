@@ -1,0 +1,8 @@
+[gd_resource type="PanoramaSkyMaterial" format=3 uid="uid://dys2s6y7jwfxu"]
+
+[ext_resource type="Texture2D" uid="uid://dy7f3o5m5skoc" path="res://addons/psx_skyboxes/panoramas/night_moon.png" id="1"]
+
+[resource]
+resource_name = "night_moon"
+panorama = ExtResource("1")
+filter = false
