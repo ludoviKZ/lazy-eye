@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://qjkka8v56thx" path="res://lvl_1.gd" id="1_g5nw0"]
 [ext_resource type="Script" uid="uid://bshydkcpn2e12" path="res://elevator_2.gd" id="1_s5spe"]
-[ext_resource type="PackedScene" uid="uid://c4ht7cv35gm8x" path="res://assets/elevator_1.glb" id="1_x5umw"]
 [ext_resource type="Script" uid="uid://cqii4r67h2f2j" path="res://scenes/Interaction_Scenes/interact_area_3d.gd" id="2_akum8"]
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="2_okdh5"]
 [ext_resource type="Texture2D" uid="uid://ctdvtb288yb3i" path="res://assets/concrete_1.png" id="4_clg6b"]
 [ext_resource type="ArrayMesh" uid="uid://law73iqpewlb" path="res://assets/psx_downturning_lamppost.obj" id="4_okdh5"]
+[ext_resource type="Texture2D" uid="uid://ckk5lb7tmfdgq" path="res://scenes/Player/door_3_double.png" id="4_v6ada"]
 [ext_resource type="PackedScene" uid="uid://ckv8523518na3" path="res://assets/psx_-_hex_skyscraper.glb" id="6_t6wp4"]
 [ext_resource type="PackedScene" uid="uid://chf10bubmxc0t" path="res://assets/Wall.tscn" id="7_31jyx"]
 [ext_resource type="Script" uid="uid://c375s1r80fxdg" path="res://area_3d.gd" id="9_a1bqk"]
@@ -73,6 +73,9 @@ size = Vector3(1, 1, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cwotn"]
 size = Vector3(1, 1, 7)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
+albedo_texture = ExtResource("4_clg6b")
+
 [node name="LVL1" type="Node" unique_id=289565252]
 script = ExtResource("1_g5nw0")
 
@@ -89,8 +92,9 @@ metadata/_custom_type_script = "uid://cqii4r67h2f2j"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71404076, 0.8020935, 0.14685321)
 shape = SubResource("SphereShape3D_gfc57")
 
-[node name="elevator_12" parent="Elevator2" unique_id=165631191 instance=ExtResource("1_x5umw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.43737125, -1.2714272, -0.15816498)
+[node name="Sprite3D" type="Sprite3D" parent="Elevator2" unique_id=1297191081]
+transform = Transform3D(0.014882329, 0, 0.99988925, 0, 1, 0, -0.99988925, 0, 0.014882329, -1.95716, 0.45139694, -0.029203653)
+texture = ExtResource("4_v6ada")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1824486393]
 navigation_mesh = SubResource("NavigationMesh_x5umw")
@@ -158,7 +162,7 @@ transform = Transform3D(0, 0, 1, 0, 3.0000005, 0, -5.0000005, 0, -5.9604645e-08,
 physics_material_override = SubResource("PhysicsMaterial_t6wp4")
 
 [node name="Sprite3D" type="Sprite3D" parent="Wall" unique_id=483064105]
-transform = Transform3D(0.13483822, 0, 0, 0, 0.18786602, 0, 0, 0, 1, -0.00540629, 0.26502824, 0.51039886)
+transform = Transform3D(0.13483822, 0, 0, 0, 0.18786602, 0, 0, 0, 1, -0.00540629, 0.5274092, 0.51039886)
 texture = ExtResource("11_g5nw0")
 
 [node name="Lamppost" type="Node" parent="." unique_id=1723567185]
@@ -184,8 +188,8 @@ shape = SubResource("BoxShape3D_8twhp")
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamppost/Area3D" unique_id=1564780072]
 unique_name_in_owner = true
 transform = Transform3D(1, -5.820767e-11, 3.6379756e-12, -7.740381e-13, -1.2073351e-08, 0.21276598, -2.5801273e-12, -0.044326246, -2.5152815e-09, 0.9020705, 0.3906801, -0.10789883)
-visible = false
 light_energy = 10.822
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Lamppost/Area3D" unique_id=1688382911]
@@ -197,8 +201,8 @@ script = ExtResource("10_4snel")
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lamppost/Area3D2" unique_id=1056547578]
 unique_name_in_owner = true
 transform = Transform3D(-0.99999976, -0.0007288341, -9.576759e-05, -9.667942e-05, 0.0012511486, 0.9999993, -0.0007287137, 0.999999, -0.0012512188, -1.0979047, 3.835484, 2.8556025)
-visible = false
 light_energy = 10.822
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D2" unique_id=990868578]
@@ -210,8 +214,8 @@ script = ExtResource("11_g81ij")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lamppost/Area3D3" unique_id=1499897774]
 transform = Transform3D(1, 0, 0, 0, -5.674475e-08, 1, 0, -1, -5.674475e-08, -6.5108986, 3.8361955, -2.434197)
-visible = false
 light_energy = 10.822
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D3" unique_id=1843527880]
@@ -226,8 +230,8 @@ script = ExtResource("12_x5umw")
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lamppost/Area3D4" unique_id=2057442317]
 transform = Transform3D(-0.99999976, -0.00072883413, -9.576759e-05, -9.667942e-05, 0.0012511485, 0.9999993, -0.00072871376, 0.999999, -0.0012512187, -6.510874, 3.835484, 2.8556025)
-visible = false
 light_energy = 10.822
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost/Area3D4" unique_id=1814738294]
@@ -235,6 +239,24 @@ transform = Transform3D(2.2, 0, 0, 0, 27.132, 0, 0, 0, 7.8300004, -3, 0, -7.8300
 shape = SubResource("BoxShape3D_cwotn")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=46880961]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1601907830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.104448, 1.8847656, 0.76205444)
+use_collision = true
+size = Vector3(0.82714844, 4.7695313, 31.559143)
+material = SubResource("StandardMaterial3D_gfc57")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1580304052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.147505, 1.8847656, 15.495369)
+use_collision = true
+size = Vector3(69.331055, 4.7695313, 1.0215607)
+material = SubResource("StandardMaterial3D_gfc57")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=43607936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.147505, 1.8847656, -14.589534)
+use_collision = true
+size = Vector3(69.331055, 4.7695313, 1.0215607)
+material = SubResource("StandardMaterial3D_gfc57")
 
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]
