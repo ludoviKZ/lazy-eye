@@ -23,15 +23,11 @@ script = ExtResource("1_h00vy")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=703867564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47882676, 0)
 
-<<<<<<< Updated upstream
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1737136225]
-=======
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1965468583]
 material_override = SubResource("ShaderMaterial_8twhp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1737136225 groups=["player"]]
 material_override = SubResource("ShaderMaterial_oq3f1")
->>>>>>> Stashed changes
 mesh = SubResource("CapsuleMesh_8twhp")
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=174141585]
