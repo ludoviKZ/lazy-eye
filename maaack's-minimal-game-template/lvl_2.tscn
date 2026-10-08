@@ -1,9 +1,17 @@
 [gd_scene format=4 uid="uid://c1m5gdd46qy37"]
 
 [ext_resource type="Texture2D" uid="uid://wpji15fi56ry" path="res://assets/wall_1_1_half_door_frame_wood_1.png" id="1_bmf8x"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="2_tu4c3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_beans"]
+=======
+[ext_resource type="PackedScene" uid="uid://nmcxdbrucpad" path="res://sofa_5.glb" id="1_dbx23"]
+[ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="2_tu4c3"]
+[ext_resource type="PackedScene" uid="uid://gg61tmsx5yth" path="res://scenes/Player/tv_mp_1.glb" id="3_1v3ac"]
+[ext_resource type="PackedScene" uid="uid://dktlou7pxd3pw" path="res://scenes/Enemies_Stuff/patrol_enemy.tscn" id="4_bmf8x"]
+[ext_resource type="PackedScene" uid="uid://coneo7n72ia72" path="res://scenes/Player/tv_table_4.glb" id="4_l31ol"]
+>>>>>>> parent of 18cd966 (boh)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fxdce"]
 
@@ -15,18 +23,22 @@ albedo_texture = ExtResource("1_bmf8x")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7f4c"]
 albedo_texture = ExtResource("1_bmf8x")
 
+<<<<<<< HEAD
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmnqu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbeg1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22vjt"]
 
+=======
+>>>>>>> parent of 18cd966 (boh)
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0da8"]
 size = Vector3(1.4510498, 1.5024414, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fxdce"]
 size = Vector3(2.2824707, 1.2463379, 1.090332)
 
+<<<<<<< HEAD
 [sub_resource type="Environment" id="Environment_8twhp"]
 ambient_light_source = 2
 ambient_light_color = Color(0.0140324, 0.21991423, 0.2921272, 1)
@@ -77,13 +89,19 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e03lu")
 
 [node name="Node2" type="Node" unique_id=2070860897]
+=======
+[node name="Node" type="Node" unique_id=2070860897]
+>>>>>>> parent of 18cd966 (boh)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=200807357]
 transform = Transform3D(-7.7631415e-07, 0, 17.582401, 0, 0.099999964, 0, -17.759998, 0, -7.6855116e-07, -21, 0, 0)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=918018834]
+<<<<<<< HEAD
 material_override = SubResource("StandardMaterial3D_beans")
+=======
+>>>>>>> parent of 18cd966 (boh)
 mesh = SubResource("BoxMesh_fxdce")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=642723315]
@@ -136,7 +154,10 @@ transform = Transform3D(-3.1052565e-07, 0, -7.564414, -7.1039996, -4.371137e-09,
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D9" unique_id=1091209485]
+<<<<<<< HEAD
 material_override = SubResource("StandardMaterial3D_tmnqu")
+=======
+>>>>>>> parent of 18cd966 (boh)
 mesh = SubResource("BoxMesh_fxdce")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D9" unique_id=286979433]
@@ -147,7 +168,10 @@ transform = Transform3D(-3.1052565e-07, 0, -7.564414, -7.1039996, -4.371137e-09,
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D11" unique_id=373478290]
+<<<<<<< HEAD
 material_override = SubResource("StandardMaterial3D_vbeg1")
+=======
+>>>>>>> parent of 18cd966 (boh)
 mesh = SubResource("BoxMesh_fxdce")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D11" unique_id=1263091725]
@@ -158,7 +182,10 @@ transform = Transform3D(-7.763141e-08, 0, -7.564414, -1.7759999, -4.371137e-09, 
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D12" unique_id=949862964]
+<<<<<<< HEAD
 material_override = SubResource("StandardMaterial3D_22vjt")
+=======
+>>>>>>> parent of 18cd966 (boh)
 mesh = SubResource("BoxMesh_fxdce")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D12" unique_id=427399355]
@@ -236,6 +263,12 @@ shape = SubResource("BoxShape3D_8twhp")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("2_tu4c3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 1)
+<<<<<<< HEAD
+=======
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player" unique_id=17905343]
+transform = Transform3D(1, 0, 0, 0, -0.25881904, 0.9659258, 0, -0.9659258, -0.25881904, -23, 10, 0)
+>>>>>>> parent of 18cd966 (boh)
 
 [node name="tv" type="StaticBody3D" parent="." unique_id=1187455519]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, -3)
@@ -267,6 +300,7 @@ shape = SubResource("BoxShape3D_fxdce")
 
 [node name="sofa_52" parent="SOFA" unique_id=1167433631]
 transform = Transform3D(0.9999998, 0, -5.684342e-14, 0, 0.9999998, 0, 5.684342e-14, 0, 0.9999998, 0.0010991096, -0.12316897, -0.49145842)
+<<<<<<< HEAD
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1325559509]
 environment = SubResource("Environment_8twhp")
@@ -280,3 +314,5 @@ omni_range = 4096.0
 transform = Transform3D(180.73764, 0, 0, 0, -1.1920929e-05, 115.80962, 0, -99.99999, -1.3805584e-05, -20.654364, 0.7800977, -8.147224)
 material_override = SubResource("StandardMaterial3D_t0ydl")
 mesh = SubResource("ArrayMesh_0a5a2")
+=======
+>>>>>>> parent of 18cd966 (boh)

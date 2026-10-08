@@ -16,7 +16,41 @@
 [ext_resource type="AudioStream" uid="uid://c43ohkl0jra8u" path="res://assets/Warehouse Lights Turning On Sound Effect (mp3cut.net).mp3" id="10_akum8"]
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://ci8nqikhawcqn" path="res://Horror_Game_Starter_Kit.fbx" id="16_g5nw0"]
+=======
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gfc57"]
+radius = 1.2843859
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_x5umw"]
+vertices = PackedVector3Array(-32.894066, 1, -16.919144, -13.394066, 1, -16.919144, -13.394066, 1, -44.919144, -32.894066, 1, -44.919144, -32.894066, 1, 17.080856, -13.394066, 1, 17.080856, -13.394066, 1, 15.080856, -33.144066, 1, 14.830856, -13.394066, 1, -14.919144, -38.394066, 0.75, -14.419144, -38.394066, 0.75, 14.830856, -33.144066, 1, -14.669144, -11.144066, 1, -14.669144, -11.144066, 1, 14.830856, 20.605934, 0.75, 14.830856, 20.605934, 0.75, -14.419144, -32.644066, 1, 45.330856, -13.394066, 1, 45.330856)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(0, 1, 8), PackedInt32Array(7, 10, 9), PackedInt32Array(0, 8, 11), PackedInt32Array(11, 8, 12), PackedInt32Array(6, 7, 13), PackedInt32Array(13, 7, 12), PackedInt32Array(12, 7, 11), PackedInt32Array(11, 7, 9), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 12), PackedInt32Array(17, 16, 5), PackedInt32Array(5, 16, 4)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gfc57"]
+size = Vector3(53.88298, 1, 30.219238)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3oyx"]
+size = Vector3(19.984863, 1, 91.21509)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akum8"]
+albedo_texture = ExtResource("4_clg6b")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_f3oyx"]
+size = Vector2(60, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5umw"]
+albedo_texture = ExtResource("4_clg6b")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_gfc57"]
+size = Vector2(20, 90)
+>>>>>>> parent of 18cd966 (boh)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6wp4"]
 albedo_texture = ExtResource("4_clg6b")
@@ -45,9 +79,12 @@ size = Vector3(1, 1, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cwotn"]
 size = Vector3(1, 1, 7)
 
+<<<<<<< HEAD
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
 albedo_texture = ExtResource("4_clg6b")
 
+=======
+>>>>>>> parent of 18cd966 (boh)
 [node name="LVL1" type="Node" unique_id=289565252]
 script = ExtResource("1_g5nw0")
 
@@ -339,6 +376,7 @@ shape = SubResource("BoxShape3D_cwotn")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Lamppost/Area3D4" unique_id=522469632]
 stream = ExtResource("10_akum8")
 
+<<<<<<< HEAD
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1892548795]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 38, 116, 89)
 visible = false
@@ -365,6 +403,8 @@ use_collision = true
 size = Vector3(69.331055, 4.7695313, 1.0215607)
 material = SubResource("StandardMaterial3D_gfc57")
 
+=======
+>>>>>>> parent of 18cd966 (boh)
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D3" to="Lamppost/Area3D3" method="_on_body_entered"]
