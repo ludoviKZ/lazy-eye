@@ -2,20 +2,32 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream:maaack's-minimal-game-template/assets/Textures/yard.png.import
 uid="uid://deth23hk1ule8"
 path="res://.godot/imported/yard.png-a27ba9391eb0e91468588e95a73f281a.ctex"
+=======
+uid="uid://cb5x5srwr0jo1"
+path.s3tc="res://.godot/imported/poster.jpg-bbee99b2fc0e180fe0344e4a6fe76d38.s3tc.ctex"
+path.etc2="res://.godot/imported/poster.jpg-bbee99b2fc0e180fe0344e4a6fe76d38.etc2.ctex"
+>>>>>>> Stashed changes:maaack's-minimal-game-template/assets/poster.jpg.import
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
+<<<<<<< Updated upstream:maaack's-minimal-game-template/assets/Textures/yard.png.import
 source_file="res://assets/Textures/yard.png"
 dest_files=["res://.godot/imported/yard.png-a27ba9391eb0e91468588e95a73f281a.ctex"]
+=======
+source_file="res://assets/poster.jpg"
+dest_files=["res://.godot/imported/poster.jpg-bbee99b2fc0e180fe0344e4a6fe76d38.s3tc.ctex", "res://.godot/imported/poster.jpg-bbee99b2fc0e180fe0344e4a6fe76d38.etc2.ctex"]
+>>>>>>> Stashed changes:maaack's-minimal-game-template/assets/poster.jpg.import
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +35,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +49,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
