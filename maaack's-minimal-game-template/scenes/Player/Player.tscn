@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://nebreelo5eua"]
 
 [ext_resource type="Script" uid="uid://dyuw0ryfy2477" path="res://scenes/Player/player.gd" id="1_h00vy"]
+[ext_resource type="Shader" uid="uid://b3j0vcft52st1" path="res://dithering.gdshader" id="2_ky53y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8twhp"]
+render_priority = 0
+shader = ExtResource("2_ky53y")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oq3f1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8twhp"]
 
@@ -12,7 +23,15 @@ script = ExtResource("1_h00vy")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=703867564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47882676, 0)
 
+<<<<<<< Updated upstream
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1737136225]
+=======
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1965468583]
+material_override = SubResource("ShaderMaterial_8twhp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1737136225 groups=["player"]]
+material_override = SubResource("ShaderMaterial_oq3f1")
+>>>>>>> Stashed changes
 mesh = SubResource("CapsuleMesh_8twhp")
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=174141585]
