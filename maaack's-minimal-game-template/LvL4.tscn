@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7jta1ox58f84"]
 
 [ext_resource type="PackedScene" uid="uid://cua2uoi8hlkkx" path="res://toilet_mp_1.glb" id="2_r657h"]
-[ext_resource type="PackedScene" path="res://assets/models/chair_mp_5.glb" id="3_f0urt"]
+[ext_resource type="PackedScene" uid="uid://db5uxpn6o3tim" path="res://assets/models/chair_mp_5.glb" id="3_f0urt"]
 [ext_resource type="PackedScene" uid="uid://c82o3dpqpyxto" path="res://assets/elevator.tscn" id="4_e2u21"]
 [ext_resource type="PackedScene" uid="uid://chsfwjtlqyhct" path="res://painting_1.glb" id="5_wt6go"]
 
@@ -15,7 +15,7 @@ size = Vector3(1.0952148, 1, 0.9486084)
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=173163736]
-transform = Transform3D(8.255519, 0, 0, 0, 3.3779197, 0, 0, 0, 7.4800005, -0.03577526, 0.0053862333, 0)
+transform = Transform3D(8.255519, 0, 0, 0, 3.3779197, 0, 0, 0, 7.4800005, -0.03577526, -1.2412225, 0)
 size = Vector3(0.991333, 1.0031891, 1)
 
 [node name="subtractionbox3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D" unique_id=1443737465]
@@ -54,11 +54,8 @@ transform = Transform3D(5.9927893, 0, 0, 0, 0.2651465, 4.010947, 0, 0.09902924, 
 size = Vector3(1.1542969, 1, 1.1049805)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=546474705]
-transform = Transform3D(4.9501624, 0, 0, 0, -0.26853007, 3.6229048, 0, 0.08944859, 10.87618, 1.1157073, -0.4540612, -9.782512)
-size = Vector3(1.0791016, 1, 1.1039276)
-
-[node name="elevator_12" parent="." unique_id=962124707]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4931512, 1.3666102, -0.68356323)
+transform = Transform3D(4.950162, 0, 0, 0, -0.27581906, 2.5722618, 0, 0.06350849, 11.171402, 1.1157073, -0.2771209, -9.007866)
+size = Vector3(1.0791016, 1, 0.98262787)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=709761628]
 transform = Transform3D(-2.1637847e-07, -0.28303614, -1.0021896e-06, -4.9501624, 1.2371903e-08, 0, -1.8916407e-14, -2.4743805e-08, 11.463713, 3.9099643, -0.46519804, -4.7741623)
@@ -69,11 +66,11 @@ transform = Transform3D(-8.910292, 2.4743798e-08, -3.0966535e-13, 7.7896243e-07,
 size = Vector3(1.656826, 1, 0.20313835)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=433633802]
-transform = Transform3D(-2.1637847e-07, -0.28303614, -1.0021896e-06, -4.9501624, 1.2371903e-08, 0, -1.8916407e-14, -2.4743805e-08, 11.463713, -1.1187677, 2.904672, -4.7741623)
+transform = Transform3D(-2.1637847e-07, -0.28303614, -1.0021896e-06, -4.9501624, 1.2371903e-08, 0, -1.8916407e-14, -2.4743805e-08, 11.463713, -1.1187677, 2.07728, -4.7741623)
 size = Vector3(0.6427841, 1, 1.5456543)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=677499377]
-transform = Transform3D(-4.950162, 2.4743803e-08, -1.1910206e-13, 4.327569e-07, 0.28303614, 1.0021895e-06, -1.8916406e-14, -2.4743803e-08, 11.463713, 1.3457414, 4.229112, -4.7741623)
+transform = Transform3D(-4.950162, 2.4743803e-08, -1.1910206e-13, 4.327569e-07, 0.28303614, 1.0021895e-06, -1.8916406e-14, -2.4743803e-08, 11.463713, 1.3457414, 7.229112, -4.7741623)
 size = Vector3(0.9769287, 1, 1.5456543)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=742084810]
@@ -81,11 +78,11 @@ transform = Transform3D(-4.9501615, 2.4743805e-08, -1.4126744e-13, -7.1054274e-1
 size = Vector3(0.97595215, 1, 0.21144676)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1408850257]
-transform = Transform3D(3.5527137e-15, 1.4901161e-08, -11.463712, -4.950163, 1.2371904e-08, -1.0541002e-14, -2.1637848e-07, -0.28303614, -4.7683716e-07, 3.2659216, 3.2086, -0.04113406)
+transform = Transform3D(3.5527137e-15, 1.4901161e-08, -11.463712, -4.950163, 1.2371904e-08, -1.0541002e-14, -2.1637848e-07, -0.28303614, -4.7683716e-07, 3.2659216, 1.780613, -0.04113406)
 size = Vector3(0.6532593, 1, 0.12243652)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1528032466]
-transform = Transform3D(3.5527137e-15, 1.4901161e-08, -11.463712, -4.950163, 1.2371904e-08, -1.0541002e-14, -2.1637848e-07, -0.28303614, -4.7683716e-07, -0.23591006, 3.177178, -0.04113406)
+transform = Transform3D(3.5527137e-15, 1.4901161e-08, -11.463712, -4.950163, 1.2371904e-08, -1.0541002e-14, -2.1637848e-07, -0.28303614, -4.7683716e-07, -0.1534527, 1.985307, -0.04113406)
 size = Vector3(0.64056396, 1, 0.12243652)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=1724556710]
@@ -147,38 +144,8 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12.442539, -4.9689436, 
 [node name="chair_mp_58" parent="." unique_id=1937013643 instance=ExtResource("3_f0urt")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 11.442539, -4.9689436, -3.808016)
 
-[node name="meat_12" parent="." unique_id=457837430]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 13.478354, -4.267937, -3.8075163)
-
-[node name="meat_13" parent="." unique_id=108621349]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.478355, -4.267937, -3.8075163)
-
-[node name="meat_14" parent="." unique_id=1381437452]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.615068, -4.267937, 0.0006656647)
-
-[node name="meat_15" parent="." unique_id=318228674]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 15.615068, -4.267937, 0.0006656647)
-
-[node name="meat_16" parent="." unique_id=1131733375]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12.615068, -4.267937, 0.0006656647)
-
 [node name="painting_12" parent="." unique_id=682490957 instance=ExtResource("5_wt6go")]
 transform = Transform3D(0, 0, -2.0000002, 0, 2, 0, 2.0000002, 0, 0, 17.826097, -3, -0.42634594)
 
-[node name="lockers2" parent="." unique_id=2130449604]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1958909, -1.3511679, -3.269031)
-
-[node name="lockers3" parent="." unique_id=329916182]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.0143263, -1.3065397, 1.4642767)
-
-[node name="metal_barrel_mp_32" parent="." unique_id=452025144]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.388549, -1.3511679, -1.6430455)
-
-[node name="metal_barrel_mp_33" parent="." unique_id=1298052162]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2633893, -1.3511679, -0.43433118)
-
-[node name="Poster_cam" parent="." unique_id=56230212]
-transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -3.1692429, 0.3597411, -0.044900417)
-
 [node name="Elevator" parent="." unique_id=123787244 instance=ExtResource("4_e2u21")]
-transform = Transform3D(-2, 4.371139e-09, 9.744496e-15, 0, -2.1855695e-09, 2.55, 1.7484555e-07, 0.05, 1.1146404e-07, 1.5474095, 2.9747324, -0.1456716)
+transform = Transform3D(-2, 4.371139e-09, 9.744496e-15, 0, -2.1855695e-09, 2.55, 1.7484555e-07, 0.05, 1.1146404e-07, 1.5474095, 1.5491524, -0.1456716)
