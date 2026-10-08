@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://gw0hvn8i4xqn"]
 
-[ext_resource type="PackedScene" uid="uid://xidvxulkpsxq" path="res://assets/floor.tscn" id="1_jschv"]
+[ext_resource type="Script" uid="uid://qjkka8v56thx" path="res://lvl_1.gd" id="1_g5nw0"]
+[ext_resource type="Script" uid="uid://bshydkcpn2e12" path="res://elevator_2.gd" id="1_s5spe"]
+[ext_resource type="Script" uid="uid://cqii4r67h2f2j" path="res://scenes/Interaction_Scenes/interact_area_3d.gd" id="2_akum8"]
 [ext_resource type="PackedScene" uid="uid://nebreelo5eua" path="res://scenes/Player/Player.tscn" id="2_okdh5"]
 [ext_resource type="PackedScene" uid="uid://c82o3dpqpyxto" path="res://assets/elevator.tscn" id="3_clg6b"]
 [ext_resource type="Texture2D" uid="uid://ctdvtb288yb3i" path="res://assets/concrete_1.png" id="4_clg6b"]
 [ext_resource type="ArrayMesh" uid="uid://law73iqpewlb" path="res://assets/psx_downturning_lamppost.obj" id="4_okdh5"]
+[ext_resource type="Texture2D" uid="uid://ckk5lb7tmfdgq" path="res://scenes/Player/door_3_double.png" id="4_v6ada"]
 [ext_resource type="PackedScene" uid="uid://ckv8523518na3" path="res://assets/psx_-_hex_skyscraper.glb" id="6_t6wp4"]
 [ext_resource type="PackedScene" uid="uid://chf10bubmxc0t" path="res://assets/Wall.tscn" id="7_31jyx"]
 [ext_resource type="Texture2D" uid="uid://nwqhf3cc4eub" path="res://assets/Untitled.png" id="8_a1bqk"]
@@ -19,7 +22,6 @@
 albedo_texture = ExtResource("4_clg6b")
 
 [sub_resource type="Environment" id="Environment_8twhp"]
-<<<<<<< Updated upstream
 ambient_light_color = Color(0.064696476, 0.06469654, 0.06469653, 1)
 glow_enabled = true
 glow_intensity = 1.01
@@ -30,18 +32,6 @@ fog_density = 0.2187
 adjustment_enabled = true
 adjustment_contrast = 1.08
 adjustment_saturation = 0.55
-=======
-ambient_light_source = 2
-glow_enabled = true
-glow_intensity = 0.8
-glow_bloom = 0.48
-fog_enabled = true
-fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
-fog_light_energy = 0.1
-fog_density = 0.08
-volumetric_fog_enabled = true
-volumetric_fog_density = 1.0
->>>>>>> Stashed changes
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6wp4"]
 
@@ -55,10 +45,54 @@ size = Vector3(1, 1, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cwotn"]
 size = Vector3(1, 1, 7)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
+albedo_texture = ExtResource("4_clg6b")
+
 [node name="LVL1" type="Node" unique_id=289565252]
+script = ExtResource("1_g5nw0")
+
+[node name="Elevator2" type="Node3D" parent="." unique_id=2062897860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.466248, 2.0396423, 0)
+script = ExtResource("1_s5spe")
+
+[node name="InteractionArea3D" type="Area3D" parent="Elevator2" unique_id=2082422608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8063965, -0.9989929, 0.08557367)
+script = ExtResource("2_akum8")
+metadata/_custom_type_script = "uid://cqii4r67h2f2j"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Elevator2/InteractionArea3D" unique_id=745107343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71404076, 0.8020935, 0.14685321)
+shape = SubResource("SphereShape3D_gfc57")
+
+[node name="Sprite3D" type="Sprite3D" parent="Elevator2" unique_id=1297191081]
+transform = Transform3D(0.014882329, 0, 0.99988925, 0, 1, 0, -0.99988925, 0, 0.014882329, -1.95716, 0.45139694, -0.029203653)
+texture = ExtResource("4_v6ada")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1824486393]
+navigation_mesh = SubResource("NavigationMesh_x5umw")
+
+[node name="floorfinal" type="StaticBody3D" parent="NavigationRegion3D" unique_id=2033413509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.349083, 0.031481028, -1.2816253)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floorfinal" unique_id=1767241033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39785, 0, 1.2619629)
+shape = SubResource("BoxShape3D_gfc57")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/floorfinal" unique_id=1457443965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.435112, 0.00012207031, 1.4700236)
+shape = SubResource("BoxShape3D_f3oyx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/floorfinal" unique_id=258594367]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -10.243149, 0.49227333, 1.3849106)
+material_override = SubResource("StandardMaterial3D_akum8")
+mesh = SubResource("QuadMesh_f3oyx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/floorfinal" unique_id=577532346]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -24.605145, 0.5211644, 0.9277096)
+material_override = SubResource("StandardMaterial3D_x5umw")
+mesh = SubResource("QuadMesh_gfc57")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("2_okdh5")]
-<<<<<<< Updated upstream
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23, 1, 1)
 
 [node name="Floor" parent="." unique_id=123787244 instance=ExtResource("1_jschv")]
@@ -176,9 +210,6 @@ transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, 
 
 [node name="Floor24" parent="." unique_id=1441512381 instance=ExtResource("1_jschv")]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 0.1, 0, -10, -4.371139e-09, -29, 0, -40)
-=======
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 1.7268829, 1)
->>>>>>> Stashed changes
 
 [node name="Elevator" parent="." unique_id=436364622 instance=ExtResource("3_clg6b")]
 transform = Transform3D(5.9604645e-08, -0.255, -1.09278474e-07, -1.231912e-16, -1.1146403e-08, 2.5, -2, 0, -1.9539925e-14, -13.385, 1, 0)
@@ -228,8 +259,8 @@ transform = Transform3D(0, 0, 1, 0, 3.0000005, 0, -5.0000005, 0, -5.9604645e-08,
 physics_material_override = SubResource("PhysicsMaterial_t6wp4")
 
 [node name="Sprite3D" type="Sprite3D" parent="Wall" unique_id=483064105]
-transform = Transform3D(0.039999988, 0, 0, 0, 0.09999997, 0, 0, 0, 1, -6.0844343e-09, 0, 0.51039886)
-texture = ExtResource("8_a1bqk")
+transform = Transform3D(0.13483822, 0, 0, 0, 0.18786602, 0, 0, 0, 1, -0.00540629, 0.5274092, 0.51039886)
+texture = ExtResource("11_g5nw0")
 
 [node name="Lamppost" type="Node" parent="." unique_id=1723567185]
 
@@ -253,9 +284,9 @@ shape = SubResource("BoxShape3D_8twhp")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamppost/Area3D" unique_id=1564780072]
 unique_name_in_owner = true
-transform = Transform3D(1, -5.820767e-11, 3.6379756e-12, -7.740381e-13, -1.2073352e-08, 0.21276598, -2.5801273e-12, -0.044326246, -2.5152818e-09, -1.0979295, 0.3906801, -0.107898824)
-visible = false
-light_energy = 5.0
+transform = Transform3D(1, -5.820767e-11, 3.6379756e-12, -7.740381e-13, -1.2073351e-08, 0.21276598, -2.5801273e-12, -0.044326246, -2.5152815e-09, 0.9020705, 0.3906801, -0.10789883)
+light_energy = 10.822
+light_bake_mode = 1
 shadow_enabled = true
 omni_range = 6.0
 
@@ -267,9 +298,9 @@ script = ExtResource("10_4snel")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lamppost/Area3D2" unique_id=1056547578]
 unique_name_in_owner = true
-transform = Transform3D(-0.99999976, -0.0007288341, -9.576759e-05, -9.667942e-05, 0.0012511486, 0.9999993, -0.0007287137, 0.999999, -0.0012512188, -3.0979047, 3.835484, 2.8556025)
-visible = false
-light_energy = 5.0
+transform = Transform3D(-0.99999976, -0.0007288341, -9.576759e-05, -9.667942e-05, 0.0012511486, 0.9999993, -0.0007287137, 0.999999, -0.0012512188, -1.0979047, 3.835484, 2.8556025)
+light_energy = 10.822
+light_bake_mode = 1
 shadow_enabled = true
 omni_range = 6.0
 
@@ -281,9 +312,9 @@ shape = SubResource("BoxShape3D_q0da8")
 script = ExtResource("11_g81ij")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lamppost/Area3D3" unique_id=1499897774]
-transform = Transform3D(1, 0, 0, 0, -5.674475e-08, 1, 0, -1, -5.674475e-08, -10.510899, 3.8361955, -2.434197)
-visible = false
-light_energy = 5.0
+transform = Transform3D(1, 0, 0, 0, -5.674475e-08, 1, 0, -1, -5.674475e-08, -6.5108986, 3.8361955, -2.434197)
+light_energy = 10.822
+light_bake_mode = 1
 shadow_enabled = true
 omni_range = 6.0
 
@@ -295,9 +326,9 @@ shape = SubResource("BoxShape3D_w5kdw")
 script = ExtResource("12_x5umw")
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lamppost/Area3D4" unique_id=2057442317]
-transform = Transform3D(-0.99999976, -0.0007288342, -9.5767595e-05, -9.667942e-05, 0.0012511485, 0.9999993, -0.00072871376, 0.999999, -0.0012512186, -10.510874, 3.835484, 2.8556025)
-visible = false
-light_energy = 5.0
+transform = Transform3D(-0.99999976, -0.00072883413, -9.576759e-05, -9.667942e-05, 0.0012511485, 0.9999993, -0.00072871376, 0.999999, -0.0012512187, -6.510874, 3.835484, 2.8556025)
+light_energy = 10.822
+light_bake_mode = 1
 shadow_enabled = true
 omni_range = 6.0
 
@@ -315,6 +346,24 @@ light_energy = 0.05
 
 [node name="Horror_Game_Starter_Kit" parent="." unique_id=1433319341 instance=ExtResource("16_g5nw0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, -3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1601907830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.104448, 1.8847656, 0.76205444)
+use_collision = true
+size = Vector3(0.82714844, 4.7695313, 31.559143)
+material = SubResource("StandardMaterial3D_gfc57")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1580304052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.147505, 1.8847656, 15.495369)
+use_collision = true
+size = Vector3(69.331055, 4.7695313, 1.0215607)
+material = SubResource("StandardMaterial3D_gfc57")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=43607936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.147505, 1.8847656, -14.589534)
+use_collision = true
+size = Vector3(69.331055, 4.7695313, 1.0215607)
+material = SubResource("StandardMaterial3D_gfc57")
 
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]
