@@ -7,5 +7,6 @@ func _ready():
 func _on_interact():
 	$"../SceneElements/CSGCylinder3D3".global_position.x += 100
 	$"../SceneElements/RigidBody3D".gravity_scale = 1
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.6).timeout
 	$AudioStreamPlayer3D.play()
+	$"../beholder".die = true

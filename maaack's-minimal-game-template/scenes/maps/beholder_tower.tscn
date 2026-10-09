@@ -22,7 +22,9 @@
 [ext_resource type="Script" uid="uid://c13q3ndeqpd0v" path="res://scenes/maps/button_2.gd" id="19_0naqv"]
 [ext_resource type="Script" uid="uid://qhfaiyai3sdg" path="res://scenes/maps/whire.gd" id="20_q2adx"]
 [ext_resource type="AudioStream" uid="uid://cbsvom4dxpst8" path="res://assets/audio/jixaw-metal-pipe-falling-sound.wav" id="22_ogcd4"]
-[ext_resource type="PackedScene" uid="uid://d1x2cr68228tw" path="res://psx_beholder_lazy_eye.tscn" id="23_pnmwd"]
+[ext_resource type="Script" uid="uid://dvthha00uragi" path="res://scenes/maps/beholder.gd" id="23_d8exd"]
+[ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="23_tyb0u"]
+[ext_resource type="PackedScene" uid="uid://bebw40bb6el8g" path="res://scenes/maps/psx_beholder_lazy_eye.tscn" id="24_d8exd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
 albedo_texture = ExtResource("2_blsk3")
@@ -69,14 +71,12 @@ radius = 1.2796887
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68odf"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_sqfns"]
+radius = 3.121729
+
 [node name="Beholder_Tower" type="Node3D" unique_id=225764706]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_si41g")
-
-[node name="Label3D" type="Label3D" parent="." unique_id=2080709058]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5766107, 0)
-text = "Beholder here
-"
 
 [node name="lights" type="Node3D" parent="." unique_id=896199144]
 
@@ -115,6 +115,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4572754, 0)
 use_collision = true
 radius = 0.96191406
 height = 1.0854492
+sides = 6
+material = SubResource("StandardMaterial3D_f3oyx")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="SceneElements/CSGCylinder3D2" unique_id=109142872]
+transform = Transform3D(0.8, 0, 0, 0, 1.0168762, 0, 0, 0, 0.8, 0, 0.39675182, 0)
+operation = 2
+use_collision = true
+radius = 0.96191406
+height = 0.30511475
 sides = 6
 material = SubResource("StandardMaterial3D_f3oyx")
 
@@ -235,7 +244,7 @@ transform = Transform3D(0.83699554, 0, 0, 0, 0.5918452, -0.5918452, 0, 0.5918452
 shape = SubResource("BoxShape3D_f3oyx")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("9_tm2oy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3471375, 0.23391628, 1.5096321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1818256, 6.7382374, -4.2445316)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=31978674]
 environment = SubResource("Environment_phkhe")
@@ -310,4 +319,26 @@ transform = Transform3D(-0.45506263, 0, 4.979248, 0, 4.9999995, 0, -4.979248, 0,
 size = Vector3(1, 3.7147217, 1.7670898)
 material = SubResource("StandardMaterial3D_68odf")
 
-[node name="psx_beholder_lazy_eye" parent="." unique_id=933705982 instance=ExtResource("23_pnmwd")]
+[node name="beholder" type="Node3D" parent="." unique_id=319847625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8036184, -0.17749405)
+script = ExtResource("23_d8exd")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="beholder" unique_id=239910777]
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="beholder/RigidBody3D" unique_id=1710636639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.069808125)
+shape = SubResource("SphereShape3D_sqfns")
+
+[node name="EnemyFOV" type="Area3D" parent="beholder/RigidBody3D" unique_id=670148063]
+transform = Transform3D(-1, 0, -8.742278e-08, -3.2533517e-08, 0.9281766, 0.37214005, 8.1143774e-08, 0.37214005, -0.9281766, 0, 0.14068365, 2.523416)
+script = ExtResource("23_tyb0u")
+horizontal_fov = 87.5
+vertical_fov = 45.0
+view_distance = 11.0
+metadata/_custom_type_script = "uid://b4wykaar5pl0n"
+
+[node name="psx_beholder_lazy_eye" parent="beholder/RigidBody3D" unique_id=1139354184 instance=ExtResource("24_d8exd")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[connection signal="player_entered" from="beholder/RigidBody3D/EnemyFOV" to="beholder" method="_on_enemy_fov_player_entered"]
