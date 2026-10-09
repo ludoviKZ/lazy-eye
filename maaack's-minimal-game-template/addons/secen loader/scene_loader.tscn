@@ -4,4 +4,3 @@
 
 [node name="SceneLoader" type="Node" unique_id=289728719]
 script = ExtResource("1_l0dhx")
-loading_screen_path = "uid://bylvh6psebf7h"
