@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://fd8nq2brq01p"]
+
+[ext_resource type="Script" uid="uid://dsoa4anmww8xo" path="res://scenes/menu/main_menuse.gd" id="1_0bmgf"]
+[ext_resource type="Script" uid="uid://11elta15og53" path="res://scenes/menu/start.gd" id="2_0i5nd"]
+[ext_resource type="Texture2D" uid="uid://dwbih8svu0dgs" path="res://assets/models/Immagine 2026-10-09 142659.jpg" id="2_io1v1"]
+[ext_resource type="Texture2D" uid="uid://cyj2y4wr2p2na" path="res://assets/models/logo corp.png" id="3_eogbi"]
+[ext_resource type="Script" uid="uid://dol6gneqn7ru7" path="res://scenes/menu/quit.gd" id="3_hm0vu"]
+
+[sub_resource type="Gradient" id="Gradient_wkc8r"]
+offsets = PackedFloat32Array(0.056603774, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gfc57"]
+gradient = SubResource("Gradient_wkc8r")
+fill_from = Vector2(0.48290598, 1)
+fill_to = Vector2(0.47863248, 0.008547009)
+
+[node name="MainMenuse" type="Node2D" unique_id=1631320226]
+script = ExtResource("1_0bmgf")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1206165111]
+
+[node name="MainMenu" type="Control" parent="UI" unique_id=1859252729]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI/MainMenu" unique_id=1387786581]
+position = Vector2(1090, 506.00006)
+scale = Vector2(64.117645, 36.142857)
+texture = ExtResource("2_io1v1")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/MainMenu" unique_id=1501088258]
+texture_filter = 2
+position = Vector2(1013.99994, 231.00002)
+scale = Vector2(2.0652754, 1.3116739)
+texture = ExtResource("3_eogbi")
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainMenu" unique_id=1140452151]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -54.0
+offset_right = 1282.0
+offset_bottom = 702.0
+scale = Vector2(2.5903285, 1.5199999)
+texture = SubResource("GradientTexture2D_gfc57")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu" unique_id=148905786]
+propagate_maximum_size = false
+layout_mode = 0
+offset_left = 234.0
+offset_top = 573.0
+offset_right = 1776.0
+offset_bottom = 1432.0
+
+[node name="Start" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=2104218778]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Quit")
+theme_override_font_sizes/font_size = 24
+text = "Start"
+script = ExtResource("2_0i5nd")
+
+[node name="Quit" type="Button" parent="UI/MainMenu/VBoxContainer" unique_id=850523234]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../Start")
+theme_override_font_sizes/font_size = 24
+text = "Quit
+"
+script = ExtResource("3_hm0vu")
+
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Start" to="UI/MainMenu/VBoxContainer/Start" method="_on_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Quit" to="UI/MainMenu/VBoxContainer/Quit" method="_on_pressed"]
