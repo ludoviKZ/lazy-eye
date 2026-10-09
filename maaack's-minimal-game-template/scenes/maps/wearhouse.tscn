@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dktlou7pxd3pw" path="res://scenes/Enemies_Stuff/patrol_enemy.tscn" id="24_whskq"]
 [ext_resource type="PackedScene" uid="uid://dmvsf60xkwckh" path="res://scenes/Enemies_Stuff/camera.tscn" id="25_lvmqm"]
 [ext_resource type="Script" uid="uid://dg6c76ay2mfyt" path="res://scenes/Enemies_Stuff/patrol_point.gd" id="26_lvmqm"]
+[ext_resource type="AudioStream" uid="uid://b2rohoehrgp7m" path="res://scenes/Interaction_Scenes/Lazy eye inc angry with effect.wav" id="27_a4sda"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
 albedo_texture = ExtResource("9_140bu")
@@ -257,7 +258,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8853426, 0.572639, 12.79605
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.621501, 0.572639, 12.796053)
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("10_u71su")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1381083, 1.96242)
+transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 0, 3.1381083, 1.96242)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1114985549]
 environment = SubResource("Environment_3n4fc")
@@ -342,3 +343,10 @@ idle_pitch = -45.0
 
 [node name="railing_catwalk8" parent="." unique_id=888540920 instance=ExtResource("20_eb6h0")]
 transform = Transform3D(0.026058013, 0, -1.003019, 0, 1.4523257, 0, 1.6252325, 0, 0.016081812, 12.847475, 0.54156566, 0.8698783)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=292888468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0467815, 8.619649)
+stream = ExtResource("27_a4sda")
+volume_db = 9.505
+pitch_scale = 0.84
+autoplay = true

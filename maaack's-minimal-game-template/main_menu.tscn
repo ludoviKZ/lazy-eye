@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://eqicbira6acf"]
 
-[ext_resource type="Texture2D" uid="uid://bq0ig3r0nyc36" path="res://scenes/menu/menuss.png" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://etgdihdxlv0f" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://qfolx47xwnrx" path="res://scenes/maps/MenuBackground.tscn" id="2_jix8l"]
+[ext_resource type="FontFile" uid="uid://dxnbsu605uq3k" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="3_fu7sn"]
 
 [node name="MainMenu" type="Control" unique_id=828036405]
 layout_mode = 3
@@ -9,24 +11,60 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7vrkn")
 
-[node name="BackgroundImage" type="TextureRect" parent="." unique_id=1177815381]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-texture = ExtResource("1_06t4h")
-
-[node name="Background" type="ColorRect" parent="BackgroundImage" unique_id=492252874]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1079.0
-color = Color(0.19607843, 0.19607843, 0.19607843, 0.63529414)
-
-[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=744262237]
-layout_mode = 0
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=480557438]
+layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(32.06542, 21.225378)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=347496063]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="wearhouse" parent="SubViewportContainer/SubViewport" unique_id=1283859626 instance=ExtResource("2_jix8l")]
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport/wearhouse" unique_id=1264312854]
+transform = Transform3D(0.26328677, 0, -0.9647176, 0, 1, 0, 0.9647176, 0, 0.26328677, -8.587769, 6.4050817, 21.451752)
+current = true
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=744262237]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 400.0
+offset_right = 297.0
+offset_bottom = 656.0
+
+[node name="NewGame" type="Button" parent="MenuButtons" unique_id=211149747]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 48
+text = "New Game
+"
+
+[node name="Quit" type="Button" parent="MenuButtons" unique_id=1136813164]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 48
+text = "Quit
+"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1253031752]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118777274]
+[node name="Label" type="Label" parent="." unique_id=1237219548]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 64.0
+offset_top = 150.0
+offset_right = 64.0
+offset_bottom = 263.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 128
+text = "Lazy Eye Inc."
