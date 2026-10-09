@@ -22,8 +22,6 @@
 [ext_resource type="Script" uid="uid://c13q3ndeqpd0v" path="res://scenes/maps/button_2.gd" id="19_0naqv"]
 [ext_resource type="Script" uid="uid://qhfaiyai3sdg" path="res://scenes/maps/whire.gd" id="20_q2adx"]
 [ext_resource type="AudioStream" uid="uid://cbsvom4dxpst8" path="res://assets/audio/jixaw-metal-pipe-falling-sound.wav" id="22_ogcd4"]
-[ext_resource type="PackedScene" uid="uid://d1x2cr68228tw" path="res://psx_beholder_lazy_eye.tscn" id="23_pnmwd"]
-[ext_resource type="PackedScene" uid="uid://cfedjrvwh1bee" path="res://scenes/Enemies_Stuff/enemy_fov.tscn" id="24_tyb0u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
 albedo_texture = ExtResource("2_blsk3")
@@ -161,22 +159,6 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.82660383, 0.17619646,
 [node name="button_122" parent="SceneElements" unique_id=2058293315 instance=ExtResource("8_uk1hq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.67753386, -2.4431953)
 
-[node name="AreaLight3D" type="AreaLight3D" parent="SceneElements/button_122" unique_id=253884223]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.89225346, 0.085220575)
-light_color = Color(0.57254905, 1, 0.27450982, 1)
-light_energy = 16.0
-area_attenuation = 3.105
-area_size = Vector2(1, 2.6173625)
-
-[node name="AreaLight3D2" type="AreaLight3D" parent="SceneElements/button_122" unique_id=2066031697]
-transform = Transform3D(0.1, 0, 0, 0, -0.1, 8.742279e-09, 0, -8.742279e-09, -0.1, 0, 0.9184639, 4.677789)
-light_color = Color(0.57254905, 1, 0.27450982, 1)
-light_energy = 16.0
-light_bake_mode = 1
-area_range = 2.199
-area_attenuation = 3.105
-area_size = Vector2(1, 2.6173625)
-
 [node name="button_123" parent="SceneElements" unique_id=310129298 instance=ExtResource("8_uk1hq")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.0023860633, -0.67753386, 2.3270736)
 
@@ -271,7 +253,7 @@ shape = SubResource("SphereShape3D_gfc57")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="button1" unique_id=625013287]
 stream = ExtResource("18_hrai0")
-volume_db = 1.0
+volume_db = -33.71
 
 [node name="button2" type="Node3D" parent="." unique_id=1366479996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61046743, 11.021869)
@@ -287,7 +269,7 @@ shape = SubResource("SphereShape3D_f3oyx")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="button2" unique_id=381842602]
 stream = ExtResource("18_hrai0")
-volume_db = 1.0
+volume_db = -33.71
 
 [node name="whire" type="Node3D" parent="." unique_id=853792911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3594537, 4.4861174, -4.410724)
@@ -303,7 +285,7 @@ shape = SubResource("SphereShape3D_68odf")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="whire" unique_id=763887984]
 stream = ExtResource("22_ogcd4")
-volume_db = 1.0
+volume_db = -4.156
 
 [node name="background palaces" type="Node3D" parent="." unique_id=1745950536]
 
@@ -326,19 +308,3 @@ material = SubResource("StandardMaterial3D_68odf")
 transform = Transform3D(-0.45506263, 0, 4.979248, 0, 4.9999995, 0, -4.979248, 0, -0.45506263, -15.756634, -4.2001247, 12.772697)
 size = Vector3(1, 3.7147217, 1.7670898)
 material = SubResource("StandardMaterial3D_68odf")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="background palaces/CSGBox3D4" unique_id=1175965051]
-transform = Transform3D(0.10000002, 0, 0, 0, 0.10000002, 0, 0, 0, 0.10000002, 2.3061297, 1.1301188, 1.7364838)
-light_color = Color(0.64705884, 1, 0, 1)
-light_energy = 16.0
-omni_range = 8.956
-omni_attenuation = 0.368
-
-[node name="psx_beholder_lazy_eye2" parent="." unique_id=558835551 instance=ExtResource("23_pnmwd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018817425, 1.5142133, -0.14237595)
-
-[node name="EnemyFOV" parent="psx_beholder_lazy_eye2" unique_id=513511883 instance=ExtResource("24_tyb0u")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-visible = false
-horizontal_fov = 69.5
-vertical_fov = 39.5

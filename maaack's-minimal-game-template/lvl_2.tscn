@@ -240,6 +240,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 1)
 [node name="tv" type="StaticBody3D" parent="." unique_id=1187455519]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 0, -3)
 
+[node name="tv_mp_12" parent="tv" unique_id=2140919973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="tv_table_42" parent="tv" unique_id=775456686]
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tv" unique_id=998328981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028686523, 0.7487793, 0)
 shape = SubResource("BoxShape3D_q0da8")
@@ -250,12 +255,18 @@ light_energy = 16.0
 area_range = 5.957
 area_attenuation = 1.632
 
+[node name="PatrolEnemy" parent="tv" unique_id=728089667]
+transform = Transform3D(-0.49992386, 0, -0.008726197, 0, 0.5, 0, 0.008726197, 0, -0.49992386, 0.08748627, 0.031011462, 4.044496)
+
 [node name="SOFA" type="StaticBody3D" parent="." unique_id=53082921]
 transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, -19.932835, 0.2093873, 6.921371)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SOFA" unique_id=1793579376]
 transform = Transform3D(0.99999994, 0, -2.842171e-14, 0, 0.99999994, 0, 2.842171e-14, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("BoxShape3D_fxdce")
+
+[node name="sofa_52" parent="SOFA" unique_id=1167433631]
+transform = Transform3D(0.9999998, 0, -5.684342e-14, 0, 0.9999998, 0, 5.684342e-14, 0, 0.9999998, 0.0010991096, -0.12316897, -0.49145842)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1325559509]
 environment = SubResource("Environment_8twhp")
