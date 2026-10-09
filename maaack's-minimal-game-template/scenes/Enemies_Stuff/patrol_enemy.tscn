@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dumwhcgkmvbng" path="res://scenes/Enemies_Stuff/detection_meter.gd" id="4_mwo18"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gfc57"]
+radius = 0.2109375
 height = 2.8533936
 
 [node name="PatrolEnemy" type="CharacterBody3D" unique_id=728089667]

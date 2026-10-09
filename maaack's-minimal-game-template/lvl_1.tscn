@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://do6gcohofmocn" path="res://assets/Textures/concrete_2.png" id="15_v6ada"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gfc57"]
+radius = 3.002101
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_x5umw"]
 
@@ -63,7 +64,7 @@ script = ExtResource("2_akum8")
 metadata/_custom_type_script = "uid://cqii4r67h2f2j"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Elevator2/InteractionArea3D" unique_id=745107343]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.71404076, 0.8020935, 0.14685321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71866035, 0.8020935, -0.41758752)
 shape = SubResource("SphereShape3D_gfc57")
 
 [node name="Sprite3D" type="Sprite3D" parent="Elevator2" unique_id=1297191081]
