@@ -5,4 +5,4 @@ func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	SceneLoader.load_scene("res://scenes/maps/interior_1.tscn")
+	SceneLoader.load_scene("res://scenes/maps/wearhouse.tscn")
