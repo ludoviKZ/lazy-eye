@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpijrkeegikif"
-path="res://.godot/imported/Color_B_Gradient.jpg-aae6d0d7664c47e4f6870bc0a602d260.ctex"
+uid="uid://bq0ig3r0nyc36"
+path="res://.godot/imported/menuss.png-ad046c14671f3cf4d1962c0ca927a067.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Color_B_Gradient.jpg"
-dest_files=["res://.godot/imported/Color_B_Gradient.jpg-aae6d0d7664c47e4f6870bc0a602d260.ctex"]
+source_file="res://scenes/menu/menuss.png"
+dest_files=["res://.godot/imported/menuss.png-ad046c14671f3cf4d1962c0ca927a067.ctex"]
 
 [params]
 

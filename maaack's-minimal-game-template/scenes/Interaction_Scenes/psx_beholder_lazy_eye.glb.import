@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjnfowdn26bv7"
-path="res://.godot/imported/psx_beholder_lazy_eye.glb-270ef04a183a8cde89c90db9824d76ae.scn"
+uid="uid://4mq5wjuybpvh"
+path="res://.godot/imported/psx_beholder_lazy_eye.glb-9351042d9b89d8a44d726d1664247ce8.scn"
 
 [deps]
 
-source_file="res://psx_beholder_lazy_eye.glb"
-dest_files=["res://.godot/imported/psx_beholder_lazy_eye.glb-270ef04a183a8cde89c90db9824d76ae.scn"]
+source_file="res://scenes/Interaction_Scenes/psx_beholder_lazy_eye.glb"
+dest_files=["res://.godot/imported/psx_beholder_lazy_eye.glb-9351042d9b89d8a44d726d1664247ce8.scn"]
 
 [params]
 

@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
 [ext_resource type="Texture2D" uid="uid://do6gcohofmocn" path="res://assets/Textures/concrete_2.png" id="15_v6ada"]
-[ext_resource type="Environment" uid="uid://bjshmgii016qo" path="res://addons/psx_skyboxes/environments/night_moon.tres" id="16_g5nw0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gfc57"]
 
@@ -39,6 +38,17 @@ albedo_texture = ExtResource("4_clg6b")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3oyx"]
 albedo_texture = ExtResource("15_v6ada")
+
+[sub_resource type="Environment" id="Environment_v6ada"]
+glow_enabled = true
+glow_intensity = 1.53
+glow_bloom = 0.48
+fog_enabled = true
+fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
+fog_light_energy = 0.65
+fog_density = 0.1089
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.4676
 
 [node name="LVL1" type="Node" unique_id=289565252]
 script = ExtResource("1_g5nw0")
@@ -66,7 +76,6 @@ texture = ExtResource("10_v6ada")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("2_okdh5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.904406, 3.227972, 1)
-visible = false
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1824486393]
 navigation_mesh = SubResource("NavigationMesh_x5umw")
@@ -81,7 +90,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3
 light_energy = 5.0
 light_indirect_energy = 16.0
 light_size = 1.0
-light_bake_mode = 1
 shadow_enabled = true
 omni_range = 6.0
 
@@ -93,7 +101,6 @@ mesh = ExtResource("4_okdh5")
 [node name="OmniLight3D" type="OmniLight3D" parent="PsxDownturningLamppost2" unique_id=537180713]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.1163054, 0.56580305)
 light_energy = 5.0
-light_bake_mode = 1
 shadow_enabled = true
 omni_range = 6.0
 
@@ -165,7 +172,7 @@ stream = ExtResource("10_akum8")
 script = ExtResource("11_g81ij")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lamppost/Area3D3" unique_id=1499897774]
-transform = Transform3D(1, 0, 0, 0, -5.674475e-08, 1, 0, -1, -5.674475e-08, -10.623646, 3.8361955, -2.0929043)
+transform = Transform3D(1, 0, 0, 0, -5.674475e-08, 1, 0, -1, -5.674475e-08, -6.5108986, 3.8361955, -2.434197)
 visible = false
 light_energy = 10.822
 light_bake_mode = 1
@@ -183,7 +190,7 @@ stream = ExtResource("10_akum8")
 script = ExtResource("12_x5umw")
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lamppost/Area3D4" unique_id=2057442317]
-transform = Transform3D(-0.99999976, -0.00072883413, -9.576759e-05, -9.667942e-05, 0.0012511485, 0.9999993, -0.00072871376, 0.999999, -0.0012512187, -10.437935, 3.835484, 2.8556025)
+transform = Transform3D(-0.99999976, -0.00072883413, -9.576759e-05, -9.667942e-05, 0.0012511485, 0.9999993, -0.00072871376, 0.999999, -0.0012512187, -6.510874, 3.835484, 2.8556025)
 visible = false
 light_energy = 10.822
 light_bake_mode = 1
@@ -227,10 +234,7 @@ size = Vector3(51.256348, 0.001, 41.183105)
 material = SubResource("StandardMaterial3D_f3oyx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=563117407]
-environment = ExtResource("16_g5nw0")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=778889503]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0821667, 0, 0)
+environment = SubResource("Environment_v6ada")
 
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]

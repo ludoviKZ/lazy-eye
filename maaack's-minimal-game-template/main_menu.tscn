@@ -1,50 +1,32 @@
 [gd_scene format=3 uid="uid://eqicbira6acf"]
 
-[ext_resource type="Texture2D" uid="uid://bi2ixu2xxcq0d" path="res://menuss.png" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://etgdihdxlv0f" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://bq0ig3r0nyc36" path="res://scenes/menu/menuss.png" id="1_06t4h"]
 
-[node name="MainMenu" type="Control" unique_id=2011981186]
+[node name="MainMenu" type="Control" unique_id=828036405]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7vrkn")
 
-[node name="Label" type="Label" parent="." unique_id=725081192]
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=1177815381]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_06t4h")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Label" unique_id=915274952]
+[node name="Background" type="ColorRect" parent="BackgroundImage" unique_id=492252874]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1079.0
+color = Color(0.19607843, 0.19607843, 0.19607843, 0.63529414)
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=744262237]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="Label/VBoxContainer" unique_id=1258075008]
-layout_mode = 2
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1253031752]
 
-[node name="Button2" type="Button" parent="Label/VBoxContainer" unique_id=1077618039]
-layout_mode = 2
-
-[node name="Button3" type="Button" parent="Label/VBoxContainer" unique_id=494716421]
-layout_mode = 2
-
-[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=531965015]
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=920242670]
-layout_mode = 0
-offset_right = 1919.0
-offset_bottom = 1079.0
-texture = ExtResource("1_06t4h")
-stretch_mode = 6
-
-[node name="ColorRect" type="ColorRect" parent="TextureRect" unique_id=1791238354]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16862746, 0.16862746, 0.16862746, 0.49411765)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1118777274]

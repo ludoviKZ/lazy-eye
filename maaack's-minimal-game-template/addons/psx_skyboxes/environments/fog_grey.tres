@@ -1,16 +1,17 @@
 [gd_resource type="Environment" format=3 uid="uid://b64v20qen0aff"]
 
+[ext_resource type="Material" path="res://addons/psx_skyboxes/materials/cube/fog_grey.tres" id="1"]
+
+[sub_resource type="Sky" id="Sky_1"]
+sky_material = ExtResource("1")
+
 [resource]
 resource_name = "fog_grey"
 background_mode = 2
+sky = SubResource("Sky_1")
 ambient_light_source = 3
 reflected_light_source = 2
-glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.716, 0.716, 0.701, 1)
-fog_density = 0.04
+fog_density = 0.012
 fog_sky_affect = 0.0
-adjustment_enabled = true
-adjustment_brightness = 0.93
-adjustment_contrast = 1.085
-adjustment_saturation = 0.52
