@@ -4,9 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bx0u6u3mspgo8" path="res://scenes/Enemies_Stuff/modern_rebel_soldier.tscn" id="2_0lf7x"]
 [ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="3_ypcfe"]
 [ext_resource type="Script" uid="uid://dumwhcgkmvbng" path="res://scenes/Enemies_Stuff/detection_meter.gd" id="4_mwo18"]
+[ext_resource type="Script" uid="uid://eculh1r3ymlp" path="res://scenes/Enemies_Stuff/area_3d.gd" id="5_0lf7x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gfc57"]
 height = 2.8533936
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gfc57"]
+radius = 1.1158489
 
 [node name="PatrolEnemy" type="CharacterBody3D" unique_id=728089667]
 transform = Transform3D(-0.9998477, 0, -0.017452395, 0, 1, 0, 0.017452395, 0, -0.9998477, 0, 0, 0)
@@ -36,3 +40,12 @@ metadata/_custom_type_script = "uid://b4wykaar5pl0n"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.754066, -0.06285739)
 script = ExtResource("4_mwo18")
 metadata/_custom_type_script = "uid://dumwhcgkmvbng"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1323785175]
+script = ExtResource("5_0lf7x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1049307189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6455655, 0)
+shape = SubResource("SphereShape3D_gfc57")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
