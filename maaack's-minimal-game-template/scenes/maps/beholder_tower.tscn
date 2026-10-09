@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://c13q3ndeqpd0v" path="res://scenes/maps/button_2.gd" id="19_0naqv"]
 [ext_resource type="Script" uid="uid://qhfaiyai3sdg" path="res://scenes/maps/whire.gd" id="20_q2adx"]
 [ext_resource type="AudioStream" uid="uid://cbsvom4dxpst8" path="res://assets/audio/jixaw-metal-pipe-falling-sound.wav" id="22_ogcd4"]
+[ext_resource type="PackedScene" uid="uid://d1x2cr68228tw" path="res://psx_beholder_lazy_eye.tscn" id="23_pnmwd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
 albedo_texture = ExtResource("2_blsk3")
@@ -308,3 +309,5 @@ material = SubResource("StandardMaterial3D_68odf")
 transform = Transform3D(-0.45506263, 0, 4.979248, 0, 4.9999995, 0, -4.979248, 0, -0.45506263, -15.756634, -4.2001247, 12.772697)
 size = Vector3(1, 3.7147217, 1.7670898)
 material = SubResource("StandardMaterial3D_68odf")
+
+[node name="psx_beholder_lazy_eye" parent="." unique_id=933705982 instance=ExtResource("23_pnmwd")]
