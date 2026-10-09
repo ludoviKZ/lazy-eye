@@ -13,6 +13,7 @@ script = ExtResource("1_h00vy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47882676, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1737136225 groups=["player"]]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_8twhp")
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=174141585 groups=["player"]]

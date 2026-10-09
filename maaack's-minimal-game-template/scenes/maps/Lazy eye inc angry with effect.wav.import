@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dplhj16bnom7x"
+path="res://.godot/imported/Lazy eye inc angry with effect.wav-55b0981fef78db54854e06585468f6e0.sample"
+
+[deps]
+
+source_file="res://scenes/maps/Lazy eye inc angry with effect.wav"
+dest_files=["res://.godot/imported/Lazy eye inc angry with effect.wav-55b0981fef78db54854e06585468f6e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
