@@ -4,3 +4,5 @@
 
 [node name="Node" type="Node" unique_id=410654856]
 script = ExtResource("1_t1ahq")
+fade_out_duration = 1.5
+fade_in_duration = 1.5
