@@ -26,15 +26,19 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
 
 [sub_resource type="Environment" id="Environment_pel0d"]
+background_energy_multiplier = 3.29
 glow_enabled = true
 glow_intensity = 1.53
 glow_bloom = 0.48
 fog_enabled = true
 fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
-fog_light_energy = 0.65
-fog_density = 0.1089
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.4676
+fog_light_energy = 0.68
+fog_density = 0.0759
+volumetric_fog_density = 0.5555
+adjustment_enabled = true
+adjustment_brightness = 0.82
+adjustment_contrast = 1.08
+adjustment_saturation = 0.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_chhce"]
 size = Vector3(9.398531, 4.1926003, 0.8019409)
@@ -208,6 +212,16 @@ transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=966359600]
 environment = SubResource("Environment_pel0d")
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="WorldEnvironment" unique_id=1174562515]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742279e-08, 0, -8.742279e-08, -1, 1.3550267, 2.817665, -48.402405)
+light_color = Color(0.57254905, 1, 0.27450982, 1)
+light_energy = 16.0
+light_specular = 8.916
+light_bake_mode = 1
+area_range = 6.288
+area_attenuation = 3.342
+area_size = Vector2(2.0967655, 3.9665852)
 
 [node name="PatrolEnemy" parent="." unique_id=728089667 node_paths=PackedStringArray("route") instance=ExtResource("11_lkdba")]
 transform = Transform3D(-0.9998477, 0, -0.017452395, 0, 1, 0, 0.017452395, 0, -0.9998477, -12.564083, 0, -27.74384)

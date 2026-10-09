@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dyk8fv7lil7pk" path="res://addons/maaacks_game_template/base/assets/cardboard_box_2.glb" id="1_dc8jb"]
 [ext_resource type="PackedScene" uid="uid://c5qj4x1v5pqit" path="res://assets/models/wooden_crate_5.glb" id="2_rbq5a"]
 [ext_resource type="PackedScene" uid="uid://dml2sei6gixmc" path="res://assets/models/beam_4.glb" id="3_abgkd"]
-[ext_resource type="PackedScene" uid="uid://de67roamebsbm" path="res://assets/models/button_12.glb" id="4_e66fk"]
 [ext_resource type="PackedScene" uid="uid://cqj46vyj1a676" path="res://assets/models/catwalk_1.glb" id="5_8l6ko"]
 [ext_resource type="PackedScene" uid="uid://d4nx2bbw838a2" path="res://assets/models/door_3_loose.glb" id="6_50f8k"]
 [ext_resource type="PackedScene" uid="uid://dgfqy3jbtumbw" path="res://assets/models/shutter_roller.glb" id="6_ebbm7"]
@@ -23,20 +22,21 @@
 [ext_resource type="PackedScene" uid="uid://dcfcmluwyxwh2" path="res://assets/models/railing_catwalk.glb" id="20_eb6h0"]
 [ext_resource type="PackedScene" uid="uid://brkuagg50p33s" path="res://assets/models/floor_plate.glb" id="21_6itv4"]
 [ext_resource type="PackedScene" uid="uid://bfm7tnea5jmt6" path="res://assets/models/pallet_drums.glb" id="21_ebbm7"]
+[ext_resource type="PackedScene" uid="uid://dr23y6d47l7ha" path="res://assets/models/ceiling_lamp_4_1_a_off.glb" id="25_lvmqm"]
+[ext_resource type="AudioStream" uid="uid://dplhj16bnom7x" path="res://scenes/maps/Lazy eye inc angry with effect.wav" id="25_whskq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
 albedo_texture = ExtResource("9_140bu")
 
-[sub_resource type="Environment" id="Environment_3n4fc"]
-glow_enabled = true
-glow_intensity = 1.53
-glow_bloom = 0.48
+[sub_resource type="Environment" id="Environment_n4y2n"]
 fog_enabled = true
-fog_light_color = Color(0.26526117, 0.2906849, 0.33024272, 1)
-fog_light_energy = 0.65
-fog_density = 0.1089
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.4676
+fog_light_color = Color(0.21401742, 0.23577034, 0.2696176, 1)
+fog_light_energy = 1.05
+fog_density = 0.2078
+adjustment_enabled = true
+adjustment_brightness = 0.89
+adjustment_contrast = 1.135
+adjustment_saturation = 0.47
 
 [node name="wearhouse" type="Node3D" unique_id=1283859626]
 
@@ -52,8 +52,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51677775, 8.6651945)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4698467, 0.5322056, 0)
 
 [node name="beam_42" parent="NavigationRegion3D" unique_id=106605885 instance=ExtResource("3_abgkd")]
-
-[node name="button_122" parent="NavigationRegion3D" unique_id=310129298 instance=ExtResource("4_e66fk")]
 
 [node name="shutter_roller2" parent="NavigationRegion3D" unique_id=1270120330 instance=ExtResource("6_ebbm7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.94262, 0, 12.142318)
@@ -75,6 +73,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.918098, 0, 24.997055)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1238724505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9745483, 0, 12.640442)
+use_collision = true
+size = Vector3(32.693726, 1, 26.280884)
+material = SubResource("StandardMaterial3D_gfc57")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D" unique_id=557336133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9745483, 8.543265, 12.640442)
 use_collision = true
 size = Vector3(32.693726, 1, 26.280884)
 material = SubResource("StandardMaterial3D_gfc57")
@@ -206,15 +210,15 @@ size = Vector3(16.420593, 10.003906, 10.68634)
 material = SubResource("StandardMaterial3D_gfc57")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2118121577]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.371815, 4.501953, 12.653587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.371815, 4.501953, 12.479198)
 use_collision = true
-size = Vector3(0.001, 10.003906, 26.254593)
+size = Vector3(0.001, 10.003906, 26.60337)
 material = SubResource("StandardMaterial3D_gfc57")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=61436271]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.234161, 4.501953, 12.653587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.234161, 4.501953, 12.541382)
 use_collision = true
-size = Vector3(0.001, 10.003906, 26.254593)
+size = Vector3(0.001, 10.003906, 26.479004)
 material = SubResource("StandardMaterial3D_gfc57")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D" unique_id=355312654]
@@ -254,7 +258,67 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8853426, 0.572639, 12.79605
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.621501, 0.572639, 12.796053)
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("10_u71su")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1381083, 1.96242)
+transform = Transform3D(-0.9659258, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, -0.9659258, 0, 2.1127748, 1.96242)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1114985549]
-environment = SubResource("Environment_3n4fc")
+environment = SubResource("Environment_n4y2n")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1349771115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.838, 6.517441, 12.807693)
+stream = ExtResource("25_whskq")
+pitch_scale = 0.85
+autoplay = true
+
+[node name="ceiling_lamp_4_1_a_off2" parent="." unique_id=1809838033 instance=ExtResource("25_lvmqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8.127618, 5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ceiling_lamp_4_1_a_off2" unique_id=1461095698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46668625, 0)
+light_energy = 13.126
+light_size = 1.0
+omni_range = 4096.0
+
+[node name="ceiling_lamp_4_1_a_off3" parent="." unique_id=82805295 instance=ExtResource("25_lvmqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8.127618, 5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ceiling_lamp_4_1_a_off3" unique_id=1009829665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46668625, 0)
+light_energy = 13.126
+light_size = 1.0
+omni_range = 4096.0
+
+[node name="ceiling_lamp_4_1_a_off4" parent="." unique_id=772428628 instance=ExtResource("25_lvmqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 8.127618, 5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ceiling_lamp_4_1_a_off4" unique_id=473807149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46668625, 0)
+light_energy = 13.126
+light_size = 1.0
+omni_range = 4096.0
+
+[node name="ceiling_lamp_4_1_a_off5" parent="." unique_id=1255859673 instance=ExtResource("25_lvmqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 8.127618, 20)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ceiling_lamp_4_1_a_off5" unique_id=26429325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46668625, 0)
+light_energy = 13.126
+light_size = 1.0
+omni_range = 4096.0
+
+[node name="ceiling_lamp_4_1_a_off6" parent="." unique_id=725471907 instance=ExtResource("25_lvmqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 8.127618, 20)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ceiling_lamp_4_1_a_off6" unique_id=570797613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46668625, 0)
+light_energy = 13.126
+light_size = 1.0
+omni_range = 4096.0
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="." unique_id=869312300]
+transform = Transform3D(-1, -7.642742e-15, 8.742278e-08, 0, -1, -8.742278e-08, 8.742278e-08, -8.742278e-08, 1, -5.785707, 3.8614917, 25.743155)
+light_color = Color(0.57254905, 1, 0.27450982, 1)
+light_energy = 16.0
+light_bake_mode = 1
+area_range = 2.4
+area_attenuation = 3.342
+area_size = Vector2(1, 1.104784)
