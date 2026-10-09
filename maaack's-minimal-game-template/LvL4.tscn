@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://bshydkcpn2e12" path="res://elevator_2.gd" id="30_xf4ow"]
 [ext_resource type="Script" uid="uid://cqii4r67h2f2j" path="res://scenes/Interaction_Scenes/interact_area_3d.gd" id="31_23c1y"]
 [ext_resource type="PackedScene" uid="uid://c4ht7cv35gm8x" path="res://assets/elevator_1.glb" id="32_q0c7e"]
+[ext_resource type="PackedScene" uid="uid://besgy04tqh86g" path="res://assets/chair_mp_5.glb" id="35_v4tsq"]
 
 [sub_resource type="Environment" id="Environment_8twhp"]
 ambient_light_source = 2
@@ -304,37 +305,37 @@ transform = Transform3D(3.929689, 0, 0, 0, 1.1944013, 0, 0, 0, 3.0743515, 6.9508
 transform = Transform3D(-2.3967402, 0, -5.5034118e-08, 0, 0.64747, 0, 2.0952969e-07, 0, -0.62951696, 1.3013618, -0.7882546, -8.336581)
 
 [node name="meat_12" parent="NavigationRegion3D" unique_id=457837430 instance=ExtResource("16_4e40w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.379348, -4.1735687, -3.75081)
+transform = Transform3D(0.94658023, 0, -0.3224684, 0, 1, 0, 0.3224684, 0, 0.94658023, 12.379348, -4.519595, -4.3109655)
 
 [node name="meat_13" parent="NavigationRegion3D" unique_id=564097801 instance=ExtResource("16_4e40w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.369276, -4.1735687, -3.7094615)
+transform = Transform3D(-0.43079236, 0, 0.9024511, 0, 1, 0, -0.9024511, 0, -0.43079236, 14.123049, -4.4729896, -4.2665777)
 
 [node name="meat_14" parent="NavigationRegion3D" unique_id=1014157895 instance=ExtResource("16_4e40w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.586908, -4.1735687, -0.047589593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.254183, -4.4824414, -0.047589593)
 
 [node name="pistol_mp_12" parent="NavigationRegion3D" unique_id=1031150535 instance=ExtResource("17_jsggf")]
-transform = Transform3D(-0.4446493, 0.89570475, 3.9152496e-08, 0, -4.371139e-08, 1, 0.89570475, 0.4446493, 1.943624e-08, 13.32911, -4.152118, -3.7497764)
+transform = Transform3D(-0.4446493, 0.89570475, 3.9152496e-08, 0, -4.371139e-08, 1, 0.89570475, 0.4446493, 1.943624e-08, 13.14351, -4.4601545, -4.223232)
 
 [node name="pistol_mp_13" parent="NavigationRegion3D" unique_id=225380572 instance=ExtResource("17_jsggf")]
-transform = Transform3D(-0.48277324, 0.8757454, 3.828005e-08, 0, -4.371139e-08, 1, 0.8757454, 0.48277324, 2.110269e-08, 16.56625, -4.152118, -3.7497764)
+transform = Transform3D(-0.48277324, 0.8757454, 3.828005e-08, 0, -4.371139e-08, 1, 0.8757454, 0.48277324, 2.110269e-08, 16.321207, -4.4670796, -4.4145026)
 
 [node name="pistol_mp_14" parent="NavigationRegion3D" unique_id=228391128 instance=ExtResource("17_jsggf")]
-transform = Transform3D(0.8363666, -0.54817057, -2.3961297e-08, 0, -4.371139e-08, 1, -0.54817057, -0.8363666, -3.6558745e-08, 16.56625, -4.152118, 0.011574745)
+transform = Transform3D(0.8363666, -0.54817057, -2.3961297e-08, 0, -4.371139e-08, 1, -0.54817057, -0.8363666, -3.6558745e-08, 16.233524, -4.460991, 0.011574745)
 
 [node name="shotgun_ammo_12" parent="NavigationRegion3D" unique_id=66540033 instance=ExtResource("18_qwiyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.515388, -4.173396, -3.7361348)
+transform = Transform3D(-0.37688038, 0, -0.92626196, 0, 1, 0, 0.92626196, 0, -0.37688038, 15.296332, -4.4817615, -4.179059)
 
 [node name="shotgun_ammo_13" parent="NavigationRegion3D" unique_id=588015940 instance=ExtResource("18_qwiyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.568024, -4.173396, -3.8605113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.082235, -4.4935513, -4.3290987)
 
 [node name="shotgun_ammo_14" parent="NavigationRegion3D" unique_id=1101262439 instance=ExtResource("18_qwiyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.232222, -4.173396, -3.5819986)
+transform = Transform3D(-0.094555095, 0, 0.99551964, 0, 1, 0, -0.99551964, 0, -0.094555095, 15.239202, -4.4796286, -4.2885857)
 
 [node name="syringe_mp_12" parent="NavigationRegion3D" unique_id=1758043373 instance=ExtResource("19_8c454")]
-transform = Transform3D(1.3810053, 0, 0.5855121, 0, 1.5, 0, -0.5855121, 0, 1.3810053, 15.651194, -4.1700187, -0.040764272)
+transform = Transform3D(1.3810053, 0, 0.5855121, 0, 1.5, 0, -0.5855121, 0, 1.3810053, 15.318468, -4.4788914, -0.040764272)
 
 [node name="open_book_mp_12" parent="NavigationRegion3D" unique_id=1034784959 instance=ExtResource("20_bpfmm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.573745, -4.1729774, -0.08440657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.241019, -4.48185, -0.08440657)
 
 [node name="lamp_5_1_on2" parent="NavigationRegion3D" unique_id=817081983 instance=ExtResource("21_yvk0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.909525, -1.6809167, -4.8687406)
@@ -489,8 +490,62 @@ use_collision = true
 size = Vector3(1.0952148, 0.001, 0.814621)
 material = SubResource("StandardMaterial3D_k6a4r")
 
+[node name="pistol_mp_15" parent="NavigationRegion3D" unique_id=174994341 instance=ExtResource("17_jsggf")]
+transform = Transform3D(0.86931604, 0.49425665, 2.1604643e-08, 0, -4.371139e-08, 1, 0.49425665, -0.86931604, -3.7999012e-08, 2.0630553, -2.460544, 1.3293605)
+
+[node name="shotgun_ammo_15" parent="NavigationRegion3D" unique_id=968774934 instance=ExtResource("18_qwiyx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1790767, -2.4780831, 2.0298183)
+
+[node name="shotgun_ammo_16" parent="NavigationRegion3D" unique_id=1621750490 instance=ExtResource("18_qwiyx")]
+transform = Transform3D(0.7098585, 0, -0.70434433, 0, 1, 0, 0.70434433, 0, 0.7098585, 2.1790767, -2.4780831, 2.2287886)
+
+[node name="shotgun_ammo_17" parent="NavigationRegion3D" unique_id=145660248 instance=ExtResource("18_qwiyx")]
+transform = Transform3D(0.9043141, 0, -0.42686766, 0, 1, 0, 0.42686766, 0, 0.9043141, 2.0428886, -2.4780831, 2.0980165)
+
+[node name="syringe_mp_13" parent="NavigationRegion3D" unique_id=1696898554 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.4479779, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_26" parent="NavigationRegion3D" unique_id=1501677849 instance=ExtResource("19_8c454")]
+transform = Transform3D(-1.4977382, 0.00893367, -0.08185349, 0.008901974, 1.4999734, 0.00082391186, 0.081856936, 0.0003368883, -1.4977648, 1.4915254, -2.3655086, -2.310894)
+
+[node name="syringe_mp_14" parent="NavigationRegion3D" unique_id=2075707852 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.4742094, 0, 0.27695954, 0, 1.5, 0, -0.27695954, 0, 1.4742094, 1.3413206, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_25" parent="NavigationRegion3D" unique_id=405181579 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.437436, 0, -0.4286933, 0, 1.5, 0, 0.4286933, 0, 1.437436, 1.2540718, -2.3655086, -2.2284193)
+
+[node name="syringe_mp_15" parent="NavigationRegion3D" unique_id=1786607856 instance=ExtResource("19_8c454")]
+transform = Transform3D(0.9633887, 0, 1.1497314, 0, 1.5, 0, -1.1497314, 0, 0.9633887, 1.043075, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_24" parent="NavigationRegion3D" unique_id=2094263853 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.408319, 0, 0.5163698, 0, 1.5, 0, -0.5163698, 0, 1.408319, 0.9434458, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_16" parent="NavigationRegion3D" unique_id=1590146698 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.4500861, 0, 0.38373193, 0, 1.5, 0, -0.38373193, 0, 1.4500861, 0.8245318, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_23" parent="NavigationRegion3D" unique_id=1403970818 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.4946581, 0, -0.1264795, 0, 1.5, 0, 0.1264795, 0, 1.4946581, 0.72745556, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_17" parent="NavigationRegion3D" unique_id=687810107 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.4214711, 0, -0.47897786, 0, 1.5, 0, 0.47897786, 0, 1.4214711, 0.63655657, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_18" parent="NavigationRegion3D" unique_id=1373265099 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.350203, 0, -0.65341556, 0, 1.5, 0, 0.65341556, 0, 1.350203, 0.43549544, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_22" parent="NavigationRegion3D" unique_id=1011330282 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.4997096, 0, 0.029514432, 0, 1.4999999, 0, -0.029514432, 0, 1.4997096, 0.5214619, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_19" parent="NavigationRegion3D" unique_id=1274058893 instance=ExtResource("19_8c454")]
+transform = Transform3D(-1.1499923, 0, 0.96307707, 0, 1.5, 0, -0.96307707, 0, -1.1499923, 0.19717073, -2.3655086, -2.1534376)
+
+[node name="syringe_mp_20" parent="NavigationRegion3D" unique_id=1071904632 instance=ExtResource("19_8c454")]
+transform = Transform3D(1.1966991, 0, 0.9043845, 0, 1.4999999, 0, -0.9043845, 0, 1.1966991, 1.637025, -2.3655086, -2.1771836)
+
+[node name="syringe_mp_21" parent="NavigationRegion3D" unique_id=259323501 instance=ExtResource("19_8c454")]
+transform = Transform3D(-1.3412292, 0, 0.671643, 0, 1.5, 0, -0.671643, 0, -1.3412292, 1.8288467, -2.3655086, -2.2051158)
+
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("30_aku34")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.368512, -1.1381572, -18.170025)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23705769, -1.8950164, 2.0090132)
 
 [node name="camera" parent="." unique_id=288744070 instance=ExtResource("29_m18md")]
 transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -3.1750588, -1.7343206, -0.9328079)
@@ -517,3 +572,33 @@ shape = SubResource("SphereShape3D_v4tsq")
 
 [node name="elevator_12" parent="." unique_id=1893579418 instance=ExtResource("32_q0c7e")]
 transform = Transform3D(-1.6016178, 0, -8.742278e-08, 0, 1, 0, 1.4001787e-07, 0, -1, 1.5663068, 1.1634967, 0.6698582)
+
+[node name="chair_mp_52" parent="." unique_id=1771161345 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12.265143, -5.2772465, -4.3120103)
+
+[node name="chair_mp_53" parent="." unique_id=638301920 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 13.265143, -5.2772465, -4.3120103)
+
+[node name="chair_mp_54" parent="." unique_id=1246076976 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 14.265143, -5.2772465, -4.3120103)
+
+[node name="chair_mp_55" parent="." unique_id=1896133863 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15.265143, -5.2772465, -4.3120103)
+
+[node name="chair_mp_56" parent="." unique_id=1143473784 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 16.265144, -5.2772465, -4.3120103)
+
+[node name="chair_mp_57" parent="." unique_id=1229578132 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 12.265143, -5.2772465, 0.06009817)
+
+[node name="chair_mp_58" parent="." unique_id=456492220 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 13.265143, -5.2772465, 0.06009817)
+
+[node name="chair_mp_59" parent="." unique_id=1717555676 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 14.265143, -5.2772465, 0.06009817)
+
+[node name="chair_mp_60" parent="." unique_id=526387396 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 15.265143, -5.2772465, 0.06009817)
+
+[node name="chair_mp_61" parent="." unique_id=1729697987 instance=ExtResource("35_v4tsq")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 16.265144, -5.2772465, 0.06009817)

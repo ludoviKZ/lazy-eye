@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d1x2cr68228tw"]
+
+[ext_resource type="PackedScene" uid="uid://4mq5wjuybpvh" path="res://scenes/Interaction_Scenes/psx_beholder_lazy_eye.glb" id="1_38h5x"]
+
+[node name="psx_beholder_lazy_eye" unique_id=933705982 instance=ExtResource("1_38h5x")]
