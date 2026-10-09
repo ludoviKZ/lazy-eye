@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Maaack's Minimal Game Template"
-run/main_scene="uid://dl20ljxu1r652"
+run/main_scene="uid://eqicbira6acf"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.png"
 
@@ -48,6 +48,7 @@ import/blender/enabled=false
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+fonts/main_scene="uid://fd8nq2brq01p"
 
 [input]
 
