@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bruq130dg5n3g"]
+
+[ext_resource type="FontFile" uid="uid://dxnbsu605uq3k" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="1_qgblr"]
+[ext_resource type="Script" uid="uid://cqq683nsl8bkf" path="res://new_game.gd" id="2_a7h0f"]
+
+[node name="Node2D" type="Node2D" unique_id=353768973]
+
+[node name="MenuUi" type="CanvasLayer" parent="." unique_id=1958425205]
+
+[node name="Title" type="Label" parent="MenuUi" unique_id=814646363]
+offset_left = 32.0
+offset_right = 932.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("1_qgblr")
+theme_override_font_sizes/font_size = 128
+text = "Are you ready
+to face the Bheolder?"
+
+[node name="MenuButtons" type="Control" parent="MenuUi" unique_id=1876514761]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewGame" type="Button" parent="MenuUi/MenuButtons" unique_id=2138777470]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 531.0
+offset_right = 999.0
+offset_bottom = 596.0
+theme_override_fonts/font = ExtResource("1_qgblr")
+theme_override_font_sizes/font_size = 64
+text = "YES!"
+script = ExtResource("2_a7h0f")
+
+[connection signal="pressed" from="MenuUi/MenuButtons/NewGame" to="MenuUi/MenuButtons/NewGame" method="_on_pressed"]

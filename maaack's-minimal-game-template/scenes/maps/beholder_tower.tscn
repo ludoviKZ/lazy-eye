@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://dvthha00uragi" path="res://scenes/maps/beholder.gd" id="23_d8exd"]
 [ext_resource type="Script" uid="uid://b4wykaar5pl0n" path="res://scenes/Enemies_Stuff/enemy_fov.gd" id="23_tyb0u"]
 [ext_resource type="PackedScene" uid="uid://bebw40bb6el8g" path="res://scenes/maps/psx_beholder_lazy_eye.tscn" id="24_d8exd"]
+[ext_resource type="PackedScene" uid="uid://cvhak4dugwpxc" path="res://assets/crt_filter/crt_filter.tscn" id="26_lj64e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfc57"]
 albedo_texture = ExtResource("2_blsk3")
@@ -244,7 +245,7 @@ transform = Transform3D(0.83699554, 0, 0, 0, 0.5918452, -0.5918452, 0, 0.5918452
 shape = SubResource("BoxShape3D_f3oyx")
 
 [node name="Player" parent="." unique_id=958992094 instance=ExtResource("9_tm2oy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1818256, 6.7382374, -4.2445316)
+transform = Transform3D(-0.3196121, 0, 0.94754845, 0, 1, 0, -0.94754845, 0, -0.3196121, 8.554156, 0.8107953, 0.68093586)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=31978674]
 environment = SubResource("Environment_phkhe")
@@ -263,7 +264,6 @@ shape = SubResource("SphereShape3D_gfc57")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="button1" unique_id=625013287]
 stream = ExtResource("18_hrai0")
-volume_db = -33.71
 
 [node name="button2" type="Node3D" parent="." unique_id=1366479996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61046743, 11.021869)
@@ -295,7 +295,6 @@ shape = SubResource("SphereShape3D_68odf")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="whire" unique_id=763887984]
 stream = ExtResource("22_ogcd4")
-volume_db = -4.156
 
 [node name="background palaces" type="Node3D" parent="." unique_id=1745950536]
 
@@ -335,10 +334,12 @@ transform = Transform3D(-1, 0, -8.742278e-08, -3.2533517e-08, 0.9281766, 0.37214
 script = ExtResource("23_tyb0u")
 horizontal_fov = 87.5
 vertical_fov = 45.0
-view_distance = 11.0
+view_distance = 44.6
 metadata/_custom_type_script = "uid://b4wykaar5pl0n"
 
 [node name="psx_beholder_lazy_eye" parent="beholder/RigidBody3D" unique_id=1139354184 instance=ExtResource("24_d8exd")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="crt_filter" parent="." unique_id=1678918676 instance=ExtResource("26_lj64e")]
 
 [connection signal="player_entered" from="beholder/RigidBody3D/EnemyFOV" to="beholder" method="_on_enemy_fov_player_entered"]

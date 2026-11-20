@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cnlf2eh4gto2k" path="res://area_3d_3.gd" id="11_g81ij"]
 [ext_resource type="Script" uid="uid://0ysps10pxcot" path="res://area_3d_4.gd" id="12_x5umw"]
 [ext_resource type="Texture2D" uid="uid://do6gcohofmocn" path="res://assets/Textures/concrete_2.png" id="15_v6ada"]
+[ext_resource type="PackedScene" uid="uid://cvhak4dugwpxc" path="res://assets/crt_filter/crt_filter.tscn" id="16_g5nw0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gfc57"]
 
@@ -235,6 +236,8 @@ material = SubResource("StandardMaterial3D_f3oyx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=563117407]
 environment = SubResource("Environment_v6ada")
+
+[node name="crt_filter" parent="." unique_id=1678918676 instance=ExtResource("16_g5nw0")]
 
 [connection signal="body_entered" from="Lamppost/Area3D" to="Lamppost/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Lamppost/Area3D2" to="Lamppost/Area3D2" method="_on_body_entered"]

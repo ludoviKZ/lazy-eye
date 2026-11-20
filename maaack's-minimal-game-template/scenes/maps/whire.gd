@@ -10,3 +10,6 @@ func _on_interact():
 	await get_tree().create_timer(1.6).timeout
 	$AudioStreamPlayer3D.play()
 	$"../beholder".die = true
+	await get_tree().create_timer(1.2).timeout
+	AudioMaster.stop()
+	SceneLoader.load_scene("res://node_2d.tscn")

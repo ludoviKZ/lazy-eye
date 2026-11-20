@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b1qgfmwxhqgq5"]
+
+[ext_resource type="PackedScene" uid="uid://b7jta1ox58f84" path="res://LvL4.tscn" id="1_d61hk"]
+
+[node name="Node" unique_id=1120725842 instance=ExtResource("1_d61hk")]

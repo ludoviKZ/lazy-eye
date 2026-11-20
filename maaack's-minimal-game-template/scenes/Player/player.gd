@@ -34,8 +34,12 @@ func _physics_process(delta):
 	var current_speed = speed
 	var target_height = standing_height
 
-	if Input.is_action_pressed("crouch"):
+	if Input.is_action_pressed("crouch") &&  !test_move(global_transform, Vector3.UP * (0.6)):
 		
+		current_speed = crouch_speed
+		target_height = crouch_height
+		$Hitbox.shape.height = 1 + crouch_height
+	elif test_move(global_transform, Vector3.UP * (0.6)):
 		current_speed = crouch_speed
 		target_height = crouch_height
 		$Hitbox.shape.height = 1 + crouch_height
@@ -61,6 +65,8 @@ func _physics_process(delta):
 	velocity.x = direction.x * current_speed
 	velocity.z = direction.z * current_speed
 	
+	if Input.is_action_just_pressed("reload"):
+		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("ui_text_backspace"):
 		get_tree().quit()
 	move_and_slide()

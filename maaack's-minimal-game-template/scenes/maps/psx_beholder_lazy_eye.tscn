@@ -3,3 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://4mq5wjuybpvh" path="res://scenes/Interaction_Scenes/psx_beholder_lazy_eye.glb" id="1_33557"]
 
 [node name="psx_beholder_lazy_eye" unique_id=1185643711 instance=ExtResource("1_33557")]
+
+[node name="Main_Lazy_Eye_iris_rim" parent="world" parent_id_path=PackedInt32Array(562288706) index="13" unique_id=1468635575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1588282, -0.22814292, 0)
+
+[node name="Main_Lazy_Eye_iris" parent="world" parent_id_path=PackedInt32Array(562288706) index="14" unique_id=497472924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1588282, -0.22814292, 0)
+
+[node name="Main_Lazy_Eye_pupil" parent="world" parent_id_path=PackedInt32Array(562288706) index="15" unique_id=120031143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1588282, -0.22814292, 0.048828244)
+
+[node name="Main_Lazy_Eye_glint" parent="world" parent_id_path=PackedInt32Array(562288706) index="16" unique_id=1266385445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1588282, -0.22814292, 0.048828244)

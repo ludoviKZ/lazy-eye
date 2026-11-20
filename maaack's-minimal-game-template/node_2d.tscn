@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://drkfindwy13vg"]
+
+[ext_resource type="Script" uid="uid://k1wd6lvwrcij" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://cncnkyx7kmafi" path="res://scenes/maps/WhatsApp Image 2026-10-09 at 18.28.19(1).jpeg" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=351361452]
+script = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1511037733]
+position = Vector2(975, 556.00006)
+scale = Vector2(1.93669, 1.767254)
+texture = ExtResource("1_wtcfe")

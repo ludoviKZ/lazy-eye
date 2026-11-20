@@ -9,7 +9,7 @@ func _ready() -> void:
 	quit.pressed.connect(exit_game)
 
 func start_game() -> void:
-	get_tree().change_scene_to_file("res://lvl_1.tscn")
+	SceneLoader.load_scene("res://lvl_1.tscn")
 
 func exit_game() -> void:
 	get_tree().quit()
